@@ -1,0 +1,421 @@
+<div class="pgc-home-banner-wrapper-container">
+  <owl-carousel-o [options]="pgchomebanner">
+      <ng-container *ngFor="let banner of pgcbanner">
+          <ng-template class="slide home-banner-carousel-section" carouselSlide>
+              <img [src]="banner.img" class="img-fluid" alt="{{banner.title}}" />
+              <div class="container pgc-banner-container">
+                  <div class="row">
+                      <div class="col-lg-6">
+                          <h1 class="home-banner-heaading">{{banner.title}}</h1>
+                      </div>
+                  </div>
+              </div>
+          </ng-template>
+      </ng-container>
+  </owl-carousel-o>
+  <section class="news-section">
+      <div class="container-fluid news-section-width">
+          <div class="row">
+              <div class="col-lg-1">
+                  <div class="new-pgc-heading">
+                      <h5>NEWS</h5>
+                  </div>
+              </div>
+              <div class="col-lg-11">
+                  <div class="row">
+                      <div class="col-lg-4 py-4 cursor" *ngFor="let news of newslist" (click)="openNews(news)">
+                          <p>{{news.updatedat|date:'MMMM d, y'}}</p>
+                          <p><strong>{{news.title}}</strong></p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+</div>
+
+<section class="pgc-services-area py-5 overflow-hidden">
+  <div class="container pb-5">
+      <div class="row mx-0">
+          <div class="col-md-4 pgc-services-content" data-aos="fade-right">
+              <div class="pgc-our-services-padding">
+                  <h5 class="pt-4">Reasons To Count On Us</h5>
+                  <h1 class="our-services-area-heading my-2">What <span>we do?</span></h1>
+                  <p>{{ config.appDisplayName }} strives to meet the demand for quality health services with
+                      advancements in
+                      the medical system and increased accessibility.</p>
+              </div>
+          </div>
+          <div class="col-md-4 pgc-services-content" data-aos="fade-right">
+              <div class="pgc-content-content-inner">
+                  <i class="fas fa-hand-holding-heart"></i>
+                  <h3>Contingency Funds</h3>
+                  <p>To meet the demand for quality health services and technological advancement of the health
+                      sector.</p>
+              </div>
+          </div>
+
+          <div class="col-md-4 pgc-services-content" data-aos="fade-left">
+              <div class="pgc-content-content-inner">
+                  <i class="fas fa-universal-access"></i>
+                  <h3>Easily Accessible Platform</h3>
+                  <p>Where everyone can reach out with effortless technical accessibility.</p>
+              </div>
+          </div>
+
+          <div class="col-md-4 pgc-services-content" data-aos="fade-left">
+              <div class="pgc-content-content-inner">
+                  <i class="fas fa-medkit"></i>
+                  <h3>Quality Health Support System</h3>
+                  <p>That is Reliable and Transparent with increased accessibility.</p>
+              </div>
+          </div>
+          <div class="col-md-4 pgc-services-content" data-aos="fade-left">
+              <div class="pgc-content-content-inner">
+                  <i class="fas fa-user-md"></i>
+                  <h3>Free Medical Checkups </h3>
+                  <p>Aiming to make consultations available at every nook and corner of India at Regular Intervals</p>
+              </div>
+          </div>
+
+          <div class="col-md-4 pgc-services-content" data-aos="fade-left">
+              <div class="pgc-content-content-inner">
+                  <i class="fas fa-file-prescription"></i>
+                  <h3>Affordable medical solutions</h3>
+                  <p>Creating effective and technically advanced medical solutions at affordable costs.</p>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+
+<section class="our-support-section py-5">
+  <div class="container">
+      <div class="row">
+          <div class="col-md-12 text-center">
+              <h5 class="color-pink">We Are Dedicated Towards</h5>
+              <h1 class="pgc-text-bold"> Our commitment</h1>
+              <img src="./assets/images/landing-page/our_support_content.webp" alt="We Are Dedicated Towards"
+                  class="img-fluid" />
+          </div>
+      </div>
+  </div>
+</section>
+
+<section class="medical-cases-section pt-5 pb-2 overflow-hidden" [hidden]="medicalCase?.length == 0">
+  <div class="container">
+      <div class="row my-4">
+          <div class="col-lg-12">
+              <h5 class="color-pink">Medical Cases</h5>
+              <h1 class="pgc-text-bold">We are supporting</h1>
+              <p class="font-weight-bold text-dark">Getting medical help right away for someone with an emergency can
+                  save their life. Please extend your help to these victims according to your ability.</p>
+          </div>
+          <div class="row">
+              <div class="medical-cases col-lg-4 my-3" data-aos="flip-down" *ngFor="let story of medicalCase">
+                  <div class="case-item bb-5">
+                      <a routerLink="/medical-support/{{story?.slug}}">
+                          <figure class="blog-responsive-height mb-0">
+                              <img class="img-fluid max-w" [src]="story?.featuredimage" alt="Medical Cases">
+                          </figure>
+                      </a>
+                      <div
+                          class="item-details medical-item-padding  medical-carousel-activecase-height ">
+                          <h5 class="text-wrapping-heading-height"><a routerLink="/medical-support/{{story?.slug}}"
+                                  class="text-dark text-decoration-none"><strong
+                                      [innerText]="story?.title"></strong></a></h5>
+                          <p [innerHTML]="story?.story.substring(0,200) + '...'"></p>
+                          <div class="row">
+                              <div class="col-md-12">
+                                  <div class="medical-cases-btn-section">
+                                      <a routerLink="/medical-support/{{story?.slug}}"
+                                          class="medical-cases-btn donate-now-btn-width">Donate Now</a>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <a routerLink="/medical-support" class="view-all-cases">View All</a>
+          </div>
+      </div>
+  </div>
+</section>
+
+<section class="success-story-section overflow-hidden">
+  <div class="container">
+      <div class="row my-4">
+          <div class="col-lg-12">
+              <h1 class="pgc-text-bold">Lives we have saved</h1>
+              <p class="why-choose-us-pgc-paragraph">Congratulating and celebrating the lives we have saved through
+                  your help. Thank you.</p>
+          </div>
+          <div class="row">
+              <div class="col-lg-3 success-stories-carousel-container my-3" data-aos="flip-up"
+                  *ngFor="let story of successstoriesdata">
+                  <div class="case-item bb-5">
+                      <a routerLink="/medical-support/{{story?.slug}}">
+                          <figure class="blog-responsive-height mb-0">
+                              <img  height="210px" class="w-100" alt="Lives We Have Save" [src]="story?.featuredimage" />
+                          </figure>
+                      </a>
+                      <div
+                          class="item-details medical-item-padding  success-stories-height success_stories-flex medical-carousel-activecase-height">
+                          <a routerLink="/medical-support/{{story?.slug}}" class="text-dark text-decoration-none">
+                              <h5 class="text-center text-wrapping-heading-height">
+                                  <strong [innerText]="story?.title"></strong>
+                              </h5>
+                          </a>
+                          <p [innerHTML]="story?.story.substring(0,140)+'...'"></p>
+                          <a class="work-readmore-btn success_stories-margin mb-4"
+                              routerLink="/medical-support/{{story?.slug}}">
+                              Read More
+                          </a>
+                      </div>
+                  </div>
+              </div>
+              <a routerLink="successstories" class="view-all-cases">View All </a>
+          </div>
+      </div>
+  </div>
+</section>
+
+<section class="home-global-presence">
+  <div class="container">
+      <div class="row">
+          <div class="col-lg-5 d-flex align-items-center">
+              <h1>Every Day We Are One Step Closer to the <span>Healthy World</span>
+                  We Want Tomorrow, Through Our Steadfast Commitment to Action Today.</h1>
+          </div>
+          <div class="col-lg-7">
+              <div class="counter">
+                  <div class="row">
+                      <div class="col-6 col-sm-6 col-md-6 col-lg-6">
+                          <div class="count-up">
+                              <img src="./assets/images/landing-page/c-1.webp" alt="Supporters" />
+                              <h1><span class="counter-count">9000</span>+</h1>
+                              <h3>Supporters</h3>
+                          </div>
+                      </div>
+
+                      <div class="col-6 col-sm-6 col-md-6 col-lg-6">
+                          <div class="count-up">
+                              <img src="./assets/images/landing-page/c-2.webp" alt="Connected People" />
+                              <h1><span class="counter-count">4000</span>+</h1>
+                              <h3>Connected People</h3>
+                          </div>
+                      </div>
+
+                      <div class="col-6 col-sm-6 col-md-6 col-lg-6">
+                          <div class="count-up">
+                              <img src="./assets/images/landing-page/c-4.webp" alt="States & UT" />
+                              <h1><span class="counter-count">28</span>+</h1>
+                              <h3>States & UT</h3>
+                          </div>
+                      </div>
+
+                      <div class="col-6 col-sm-6 col-md-6 col-lg-6">
+                          <div class="count-up">
+                              <img src="./assets/images/landing-page/c-3.webp" alt="Partners" />
+                              <h1><span class="counter-count">50</span>+</h1>
+                              <h3>Partners</h3>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+
+<section class="feature-discovery py-5">
+  <div class="container mb-4">
+      <div class="row">
+          <div class="col-lg-12">
+              <h5 class="color-pink">We Make Sincere Efforts Towards</h5>
+              <h1 class="pgc-text-bold">WHAT ARE WE WORKING ON?</h1>
+              <p class="pgc-discovery-p">Our team is busy working towards our vision of a healthy and developed India.
+                  Discover what is happening at <span>{{ config.appDisplayName }}</span> here: </p>
+          </div>
+      </div>
+  </div>
+
+  <div class="pgc-discover">
+      <div class="container">
+          <div class="row">
+              <div class="col-12 col-md-6 col-lg-3 px-0">
+                  <div class="pgc-discover-feature pgcdiscover1">
+                      <div class="pgc-discover-flex">
+                          <h5>01</h5>
+                          <p>Transforming health sector of India</p>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-12 col-md-6 col-lg-3 px-0">
+                  <div class="pgc-discover-feature pgcdiscover2">
+                      <div class="pgc-discover-flex">
+                          <h5>02</h5>
+                          <p>Saving lives through advanced medical support</p>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-12 col-md-6 col-lg-3 px-0">
+                  <div class="pgc-discover-feature pgcdiscover3">
+                      <div class="pgc-discover-flex">
+                          <h5>03</h5>
+                          <p>Easy access to medical services through technical advancement</p>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-12 col-md-6 col-lg-3 px-0">
+                  <div class="pgc-discover-feature pgcdiscover4">
+                      <div class="pgc-discover-flex">
+                          <h5>04</h5>
+                          <p>Better connection to create a healthier society</p>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+
+<section class="latest-update py-5 overflow-hidden">
+  <div class="container">
+      <div class="row mb-3">
+          <div class="col-lg-12">
+              <h5 class="color-pink">Bulletin Board</h5>
+              <h1 class="pgc-text-bold">Latest Updates</h1>
+              <p class="pgc-discovery-p">As we all know, the healthcare industry is undergoing a major transformation
+                  in India. The <span>{{ config.appDisplayName }}</span> brings the latest healthcare news, views and
+                  updates
+                  from the Indian and Global Health Industry.</p>
+          </div>
+      </div>
+
+      <div class="row mx-lg-5">
+          <div class="row latest-update-inner-container">
+              <div class="col-lg-4 my-3" data-aos="flip-right" *ngFor="let news of blog">
+                  <div class="case-item">
+                      <figure class="blog-responsive-height mb-0">
+                          <img class="img-fluid" [src]="news.featuredimage" alt="Bulletin Board" />
+                      </figure>
+
+                      <div class="item-details news-content medical-carousel-activecase-height">
+                          <h5 class="text-wrapping-heading-height" [class.overflow]="news.title.length > 100"><strong
+                                  [innerText]="news.title | slice:0:100"></strong></h5>
+                          <p class="news-para" [class.overflow]="news.description.length > 120"
+                              [innerHTML]="news.description.substring(0,170) + '...'"></p>
+                          <a class="news-learnmore" routerLink="/blogs/{{news?.slug}}">
+                              <i class="fa fa-plus" aria-hidden="true"></i>
+                              <span>Learn More</span>
+                          </a>
+                      </div>
+                  </div>
+              </div>
+              <a routerLink="blogs" class="view-all-cases">View All </a>
+          </div>
+      </div>
+  </div>
+</section>
+
+<section class="we-impact-section overflow-hidden">
+  <div class="we-impact-bg-overlay">
+      <div class="container py-4">
+          <div class="row my-3">
+              <div class="col-lg-12 ">
+                  <div class="how-we-im text-center">
+                      <h1>Let’s Make an Impact Together </h1>
+                      <p>Let us unite and provide emotional, moral and medical support to all citizens and build a
+                          healthy India by 2030
+                      </p>
+                  </div>
+              </div>
+          </div>
+          <div class="wrap-videos">
+
+              <div class="row mb-4">
+                  <div class="col-lg-3 my-3" data-aos="zoom-in">
+
+                      <a class="modalclick"
+                          href="https://www.youtube.com/embed/w2eW784t0w8?rel=0&showinfo=0&autoplay=1">
+                          <img src="./assets/images/landing-page/world-blood-pgc.jpg" alt="World Blood"
+                              class="img-fluid w-100" />
+                          <span><i class="fab fa-youtube"></i></span>
+                      </a>
+                  </div>
+                  <div class="col-lg-3 my-3" data-aos="zoom-in-up">
+                      <a class="modalclick"
+                          href="https://www.youtube.com/embed/KsDwkav3oPQ?rel=0&showinfo=0&autoplay=1">
+                          <img src="./assets/images/landing-page/mqdefault-pgc.jpg" alt="mqdefault-senior-citizens"
+                              class="img-fluid w-100" />
+                          <span><i class="fab fa-youtube"></i></span>
+                      </a>
+                  </div>
+                  <div class="col-lg-3 my-3" data-aos="zoom-in-down">
+                      <a class="modalclick"
+                          href="https://www.youtube.com/embed/gm8fyGJI8xc?rel=0&showinfo=0&autoplay=1">
+                          <img src="./assets/images/landing-page/mqdefault-senior-citizens.jpg"
+                              class="img-fluid w-100" alt="Senior citizens" />
+                          <span><i class="fab fa-youtube"></i></span>
+                      </a>
+                  </div>
+                  <div class="col-lg-3 my-3" data-aos="zoom-in-down">
+                    <a class="modalclick"
+                        href="https://www.youtube.com/embed/y2qas8IgzgU?rel=0&showinfo=0&autoplay=1">
+                        <img src="./assets/images/landing-page/Womens_day.jpg"
+                            class="img-fluid w-100" alt="Senior citizens" />
+                        <span><i class="fab fa-youtube"></i></span>
+                    </a>
+                </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+
+<section class="events-section py-5 overflow-hidden">
+  <div class="container">
+      <div class="row mb-4">
+          <div class="col-lg-12">
+              <h5 class="color-pink">Events</h5>
+              <h1 class="pgc-text-bold">Events at PGC</h1>
+              <p class="pgc-discovery-p"><span>PGC</span> organizes and hosts a multitude of events virtually and in
+                  person.</p>
+          </div>
+      </div>
+
+      <div class="row">
+          <div class="col-lg-12">
+              <div class="row">
+                  <div class="col-lg-6" data-aos="flip-down" *ngFor="let event of events">
+                      <div class="case-item">
+                          <div class="row">
+                              <div class="col-lg-5">
+                                  <img class="img-responsive" [src]="event.img" alt="Events" />
+                              </div>
+                              <div class="col-lg-7">
+                                  <div class="item-details event-content">
+                                      <h5 class="events-heading">
+                                          <strong [innerText]="event.title"></strong>
+                                      </h5>
+                                      <p class="events-para" [innerText]="event.summary">
+                                          Events: Covid-19 Stress Relief - Let's Heal Overselves</p>
+                                      <p class="events-para para-font-12" [innerHTML]="event.eventpara1"></p>
+                                      <P class="events-para para-font-12" [innerHTML]="event.relief"></P>
+                                      <p class="events-para para-font-12">{{event.eventpara2}}</p>
+                                      <div class="text-center">
+                                        <a [href]="event.eventlink" target="_blank" class="events-link">Join Now</a>
+                                        <span class="events-span"> {{event.support}}</span>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>
+<app-youtubemodal></app-youtubemodal>

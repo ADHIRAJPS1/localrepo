@@ -1,0 +1,163 @@
+.pgc-ourgallery-heading{text-align: center; text-transform: uppercase; font-weight: 600; line-height: 1.7;}
+
+.help-tab-align{justify-content: center;  margin-bottom: 25px; border-bottom: none;}
+.help-tab-align li{flex: 1 1 auto; text-align: center;}
+.donate-mode-heading{font-weight: 600; margin:23px 0px; text-align: center;}
+
+
+.amount-content{
+    border-radius: 8px;
+    margin: 1.5625em auto 0;
+    position: relative;
+}
+.pgc-helpus-bank-details{padding: 15px;}
+.helpus-knowmore{border-radius: 40px 0px 40px 0px;}
+
+.form-control::placeholder {
+  color: #d5d5d5;
+  opacity: 1; /* Firefox */
+}
+
+.form-control:-ms-input-placeholder { /* Internet Explorer 10-11 */
+ color: #d5d5d5;
+}
+
+.form-control::-ms-input-placeholder { /* Microsoft Edge */
+ color: #d5d5d5;
+}
+
+.help-tab-align li a{font-size: 18px;  text-decoration: none;}
+.help-tab-align li a{color: #000; background: #e2e2e2;  padding: 13px 25px; border-radius: 0px; display: block;}
+.help-tab-align li a.active{background: #a42a6a; color: #fff;}
+.amount-selected-tab_1{border-bottom: none;}
+.amount-selected-tab_1 li a{text-decoration: none;
+   color: #b3b3b3;
+   border:1px solid #b3b3b3;
+    padding: 7px 20px;
+    display: block;
+    margin-right: 10px;
+    font-size: 19px;
+    position: relative;
+    border-radius: 10px;
+}
+.amount-selected-tab_1 li a.active{background: #a42a6a; color: #fff;}
+    .supporter-list{
+        list-style: none;
+    }
+    .supporter-list{
+        list-style: none;
+    padding-left: 60px;
+    }
+    .supporter-list li{
+        border-bottom: 1px solid #e6e4e5;
+    width: 100%;
+    padding: 10px 0px;
+    display: flex;
+    align-items: center;
+    }
+
+    .supporter-list li span{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: #e1bacf;
+    color: #a42a6a;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    border-radius: 35px;
+    margin-left: -60px;
+    }
+
+    .pgc-employee-donation{
+        text-align: center;
+    display: block;
+    margin: 35px auto;
+    font-size: 19px;
+    color: #a42a6a;
+    }
+
+    .pgc-helpus-pararapg{margin:19px 0px 30px; color: #6b6c6e;}
+
+.amount-content p{font-weight: 600; font-size: 22px; }
+.companytextbox{position: absolute; z-index: 12; margin-left: -2px;}
+.companytextbox .searchbg{padding-top: 10px; padding-bottom: 10px;}
+.search-text-box-padding{padding-left: 50px;}
+.pgc-employer-ul-list{list-style: none;   cursor: pointer;}
+.pgc-employer-ul-list li{padding: 10px;}
+.pgc-employer-ul-list li:hover{background: #212529; color: #fff;}
+.pgc-employer-ul-list li:hover a{color: #fff;}
+.pgc-employer-ul-list li a{color: #212529; text-decoration: none;}
+.match-amount-div{width: 100%; background: #F8F8F8; padding: 10px;}
+
+  /* update css */
+  .pgc-donation-page-scrolling{
+    position: absolute;
+    width: 100%;
+    top: 160px;
+  }
+  .pgc-donation-banner-title{color: #fff;}
+  .pgc-donate-currency-container{margin-left: auto; display: table;  color: #051d40;}
+  .pgc-donate-currency-symbol{
+    padding: 6px 18px;
+    border: 1.5px solid #051d40;
+    background: transparent;
+    color: #051d40;
+    display: block;
+  }
+  select.pgc-donate-currency-symbol option {
+    color: #a42a6a;
+    background-color: #fff;
+}
+  .pgc-donate-form-container{margin-bottom: 50px;}
+  .pgc-donate-form-innercontainer{
+    background: #fff;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 20px 20px 0px 0px;
+  }
+  .donate-symbol-img{width: 10px; margin:7px;}
+  .donate-symbol-img-email{width: 15px; margin: 7px;}
+  .pgc-forms-label-color{color: #6b6c6e;}
+  .pgc-donate-support{color: #a42a6a; text-decoration: none; }
+
+  .debit-card-textbox{border:1px solid #a42a6a; border-radius: 5px;}
+
+  img.donate-symbol-img-qr-code {
+    width: 150px;
+}
+
+section.pgc-help-us-section {
+  background: #fbf7f9;
+}
+  .debit-card-textbox .input-group-text {
+    display: flex;
+    align-items: center;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: center;
+    white-space: nowrap;
+    background-color: transparent;
+    border: none;
+    border-radius: .25rem;
+}
+.debit-card-textbox .form-control{border: none;}
+.donate-symbol-img-credit{width:25px; margin: 7px;}
+.pgc-donate-barcode-container{text-align: center;}
+.donate-barcode-name{font-weight: 600;}
+.donate-scan-app-text{font-weight:600; color:#a42a6a;}
+.donate-app-img{width:80%;}
+.pgc-donate-funded-text-container{background: #90497d; color: #fff; padding: 20px; border-radius: 0px 0px 20px 20px;}
+.pgc-donation-banner-heading-container{margin-top:40vh; position: sticky; top:50vh; margin-bottom: 40px;}
+.pgc-donate-offline-payment-table{margin-left:11px;}
+.instruction-bank-account-innercontainer{background: #f2e8ee; border-radius: 20px;}
+.instruction-bank-account-innercontainer .email{color:#a42a6a; text-decoration: none;}
+.text-true{
+  color: #4aa02c;
+}
+.text-no{
+  color:#ff0000
+}

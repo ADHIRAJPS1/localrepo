@@ -1,0 +1,14 @@
+.faq-searchbox{border-radius: 20px; padding-left: 42px;}
+.faq-search-icon{position: relative;}
+.faq-search-icon i{position: absolute;top: 35%; color: #90497d; margin-left: 15px;}
+.faq-back-link{color: #90497d; text-decoration: none;}
+.faq-details-heading{text-decoration: none; color:#212529;}
+
+.faq-details-paragraph{text-decoration: none; color:#212529; margin: 20px 0px; display: block;}
+.see-all-articles{text-decoration: none; color:#90497d; margin: 20px 0px; display: block;}
+.accordion-item {
+    border-bottom: 1px solid rgba(0,0,0,.125);
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}

@@ -1,0 +1,24 @@
+.pgc-annual-report-section{background: #f3eaeb; }
+.annual-report-btn img{width: 14px;margin-right:5px; display: inline-block;}
+.annual-report-btn{background: #a42a6a; margin-top:6px; display: inline-block; border-radius:7px; padding: 7px 18px; color: #fff; text-decoration: none;}
+.annual-report-p{margin: 0px;}
+.annual-report-h6{margin:5px 0px;}
+.annual-report-card{border:none; background-color: transparent;}
+.impact-report{background: #90497d; color: #fff;}
+.impact-report-h5{margin:20px 0px;}
+.impact-report-h2{margin:30px 0px;}
+.impact-report-btn{color: #fff; text-decoration: none; display: block; margin-bottom: 15px;}
+.report-readmore-btn{color: #a42a6a; text-decoration: none;}
+.report-readmore-para{color: #a42a6a;}
+.impact-report-card-container{background: #f9f9f9; border: 1px solid #00000012; box-shadow: 0 7px 14px rgb(0 0 0 / 10%);}
+
+.report-owl-three .item .card{background-color: transparent;}
+.aboutus-team-member-name{text-decoration: none; cursor: pointer;}
+
+@media (min-width: 576px){
+.modal-dialog {
+    margin: 5.75rem auto;
+}
+}
+.image-box{border:1px solid #e5e5e5; padding: 5px;}
+.team-profile{font-size: 13px; font-weight: 600;}

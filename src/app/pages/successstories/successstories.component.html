@@ -1,0 +1,65 @@
+<section class="home-banner"
+    style="background-image: url(./assets/images/case/220-SM919109.webp); background-repeat: no-repeat; background-size: cover;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-6">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="pgc-cases-section">
+    <div class="container">
+        <div class="row py-5">
+            <div class="col-lg-2">
+                <h1>Find Stories</h1>
+            </div>
+            <div class="col-lg-8">
+                <div class="case-search-box">
+                    <input type="text" class="form-control search-case-textbox" placeholder="Search by name, Stories" />
+                    <span class="search-textbox-icon"><i class="fa fa-search" aria-hidden="true"></i></span>
+                    <input type="submit" value="Search" class="btn btn-search" />
+                </div>
+            </div>
+            <div class="col-lg-2">
+                <ul class="navbar-nav case_category-search">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Search Category
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li *ngFor="let casefilter of categoryList;"><a class="dropdown-item"
+                                    (click)="searchcaselist(casefilter.title)">
+                                    {{casefilter.title}}</a></li>
+
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 my-3" data-aos="fade-up" data-aos-easing="ease-in-sine" data-aos-duration="600"
+                *ngFor="let story of stories">
+                <a class="successfull-stories-link-color" routerLink="/medical-support/{{story?.slug}}">
+                    <div class="case-listing-pgc">
+                        <figure class="blog-responsive-height">
+                            <img src="{{story?.featuredimage}}" alt="{{story?.title}}" class="img-fluid w-100">
+                        </figure>
+                        <div class="item-details medical-item-padding medical-border-bottom case-story-height">
+                            <h5><strong>{{story?.title}}</strong></h5>
+                            <p [innerHTML]="story?.story.substring(0,150)"></p>
+                            <a routerLink="/medical-support/{{story?.slug}}" class="case-readmore mb-3 d-block">
+                                Read More</a>
+
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-12">
+                <a class="blog-loadmore-btn" (click)="loanextPageData()" *ngIf="isloadMoreBtn">Load More <i
+                        aria-hidden="true" class="fa fa-arrow-down"></i></a>
+            </div>
+        </div>
+    </div>
+</section>

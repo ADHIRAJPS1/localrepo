@@ -1,0 +1,65 @@
+<section class="home-banner"
+    style="background-image: url(./assets/images/case/220-SM919109.webp); background-repeat: no-repeat; background-size: cover;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-6">
+            </div>
+        </div>
+    </div>
+</section>
+<section class="successstoriesdetails py-5" *ngIf="storyData">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h4>{{storyData?.categoryname}}</h4>
+            </div>
+            <div class="col-lg-8">
+                <img src="{{storyData?.featuredimage}}" alt="{{storyData?.title}}" class="img-fluid w-100 my-4" />
+                <h3>{{storyData?.title}}</h3>
+                <p [innerHTML]="storyData?.story"></p>
+                <small class="success-stories-details-impact">Tell your friends and make an impact</small>
+                <div class="mt-4 d-block">
+                    <share-buttons class="social-icons-theme" [theme]="'circles-dark'"
+                        [include]="['facebook','twitter','linkedin','whatsapp']" [show]="9" [url]="currentPageUrl"
+                        [image]="storyData?.featuredimage" [autoSetMeta]="true">
+                    </share-buttons>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="successfully-stories-sticky-section my-4">
+                    <div class="success-fully-progressbar-container py-4">
+                        <div class="successfully-funds-progressbar-section">
+                            <p>Total Funds</p>
+                            <h4>Rs.{{storyData?.targetamount| number:'1.0':'en-US'}}</h4>
+                            <p>Funds Raised</p>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: 75%;" aria-valuenow="75"
+                                    aria-valuemin="0" aria-valuemax="100">75%</div>
+                            </div>
+                        </div>
+                        <hr />
+                        <h4 class="text-center">Successfully Operated</h4>
+                    </div>
+                    <h4 class="py-4">Latest Campaigns</h4>
+                    <a class="successfull-stories-link-color" routerLink="/successstoriesdetails/{{story?.slug}}"
+                        *ngFor="let story of successstoriesdata">
+                        <div class="row my-3">
+                            <div class="col-md-4">
+                                <figure>
+                                    <img class="img-responsive" alt="image PGC" [src]="story?.featuredimage" />
+                                </figure>
+                            </div>
+                            <div class="col-md-8">
+                                <h5 [innerText]="story?.title"></h5>
+                                  <p class="successfully-story-latest-compaign-p"
+                                      [innerHTML]="story?.story.substring(0,100)+'...'"></p>
+                            </div>
+                        </div>
+                        <hr />
+                    </a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

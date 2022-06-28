@@ -1,0 +1,10 @@
+.recaptcha-center{margin: 0 auto; display: table;}
+.help-txt {
+    font-size: 12px;
+}
+.help-txt.err{
+    color: #dc3545;
+}
+.form-label span{color:red;}
+.contact_nav-link{background-color: #928d8d85; width:13rem; color:#000; font-weight: 500; font-size: 18px; border-radius: 0px;}
+.contact_nav-link.active{background-color: #861657;}

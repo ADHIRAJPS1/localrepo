@@ -1,0 +1,162 @@
+<div class="col-lg-12 p-4" style="padding-top:0 !important;">
+    <div class="row">
+        <div class="col-sm-4">
+            <button [disabled]="showSpinner" (click)="showAddModal(content)" class="btn bg-light-gray">+ Add New EMP</button>
+        </div>
+        <div class="col-sm-4 filter-section">
+            <input class="filter-input form-control" name="searchTerm" [(ngModel)]="tableService.searchTerm" placeholder="Search..." />
+        </div>
+        <div class="col-sm-4 filter-section">
+            <button [disabled]="showSpinner" (click)="reload()" class="btn bg-light-gray">Reload <i class="fas fa-redo"></i></button>
+            
+        </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-12">
+         <table class="table table-striped">
+            <thead class="bg-header_t text-primary">
+               <tr>
+                  <th [ngClass]="c.columnname === '' ? '' : 'cursor-pointer'" *ngFor="let c of displayedColumns" [sortable]="c.columnname" (sort)="onSort($event)">{{ c.displayname }}</th>
+               </tr>
+            </thead>
+            <tbody>
+               <tr *ngFor="let e of resultList$ | async; let i = index">
+                  <td>{{i+1}}</td>
+                  <td>{{ e.firstname }} {{ e.middlename }} {{ e.lastname }}</td>
+                  <td>{{ e.phonenumber }}</td>
+                  <td>{{ e.designation }}</td>
+                  <td>{{ e.lastlogintime | date : 'short'}}</td>
+                  <td>{{ e.lockoutenabled == true ? 'Inactive' : 'Active' }}</td>
+                  <td>
+                     <i class="fas fa-edit cursor" (click)="showEdit(content, e)"></i>
+                     <!--i class="icon-feather-trash-2 cursor text-primary"></i-->
+                  </td>
+               </tr>
+            </tbody>
+         </table>
+         <div class="col-sm-12" *ngIf="showSpinner && emps?.length ==0" style="text-align:center;padding-left: 25%"><img style="width: 350px;" src="./assets/images/loading.gif" /></div>
+         <div class="d-flex justify-content-between p-2 my-pag" [hidden]="show == false">
+            <ngb-pagination [collectionSize]="totalCount" [pageSize]="pageSize" [(page)]="pageIndex" [maxSize]="5" [rotate]="true" (pageChange)="onPagination($event)"></ngb-pagination>
+            <select class="custom-select pagination" [(ngModel)]="pageSize" (ngModelChange)="setPageSize()">
+                  <option [ngValue]="10">10 items per page</option>
+                  <option [ngValue]="50">50 items per page</option>
+                  <option [ngValue]="100">100 items per page</option>
+            </select>
+         </div>
+      </div>
+   </div>
+</div>
+
+<ng-template #content let-modal>
+   <div class="modal-content shadow-lg">
+      <div class="modal-body">
+         <div class="row">
+            <div class="col-lg-6 text-center">
+               <h6>{{action}} Employee</h6>
+            </div>
+            <div class="col-lg-6 text-lg-right" (click)="modal.dismiss()">
+               <i aria-label="Close" class="fa fa-times cursor text-primary"></i>
+            </div>
+         </div>
+         <div class="card-body">
+            <form [formGroup]="userForm">
+               <div class="row">
+                  <div class="col-lg-6">
+                     <div class="form-group">
+                        <label>First Name *</label>
+                        <input type="text" formControlName="firstname" class="form-control bg-light" placeholder="First Name"/>
+                        <div *ngIf="showErr && userForm.controls.firstname.errors" class="invalid-feedback">
+                           <div *ngIf="userForm.controls.firstname.errors.required">Name is required</div>
+                       </div>
+                     </div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="form-group">
+                        <label>Middle Name</label>
+                        <input type="text" formControlName="middlename" class="form-control bg-light" placeholder="Middle Name"/>
+                        <div *ngIf="showErr && userForm.controls.middlename.errors" class="invalid-feedback">
+                           <div *ngIf="userForm.controls.middlename.errors.required">Name is required</div>
+                       </div>
+                     </div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="form-group">
+                        <label>Last Name *</label>
+                        <input type="text" formControlName="lastname" class="form-control bg-light" placeholder="Last Name"/>
+                        <div *ngIf="showErr && userForm.controls.lastname.errors" class="invalid-feedback">
+                           <div *ngIf="userForm.controls.lastname.errors.required">Name is required</div>
+                       </div>
+                     </div>
+                  </div>
+                  <div class="col-lg-6" *ngIf="temp.rolename != 'superadmin' && temp.rolename != 'admin'">
+                     <div class="form-group">
+                        <label>Designation *</label>
+                        <select formControlName="role" class="form-control bg-light">
+                           <option *ngFor="let r of roles" [hidden]="!r.isactive" [value]="r.name">{{ r.description }}</option>
+                        </select>
+                        <div *ngIf="showErr && userForm.controls.role.errors" class="invalid-feedback">
+                           <div *ngIf="userForm.controls.role.errors.required">Role is required</div>
+                       </div>
+                     </div>
+                  </div>
+                  <div class="col-lg-6">
+                     <div class="form-group">
+                        <label>Phone *</label>
+                        <ngx-intl-tel-input
+                            [cssClass]="'form-control form-textindent contact-padding phone-width campaign-card-border-radius contact-input-bg'"
+                            [selectedCountryISO]="CountryISO.India" [enableAutoCountrySelect]="true" [enablePlaceholder]="false" [customPlaceholder]="" [searchCountryFlag]="true" [phoneValidation]="true" formControlName="phonenumber">
+                        </ngx-intl-tel-input>
+                        <div *ngIf="showErr && userForm.controls.phonenumber.errors" class="invalid-feedback">
+                           <div *ngIf="userForm.controls.phonenumber.errors.required">Phone is required</div>
+                           <div *ngIf="(userForm.controls.phonenumber.hasError('maxlength') || userForm.controls.phonenumber.hasError('minlength')) && !userForm.controls.phonenumber.hasError('required')">Please enter a valid phone number.</div>
+                       </div>
+                     </div>
+                  </div>
+                  <div class="col-lg-6" *ngIf="action == 'Add'">
+                     <div class="form-group">
+                        <label>Email *</label>
+                        <input type="email" formControlName="email" class="form-control bg-light" placeholder="Email"/>
+                        <div *ngIf="showErr && userForm.controls.email.errors" class="invalid-feedback">
+                           <div *ngIf="userForm.controls.email.errors.required">Email is required</div>
+                           <div *ngIf="userForm.controls.email.hasError('pattern') && !userForm.controls.email.hasError('required')">Please enter a valid email.</div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-lg-6" *ngIf="action == 'Add'">
+                     <div class="form-group">
+                        <label>Password *</label>
+                        <input type="password" formControlName="password" class="form-control bg-light" placeholder="Password" />
+                        <div *ngIf="showErr && userForm.controls.password.errors" class="invalid-feedback">
+                           <div *ngIf="userForm.controls.password.errors.required">Password is required.</div>
+                           <div *ngIf="userForm.controls.password.errors.mustMatch">Passwords must match.</div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-lg-6" *ngIf="action == 'Add'">
+                     <div class="form-group">
+                        <label>Confirm Password *</label>
+                        <input type="password" formControlName="confirmPassword" class="form-control bg-light" placeholder="Confirm Password"/>
+                        <div *ngIf="showErr && userForm.controls.confirmPassword.errors" class="invalid-feedback">
+                           <div *ngIf="userForm.controls.confirmPassword.errors.required">Confirm Password is required.</div>
+                           <div *ngIf="userForm.controls.confirmPassword.errors.mustMatch">Passwords must match.</div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-lg-6" *ngIf="temp.rolename != 'superadmin'">
+                     <div class="form-group">
+                        <label>Emp. Status</label>
+                        <div class="custom-control custom-switch custom-switch-lg mb-4">
+                           <input name="chkbx" type="checkbox" formControlName="status" class="custom-control-input" id="switch1">
+                           <label class="custom-control-label" for="switch1">{{ userForm.controls.status.value == true ? 'Active' : 'Inactive' }}</label>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-lg-12 text-center">
+                     <button (click)="submitModal(modal)" [disabled]="showSpinner" class="btn btn-danger m-auto mt-4">Submit <img *ngIf="showSpinner" src="./assets/images/spinning-loading.gif" style="width:30px;"></button>
+                  </div>
+               </div>
+            </form>
+         </div>
+      </div>
+   </div>
+</ng-template>

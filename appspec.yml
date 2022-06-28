@@ -1,0 +1,16 @@
+version: 0.0
+os: linux
+files:
+  - source: /
+    destination: /home/ubuntu/ssr/pgc
+    file_exists_behavior: OVERWRITE
+hooks:
+ BeforeInstall:
+  - location: scripts/beforeinstallscript
+    timeout:  300
+    runas: ubuntu
+ AfterInstall:
+  - location: scripts/afterinstallscript
+    timeout:  300
+    runas: ubuntu
+    #stop

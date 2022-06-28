@@ -1,0 +1,99 @@
+<section class="home-banner"
+    style="background-image: url(./assets/images/events/20-SM279332.png); background-repeat: no-repeat; background-size: cover;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+            </div>
+        </div>
+    </div>
+</section>
+<section class="about-future-funding-section">
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="main-events-calender">Main events calendar</h1>
+                <ul class="nav nav-pills my-4 pgc-events" id="pills-tab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="pills-upcoming-tab" data-bs-toggle="pill"
+                            data-bs-target="#pills-upcoming" type="button" role="tab" aria-controls="pills-upcoming"
+                            aria-selected="true">Upcoming Events</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="pills-past-tab" data-bs-toggle="pill" data-bs-target="#pills-past"
+                            type="button" role="tab" aria-controls="pills-past" aria-selected="false">Past
+                            Events</button>
+                    </li>
+                </ul>
+                <div class="tab-content pgc-events-events-detais" id="pills-tabContent">
+                    <div class="tab-pane fade show active" id="pills-upcoming" role="tabpanel"
+                        aria-labelledby="pills-upcoming-tab">
+                        <div class="row my-5" *ngFor="let event of events">
+                            <div class="col-lg-3">
+                                <img src="{{event.url}}" alt="{{event.title}}" class="img-fluid" />
+                            </div>
+                            <div class="col-lg-9">
+                                <div class="pgc-events-container">
+                                    <h5 class="pgc-events-time mb-3">
+                                        <img src="./assets/images/events/calender.png" class="pgc-calender-icon" />
+                                        {{event.createdat|date:'d MMM, y'}}
+                                    </h5>
+                                    <h5 class="pgc-events-headingmb-3">
+                                        <img src="./assets/images/events/location.png" class="pgc-globe-icon" />
+                                        {{event.landmark}}
+                                    </h5>
+                                    <h5 class="pgc-events-time mb-3">{{event.title}}</h5>
+                                    <p [innerHTML]="event.description|slice:0:150">
+                                        1.21 billion. That’s how many young people between 15 - 24 inhabit the earth –
+                                        15.5 per cent of the global population, according to estimates in the 2020
+                                        United Nations World Youth Report.
+                                    </p>
+                                    <a routerLink="/events-details" class="pgc-events-details">Details</a>
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <hr />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="pills-past" role="tabpanel" aria-labelledby="pills-past-tab">
+                        <div class="row my-5" *ngFor="let event of events">
+                            <div class="col-lg-3">
+                                <img src="{{event.url}}" alt="Events" class="img-fluid" />
+                            </div>
+                            <div class="col-lg-9">
+                                <div class="pgc-events-container">
+                                    <h5 class="pgc-events-time mb-3">
+                                        <img src="./assets/images/events/calender.png" alt="Events Date"
+                                            class="pgc-calender-icon" />
+                                        {{event.createdat|date:'d MMM, y'}}
+                                    </h5>
+                                    <h5 class="pgc-events-headingmb-3">
+                                        <img src="./assets/images/events/location.png" alt="Events location"
+                                            class="pgc-globe-icon" />
+                                        {{event.landmark}}
+                                    </h5>
+                                    <h5 class="pgc-events-time mb-3">{{event.title}}</h5>
+                                    <p [innerHTML]="event.description|slice:0:150">
+                                        1.21 billion. That’s how many young people between 15 - 24 inhabit the earth –
+                                        15.5 per cent of the global population, according to estimates in the 2020
+                                        United Nations World Youth Report.
+                                    </p>
+                                    <a routerLink="/events-details" class="pgc-events-details">Details</a>
+                                </div>
+                            </div>
+                            <div class="col-lg-12">
+                                <hr />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <a class="blog-loadmore-btn" (click)="loadNextPageData()" *ngIf="isloadMoreBtn">
+                    Load More
+                    <i class="fa fa-arrow-down" aria-hidden="true"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>

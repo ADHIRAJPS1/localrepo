@@ -1,0 +1,397 @@
+<section class="home-banner mobile-banner-right-align"
+    style="background-image: url(./assets/images/contact-us/contact-banner.webp); background-repeat: no-repeat; background-size: cover;">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-5 offset-md-7">
+            </div>
+        </div>
+    </div>
+</section>
+<section class="contact-pgc-section py-5 overflow-hidden">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1 class="fs-1 fw-bold"> Get engaged, inspired, and impactful with us</h1>
+                <div>
+                    <p class="my-4">Thank you for reaching out to us. We would love to hear from you and will be glad to
+                        assist with any inquiries you may have. Please visit our FAQs page to see if your question has
+                        already been answered.</p>
+
+                    <p>Any individual can approach and connect with us through our Helpline Support or via Social Media
+                        Platforms. Our team members will connect with you at the earliest possible time to solve your
+                        query.
+                    </p>
+                    <p><a href="tel:18003094055" class="contact-pgc-info contact-us-info-margin">
+                            <img src="./assets/images/contact-us/call.png" alt="Call" />
+                            18003094055
+                        </a>
+                        <a href="mailto:{{ config.contactEmail }}" class="contact-pgc-info">
+                            <img src="./assets/images/contact-us/noun_Email_3967101.png" alt="Email" />
+                            {{ config.contactEmail }}
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="pgc-general-enquiries-section py-5 overflow-hidden"
+    style="background-image: url(./assets/images/contact-us/contact-us.webp); background-repeat: no-repeat; background-size: contain; background-position: right;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <ul class="nav nav-pills mb-4" id="pills-tab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link contact_nav-link active" id="pills-general-tab" data-bs-toggle="pill"
+                            data-bs-target="#pills-general" type="button" role="tab" aria-controls="pills-general"
+                            aria-selected="true">General Query</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link contact_nav-link" id="pills-media-tab" data-bs-toggle="pill"
+                            data-bs-target="#pills-media" type="button" role="tab" aria-controls="pills-media"
+                            aria-selected="false">Media</button>
+                    </li>
+                </ul>
+                <div class="tab-content" id="pills-tabContent">
+                    <div class="tab-pane fade show active" id="pills-general" role="tabpanel"
+                        aria-labelledby="pills-general-tab">
+                        <h4 class="contactus-enquiries-heading">General Enquiries</h4>
+                        <p class="contactus-enquiries-para">Thank you for your interest in {{ config.appDisplayName }} .
+                            Whatever your enquiries, please use the form below.</p>
+                        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="row">
+                                        <div class="col-md-6 my-1">
+
+                                            <div class="form-group">
+                                                <label class="form-label">First Name <span>*</span></label>
+                                                <input type="text" placeholder="First Name" formControlName="firstName"
+                                                    class="form-control"
+                                                    [ngClass]="{ 'is-invalid': f.firstName.touched && f.firstName.errors }" />
+                                                <div *ngIf="f.firstName.touched && f.firstName.errors"
+                                                    class="invalid-feedback">
+                                                    <div *ngIf="f.firstName.errors.required">First Name is required
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 my-1">
+                                            <div class="form-group">
+                                                <label class="form-label">Last Name <span>*</span></label>
+                                                <input type="text" placeholder="Last Name " formControlName="lastName"
+                                                    class="form-control"
+                                                    [ngClass]="{ 'is-invalid': f.lastName.touched && f.lastName.errors }" />
+                                                <div *ngIf="f.lastName.touched && f.lastName.errors"
+                                                    class="invalid-feedback">
+                                                    <div *ngIf="f.lastName.errors.required">Last Name is required</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 my-1">
+                                    <div class="form-group">
+                                        <label class="form-label">Country <span>*</span></label>
+                                        <span class="country">
+                                            <select class="form-select" aria-label="Default select example"
+                                                [(ngModel)]="defaultCounrty" formControlName="country"
+                                                [ngClass]="{ 'is-invalid': f.country.touched  && f.country.errors}">
+                                                <option *ngFor="let country of countries" value="{{country.name}}">
+                                                    {{country.name}}</option>
+                                            </select>
+                                            <div *ngIf="f.country.touched  && f.country.errors"
+                                                class="invalid-feedback">
+                                                <div *ngIf="f.country.errors.required">Country Name is required.</div>
+                                            </div>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 my-1">
+                                    <div class="form-group">
+                                        <label class="form-label">Phone Number <span>*</span></label>
+                                        <input type="text" minlength="13" id="phone" [(ngModel)]="data.phonenumber"
+                                            maxlength="15" placeholder="Phone Number" formControlName="phonenumber"
+                                            class="form-control phone"
+                                            [ngClass]="{ 'is-invalid': f.phonenumber.touched && f.phonenumber.errors }"
+                                            (keypress)="numericOnly($event)"
+                                            onKeyPress="if(this.value.length==15) return false;" />
+                                        <div *ngIf="f.phonenumber.touched && f.phonenumber.errors"
+                                            class="invalid-feedback">
+                                            <div *ngIf="f.phonenumber.errors.required">Phone Number is required</div>
+                                            <div *ngIf="f.phonenumber.errors.minlength">Please Enter 10 digit Mobile
+                                                Number
+                                            </div>
+                                            <div *ngIf="f.phonenumber.errors.maxlength">Please Enter 10 digit Mobile
+                                                Number
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 my-1">
+                                    <div class="form-group">
+                                        <label class="form-label">Email id <span>*</span></label>
+                                        <input type="text" placeholder="Email id" [(ngModel)]="data.email"
+                                            formControlName="email" class="form-control"
+                                            [ngClass]="{ 'is-invalid': f.email.touched && f.email.errors }" />
+                                        <div *ngIf="f.email.touched && f.email.errors" class="invalid-feedback">
+                                            <div *ngIf="f.email.errors.required">Email id is required</div>
+                                            <div *ngIf="f.email.errors.pattern">Email must be a valid email address
+                                                (eg:abc@gmail.com)</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 my-1">
+                                    <div class="form-group">
+                                        <label class="form-label">Address <span>*</span></label>
+                                        <input type="text" placeholder="Address" [(ngModel)]="data.address"
+                                            formControlName="address" class="form-control"
+                                            [ngClass]="{ 'is-invalid': f.address.touched && f.address.errors }" />
+                                        <div *ngIf="f.address.touched && f.address.errors" class="invalid-feedback">
+                                            <div *ngIf="f.address.errors.required">Address is required</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 my-1">
+                                    <div class="form-group">
+                                        <label class="form-label">Subject <span>*</span></label>
+                                        <input type="text" placeholder="Enter Subject" [(ngModel)]="data.subject"
+                                            formControlName="subject" class="form-control"
+                                            [ngClass]="{ 'is-invalid': f.subject.touched && f.subject.errors }" />
+                                        <div *ngIf="f.subject.touched && f.subject.errors" class="invalid-feedback">
+                                            <div *ngIf="f.subject.errors.required">Subject is required</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 my-1">
+                                    <div class="form-group">
+                                        <label class="form-label">Your Query <span>*</span></label>
+                                        <textarea rows="5" cols="7" [(ngModel)]="data.description"
+                                            placeholder="Your Query" formControlName="description" class="form-control"
+                                            [ngClass]="{ 'is-invalid': f.description.touched && f.description.errors }"></textarea>
+                                        <div *ngIf="f.description.touched && f.description.errors"
+                                            class="invalid-feedback">
+                                            <div *ngIf="f.description.errors.required">Description is required.</div>
+                                            <div
+                                                *ngIf="f.description.hasError('maxlength') && !f.description.hasError('required')">
+                                                Max 1000 characters allowed.</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 my-3 text-center">
+                                    <div class="form-group">
+                                        <button [disabled]="registerForm.invalid"
+                                            class="btn btn-contact-submit">SUBMIT</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="tab-pane fade" id="pills-media" role="tabpanel" aria-labelledby="pills-media-tab">
+                        <h4 class="contactus-enquiries-heading">Media Enquiries</h4>
+                        <p class="contactus-enquiries-para">Thank you for your interest in {{ config.appDisplayName }} .
+                            Whatever your enquiries, please use the form below.</p>
+                        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="row">
+                                        <div class="col-md-6 my-1">
+
+                                            <div class="form-group">
+                                                <label class="form-label">First Name <span>*</span></label>
+                                                <input type="text" placeholder="First Name" formControlName="firstName"
+                                                    class="form-control"
+                                                    [ngClass]="{ 'is-invalid': f.firstName.touched && f.firstName.errors }" />
+                                                <div *ngIf="f.firstName.touched && f.firstName.errors"
+                                                    class="invalid-feedback">
+                                                    <div *ngIf="f.firstName.errors.required">First Name is required
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 my-1">
+                                            <div class="form-group">
+                                                <label class="form-label">Last Name <span>*</span></label>
+                                                <input type="text" placeholder="Last Name " formControlName="lastName"
+                                                    class="form-control"
+                                                    [ngClass]="{ 'is-invalid': f.lastName.touched && f.lastName.errors }" />
+                                                <div *ngIf="f.lastName.touched && f.lastName.errors"
+                                                    class="invalid-feedback">
+                                                    <div *ngIf="f.lastName.errors.required">Last Name is required</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 my-1">
+                                    <div class="form-group">
+                                        <label class="form-label">Country <span>*</span></label>
+                                        <span class="country">
+                                            <select class="form-select" aria-label="Default select example"
+                                                [(ngModel)]="defaultCounrty" formControlName="country"
+                                                [ngClass]="{ 'is-invalid': f.country.touched  && f.country.errors}">
+                                                <option *ngFor="let country of countries" value="{{country.name}}">
+                                                    {{country.name}}</option>
+                                            </select>
+                                            <div *ngIf="f.country.touched  && f.country.errors"
+                                                class="invalid-feedback">
+                                                <div *ngIf="f.country.errors.required">Country Name is required.</div>
+                                            </div>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 my-1">
+                                    <div class="form-group">
+                                        <label class="form-label">Phone Number <span>*</span></label>
+                                        <input type="text" minlength="13" id="phone" [(ngModel)]="data.phonenumber"
+                                            maxlength="15" placeholder="Phone Number" formControlName="phonenumber"
+                                            class="form-control phone"
+                                            [ngClass]="{ 'is-invalid': f.phonenumber.touched && f.phonenumber.errors }"
+                                            (keypress)="numericOnly($event)"
+                                            onKeyPress="if(this.value.length==15) return false;" />
+                                        <div *ngIf="f.phonenumber.touched && f.phonenumber.errors"
+                                            class="invalid-feedback">
+                                            <div *ngIf="f.phonenumber.errors.required">Phone Number is required</div>
+                                            <div *ngIf="f.phonenumber.errors.minlength">Please Enter 10 digit Mobile
+                                                Number
+                                            </div>
+                                            <div *ngIf="f.phonenumber.errors.maxlength">Please Enter 10 digit Mobile
+                                                Number
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 my-1">
+                                    <div class="form-group">
+                                        <label class="form-label">Email id <span>*</span></label>
+                                        <input type="text" placeholder="Email id" [(ngModel)]="data.email"
+                                            formControlName="email" class="form-control"
+                                            [ngClass]="{ 'is-invalid': f.email.touched && f.email.errors }" />
+                                        <div *ngIf="f.email.touched && f.email.errors" class="invalid-feedback">
+                                            <div *ngIf="f.email.errors.required">Email id is required</div>
+                                            <div *ngIf="f.email.errors.pattern">Email must be a valid email address
+                                                (eg:abc@gmail.com)</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6 my-1">
+                                    <div class="form-group">
+                                        <label class="form-label">Address <span>*</span></label>
+                                        <input type="text" placeholder="Address" [(ngModel)]="data.address"
+                                            formControlName="address" class="form-control"
+                                            [ngClass]="{ 'is-invalid': f.address.touched && f.address.errors }" />
+                                        <div *ngIf="f.address.touched && f.address.errors" class="invalid-feedback">
+                                            <div *ngIf="f.address.errors.required">Address is required</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 my-1">
+                                    <div class="form-group">
+                                        <label class="form-label">Subject <span>*</span></label>
+                                        <input type="text" placeholder="Enter Subject" [(ngModel)]="data.subject"
+                                            formControlName="subject" class="form-control"
+                                            [ngClass]="{ 'is-invalid': f.subject.touched && f.subject.errors }" />
+                                        <div *ngIf="f.subject.touched && f.subject.errors" class="invalid-feedback">
+                                            <div *ngIf="f.subject.errors.required">Subject is required</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 my-1">
+                                    <div class="form-group">
+                                        <label class="form-label">Your Query <span>*</span></label>
+                                        <textarea rows="5" cols="7" [(ngModel)]="data.description"
+                                            placeholder="Your Query" formControlName="description" class="form-control"
+                                            [ngClass]="{ 'is-invalid': f.description.touched && f.description.errors }"></textarea>
+                                        <div *ngIf="f.description.touched && f.description.errors"
+                                            class="invalid-feedback">
+                                            <div *ngIf="f.description.errors.required">Description is required.</div>
+                                            <div
+                                                *ngIf="f.description.hasError('maxlength') && !f.description.hasError('required')">
+                                                Max 1000 characters allowed.</div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12 my-3 text-center">
+                                    <div class="form-group">
+                                        <button [disabled]="registerForm.invalid"
+                                            class="btn btn-contact-submit">SUBMIT</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+            </div>
+        </div>
+    </div>
+</section>
+<section class="office-address py-5 overflow-hidden">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="address-bg">
+                    <h4 class="contactus-enquiries-heading">Head Office</h4>
+                    <p class="contactus-address-para">Humanity Welfare Council <span>({{ config.appDisplayName
+                            }})</span></p>
+                    <p>B401, 4th FLOOR, TOWER-B, NOIDA ONE, PLOT NO. 8, BLOCK-B, SECTOR 62, NOIDA, UTTAR PRADESH - 201309, INDIA.</p>
+                    <a href="mailto:{{ config.contactEmail }}" class="contactus-emailaddress">
+                        <img src="./assets/images/contact-us/noun_Email_3967101.png" alt="Email" />
+                        {{ config.contactEmail }}
+                    </a>
+                    <a class="contact-viewmap" data-bs-toggle="modal" data-bs-target="#delhimap">View Map</a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="address-bg">
+                    <h4 class="contactus-enquiries-heading">Project Partner</h4>
+                    <p class="contactus-address-para"><span>Amritam Wellness & Research Centre</span></p>
+                    <div class="amritam-address-para">
+                        <div class="row">
+                            <div class="col-4"><span>Village</span></div>
+                            <div class="col-8">- Katapatthar,</div>
+
+                            <div class="col-4"><span>Tehsil</span></div>
+                            <div class="col-8">- Vikas Nagar,</div>
+
+                            <div class="col-4"><span>District</span></div>
+                            <div class="col-8">- Dehradun,</div>
+
+                            <div class="col-4"><span>Uttarakhand</span></div>
+                            <div class="col-8">- 248198</div>
+
+                        </div>
+                    </div>
+
+                    <a class="contact-viewmap" data-bs-toggle="modal" data-bs-target="#projectpartneraddressmap">View
+                        Map</a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="address-bg">
+                    <h4 class="contactus-enquiries-heading">For Career opportunities:</h4>
+
+                    <a href="mailto:{{ config.hrEmail }}" class="contactus-emailaddress mt-4">
+                        <img src="./assets/images/contact-us/noun_Email_3967101.png" alt="HR Email" />
+                        {{ config.hrEmail }}
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class=""
+    style="background-image: url(./assets/images/donation/Group-43.webp);  background-repeat: no-repeat; background-size: cover;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9 d-flex ">
+                <h1 class="donate-know-more-heading fs-2">Know someone in need of funds for medical emergency?</h1>
+            </div>
+            <div class="col-lg-3"><a data-bs-toggle="modal" data-bs-target="#refersToUs"
+                    class="pgc-refer-to-us-btn">Refer to us </a></div>
+        </div>
+    </div>
+</section>
+<app-refers></app-refers>
+<app-map-modal></app-map-modal>

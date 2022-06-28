@@ -1,0 +1,65 @@
+<div class="row">
+        <div class="col-sm-4"></div>
+        <div class="col-sm-4 filter-section">
+            <input class="filter-input form-control" name="searchTerm" [(ngModel)]="donations.options.search" placeholder="Search..." />
+        </div>
+        <div class="col-sm-1 filter-section">
+           <button class="btn btn-danger text-white" [disabled]="showSpinner" (click)="searchDonationList()">Search</button>
+        </div>
+        <div class="col-sm-1 filter-section">
+            <button *ngIf="donations.options.search?.length > 0" class="btn btn-danger text-white" (click)="clearSearch()">Clear</button>
+        </div>
+    </div>
+<div class="row border-bottom my-3 py-3" *ngFor="let fundraiser of donations.list">
+   <div class="col-lg-6">
+      <div class="row">
+         <div class="col-lg-5  my-3">
+            <img [src]="fundraiser.featuredimage || './assets/images/donate-black.png'" class="w-100"
+               alt="{{fundraiser?.title}}" />
+         </div>
+         <div class="col-lg-5  my-3">
+            <div class="user-project-text">
+               <small><a class="fs-5 d-block txt-primary text-decoration-none" target="_blank"
+                  routerLink="/medical-support/{{fundraiser?.slug}}">{{fundraiser.title}}</a>
+               <span class="d-block fw-normal">by <span
+                  class="text-red">{{fundraiser?.fullname}}</span></span></small>
+               <!-- <small class="text-muted fw-normal">{{fundraiser.createdat| date:"h:mm a"}}</small> -->
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="col-lg-6 my-3">
+      <ngb-progressbar class="ngb-progressbar mb-4" type="danger" height="0.5rem"
+      [value]="fundraiser?.raisedamount" [max]="fundraiser?.goal">
+      </ngb-progressbar>
+      <div class="d-flex justify-content-between mb-1">
+         <div class="d-inline-block">
+            <span class="text-red d-block">Date</span>
+            <span class="text-red mb-0">{{fundraiser?.createdat | date:'M/d/yy, h:mm a'}}</span>
+            <p class="text-blue"> </p>
+         </div>
+         <div class="d-inline-block">
+            <span class="text-red d-block">Amount</span>
+            <span class="text-red mb-0">Rs. {{fundraiser?.amount}}</span>
+            <p class="text-blue"> </p>
+         </div>
+         <!-- <div class="d-inline-block">
+            <span class="text-muter d-block">Goal</span>
+            <span class="text-muted mb-0">Rs. {{fundraiser?.goal}}</span>
+            </div> -->
+         <div class="d-inline-block">
+            <span class="text-muter d-block">Payment Mode</span>
+            <span class="text-muted mb-0">{{fundraiser?.paymentmethod}}</span>
+         </div>
+         <div class="d-inline-block">
+            <span class="text-muter d-block">Payment Status</span>
+            <span class="text-muted mb-0">{{fundraiser?.status}}</span>
+         </div>
+      </div>
+   </div>
+</div>
+<div class="row" *ngIf="donations.options.total > 0">
+   <div class="col-sm-12">
+      <ngb-pagination [collectionSize]="donations.options.total" [pageSize]="donations.options.limit" [(page)]="pageIndex" [maxSize]="5" [rotate]="true" (pageChange)="onDonationPagination($event)"></ngb-pagination>
+   </div>
+</div>

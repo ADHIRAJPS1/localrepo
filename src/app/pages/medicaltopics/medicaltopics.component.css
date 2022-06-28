@@ -1,0 +1,10 @@
+.medical-topics-filter-list-heading{
+    scroll-margin-top: 120px;
+}
+.medical-topic-container{width: 100%; display: inline-block;}
+.medical-topics-mt{margin-top: -7rem; background-color: #fff; border:1px solid #cbcbcb;}
+.medical-awareness-card-bt{border-top:3px solid #7f405f;}
+.medical-awareness-card-bt h5{color: #7f405f; position: relative;}
+.medical-awareness-card-bt h5 i{position: absolute; right: 0; top: 50%; transform: translateY(-50%);}
+.medical-awareness-card-bt a{text-decoration: none;}
+.medical-awareness-card-bt .card-text{height:90px; overflow: hidden;}

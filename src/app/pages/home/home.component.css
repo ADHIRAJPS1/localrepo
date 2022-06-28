@@ -1,0 +1,136 @@
+a.modalclick {
+  position: relative;
+}
+.modalclick span{position: absolute; top:50%; left:50%; transform: translate(-50%,-50%); color: #424242; font-size: 60px;}
+.modalclick span:before{content: ''; background-color: #fff; width: 40px; height: 40px; position: absolute; z-index: -000000;
+  left: 50%; top: 50%;  transform: translate(-50%, -50%);}
+  .modalclick span i{position: relative;}
+  .modalclick:hover span{color:red;}
+
+.wrap {
+    position: relative;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+    padding: 0 60px;
+    overflow: hidden;
+  }
+  .slider {
+    position: relative;
+    z-index: 200;
+    padding: 0 0px;
+    margin: 0px auto;
+    width: 100%;
+  }
+
+  .slick-arrow {
+    position: absolute;
+    top: 50%;
+    width: 40px;
+    height: 50px;
+    line-height: 50px;
+    margin-top: -25px;
+    border: none;
+    background: transparent;
+    color: #fff;
+    font-family: monospace;
+    font-size: 5rem;
+    z-index: 300;
+    outline: none;
+  }
+
+  .slick-prev {
+    left: -50px;
+    text-align: left;
+  }
+
+  .slick-next {
+    right: -50px;
+    text-align: right;
+  }
+
+
+
+  .item.slick-slide {
+    width: 500px;
+    height: 300px !important;
+    transition: transform .4s;
+    position: relative;
+    pointer-events: none;
+  }
+  .item.slick-slide {
+    transform: scale(0.7)  translate(640px);
+  }
+  .item.slick-slide.slick-center + .slick-slide {
+    transform: scale(0.8) translate(-250px);
+    z-index: 10;
+  }
+  .item.slick-slide.slick-center + .slick-slide + .item.slick-slide {
+    transform: scale(0.7)  translate(-640px);
+    z-index: 5;
+  }
+
+  .item.slick-slide.slick-active {
+    transform: scale(0.8) translate(250px);
+  }
+
+  .item.slick-slide.slick-center {
+    transform: scale(1);
+    z-index: 30;
+    pointer-events:all;
+  }
+
+  .slick-center:after {
+    opacity: 0;
+  }
+
+.pgc-discover {
+  background-image: url('/assets/images/landing-page/Saving-Lives-Amid-the-Coronavirus-Pandemic.webp');
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: all 0.5s linear 0.2s;
+}
+
+.pgcdiscover2, .pgcdiscover4 {
+  background-color: rgb(0 0 0 / 40%);
+}
+.pgcdiscover1, .pgcdiscover3 {
+  background-color: transparent;
+}
+
+.case-item {
+  border: 1px solid #e5e5e5;
+  border-radius: 10px;
+  overflow: hidden;
+  height: 100%;
+}
+
+.home-global-presence {
+  background-image: url('/assets/images/landing-page/Group-21.webp');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.we-impact-section {
+  background-image: url('/assets/images/landing-page/Group-26.webp');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.item-details > .overflow:after {
+  content: '...';
+}
+
+.events-section .case-item img {
+  width: 100%;
+}
+/* @media(min-width:300px){
+  .max-w{
+    max-height: 227px;
+    width: 100%;
+   }
+ } */
+
+ .bb-5{
+  border-bottom: 5px solid #90497d;
+ }

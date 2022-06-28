@@ -1,0 +1,61 @@
+.border-global{border:none;}
+
+.boxshadow-gray{box-shadow: 0px 0px 21px #0000008c;}
+.input-group-text {
+  display: flex;
+  align-items: center;
+  padding: .375rem .75rem;
+  margin-bottom: 0;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #495057;
+  text-align: center;
+  white-space: nowrap;
+  background-color: #ced4da;
+  border: 1px solid #ced4da;
+  border-radius: 50%;
+  border-top-right-radius: 50% !important;
+  border-bottom-right-radius: 50%  !important;
+}
+.input-group-prepend {
+    margin-right: 2px;
+}
+button.btn-close {
+    background: none;
+    border: none;
+}
+
+.modal-dialog {
+    max-width: 600px;
+
+}
+
+
+.border-none{border:none; border-radius: 20%;}
+.know-details{font-size: 16px; line-height: 2.5; margin:0 auto;}
+.form-border {
+    border: 1px solid #ced4da;
+    padding: 4px;
+    border-radius: 23px;
+  }
+  .btn-global{
+    background-color: #632494;
+    color:#fff;
+    border: 1px solid #632494;
+    border-radius: 50px;
+  }
+  .modal-logo{width:105px;}
+  .alert-danger1 {
+    color: #721c24;
+
+}
+
+file-upload.ng-tns-c135-0 {
+    width: 100%;
+}
+.refers_img{
+  height:50px;
+  width:50px;
+  margin: 3px;
+}

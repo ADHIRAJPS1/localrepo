@@ -1,0 +1,644 @@
+{
+  "default": {
+    "title": "Project Global Cure - Transforming The Health Sector - PGC.",
+    "meta": [
+      {
+        "name": "title",
+        "content": "Project Global Cure - Transforming The Health Sector - PGC."
+      },
+      {
+        "name": "description",
+        "content": "Project Global Cure strives to provide quality health services with increased accessibility to transform the health sector and build a healthy India by 2030."
+      },
+      {
+
+	    "name": "keywords",
+		"Content": "funds for medical emergency, Get help for medical treatment, help for poor people, charity donation, Donation online,help for poor people."
+	  },
+	  {
+	    "name": "og:title",
+        "content": "Project Global Cure - Transforming The Health Sector - PGC."
+      },
+      {
+        "name": "og:description",
+        "content": "Project Global Cure strives to provide quality health services with increased accessibility to transform the health sector and build a healthy India by 2030."
+      },
+      {
+        "name": "og:image",
+        "content": "https://www.projectglobalcure.org/assets/images/og-image-logo2.jpg"
+      },
+      {
+        "name": "twitter:image",
+        "content": "https://www.projectglobalcure.org/assets/images/og-image-logo2.jpg"
+      },
+      {
+        "name": "twitter:card",
+        "content": "summary_large_image"
+      },
+      {
+        "name": "twitter:title",
+        "content": "Project Global Cure - Transforming The Health Sector - PGC."
+      },
+      {
+        "name": "twitter:description",
+        "content": "Project Global Cure strives to provide quality health services with increased accessibility to transform the health sector and build a healthy India by 2030."
+      }
+    ]
+  },
+
+  "aboutUs": {
+    "title": "Transforming Healthcare In Every Possible Way",
+    "meta": [
+      {
+        "name": "title",
+        "content": "Transforming Healthcare In Every Possible Way"
+      },
+      {
+        "name": "description",
+        "content": "Project Global Cure is a Humanity Welfare Council initiative that aims to transform the health care sector in India by providing necessary funds to people in urgent need of medical assistance."
+      },
+	  {
+	    "name": "keywords",
+		"Content": "funds for medical emergency, Get help for medical treatment, help for poor people, charity donation, Donation online,help for poor people."
+	  },
+	  {
+	    "name": "og:title",
+        "content": "Transforming Healthcare In Every Possible Way"
+      },
+      {
+        "name": "og:title",
+        "content": "Transforming Healthcare In Every Possible Way"
+      },
+      {
+        "name": "og:description",
+        "content": "Project Global Cure is a Humanity Welfare Council initiative that aims to transform the health care sector in India by providing necessary funds to people in urgent need of medical assistance."
+      },
+      {
+        "name": "og:image",
+        "content": "https://www.projectglobalcure.org/assets/images/og-image-logo2.jpg"
+      },
+      {
+        "name": "twitter:image",
+        "content": "https://www.projectglobalcure.org/assets/images/og-image-logo2.jpg"
+      },
+      {
+        "name": "twitter:card",
+        "content": "summary_large_image"
+      },
+      {
+        "name": "twitter:title",
+        "content": "Transforming Healthcare In Every Possible Way"
+      },
+      {
+        "name": "twitter:description",
+        "content": "Project Global Cure is a Humanity Welfare Council initiative that aims to transform the health care sector in India by providing necessary funds to people in urgent need of medical assistance."
+      }
+    ]
+  },
+
+  "contactUs": {
+    "title": "Contact Us | Project Global Cure -Transforming The Health Sector |PGC",
+    "meta": [
+      {
+        "name": "title",
+        "content": "Contact Us | Project Global Cure -Transforming The Health Sector |PGC"
+      },
+      {
+        "name": "description",
+        "content": "Thank you for reaching out to us. We would love to hear from you and will be glad to assist with any inquiries you may have."
+	   },
+	   {
+
+		"name": "keywords",
+		"Content": "funds for medical emergency, Get help for medical treatment, help for poor people, charity donation, Donation online,help for poor people."
+	  },
+      {
+        "name": "og:title",
+        "content": "Contact Us | Project Global Cure -Transforming The Health Sector |PGC"
+      },
+      {
+        "name": "og:description",
+        "content": "Thank you for reaching out to us. We would love to hear from you and will be glad to assist with any inquiries you may have."
+      },
+      {
+        "name": "og:image",
+        "content": "https://www.projectglobalcure.org/assets/images/og-image-logo2.jpg"
+      },
+      {
+        "name": "twitter:image",
+        "content": "https://www.projectglobalcure.org/assets/images/og-image-logo2.jpg"
+      },
+      {
+        "name": "twitter:card",
+        "content": "summary_large_image"
+      },
+      {
+        "name": "twitter:title",
+        "content": "Contact Us | Project Global Cure -Transforming The Health Sector |PGC"
+      },
+      {
+        "name": "twitter:description",
+        "content": "Thank you for reaching out to us. We would love to hear from you and will be glad to assist with any inquiries you may have."
+      }
+    ]
+  },
+"medicalCases": {
+  "title": "Medical Support | Project Global Cure - Support for Medical Emergency |PGC",
+  "meta": [
+    {
+      "name": "title",
+      "content": "Medical Support | Project Global Cure - Support for Medical Emergency |PGC"
+    },
+    {
+      "name": "description",
+      "content": "Getting medical help right away for someone with an emergency can save their life. Please extend your help to these victims according to your ability."
+   },
+    {
+
+  "name": "keywords",
+  "Content": "funds for medical emergency, Get help for medical treatment, help for poor people, charity donation, Donation online,help for poor people."
+  },
+
+    {
+      "name": "og:title",
+      "content": "Medical Support | Project Global Cure - Support for Medical Emergency |PGC"
+    },
+    {
+      "name": "og:description",
+      "content": "Getting medical help right away for someone with an emergency can save their life. Please extend your help to these victims according to your ability."
+    },
+    {
+      "name": "og:image",
+      "content": "https://www.projectglobalcure.org/assets/images/og-image-logo2.jpg"
+    },
+    {
+      "name": "twitter:image",
+      "content": "https://www.projectglobalcure.org/assets/images/og-image-logo2.jpg"
+    },
+    {
+      "name": "twitter:card",
+      "content": "summary_large_image"
+    },
+    {
+      "name": "author",
+      "content": "Medical Support Team"
+    },
+    {
+      "name": "twitter:title",
+      "content": "Medical Support | Project Global Cure - Support for Medical Emergency |PGC"
+    },
+    {
+      "name": "twitter:description",
+      "content": "Getting medical help right away for someone with an emergency can save their life. Please extend your help to these victims according to your ability."
+    }
+  ]
+  },
+ "healthTopics": {
+  "title": "Medical Awareness | Project Global Cure - Serious medical cases  |PGC",
+  "meta": [
+    {
+      "name": "title",
+      "content": "Medical Awareness | Project Global Cure - Serious medical cases  |PGC"
+    },
+    {
+      "name": "description",
+      "content": "Gain trusted information on medical awareness and medical conditions from our experts at Project Global Cure. Browse by the letter and gain insights."
+    },
+    {
+    "name": "keywords",
+  "Content": "funds for medical emergency, Get help for medical treatment, help for poor people, charity donation, Donation online,help for poor people."
+  },
+  {
+      "name": "og:title",
+      "content": "Medical Awareness | Project Global Cure - Serious medical cases  |PGC"
+    },
+    {
+      "name": "og:description",
+      "content": "Gain trusted information on medical awareness and medical conditions from our experts at Project Global Cure. Browse by the letter and gain insights."
+    },
+    {
+      "name": "og:image",
+      "content": "https://www.projectglobalcure.org/assets/images/og-image-logo2.jpg"
+    },
+    {
+      "name": "twitter:image",
+      "content": "https://www.projectglobalcure.org/assets/images/og-image-logo2.jpg"
+    },
+    {
+      "name": "twitter:card",
+      "content": "summary_large_image"
+    },
+    {
+      "name": "twitter:title",
+      "content": "Medical Awareness | Project Global Cure - Serious medical cases  |PGC"
+    },
+    {
+      "name": "twitter:description",
+      "content": "Gain trusted information on medical awareness and medical conditions from our experts at Project Global Cure. Browse by the letter and gain insights."
+    }
+  ]
+  },
+"blogs": {
+  "title": "Blogs | Project Global Cure -Transforming The Health Sector |PGC",
+  "meta": [
+    {
+      "name": "title",
+      "content": "Blogs | Project Global Cure -Transforming The Health Sector |PGC"
+    },
+    {
+      "name": "description",
+      "content": "Find India's top wellness and health blogs on causes, prevention of health conditions, fitness, nutrition, mental and physical health areas."
+    },
+   {
+    "name": "keywords",
+  "Content": "funds for medical emergency, Get help for medical treatment, help for poor people, charity donation, Donation online,help for poor people."
+  },
+    {
+      "name": "og:title",
+      "content": "Blogs | Project Global Cure -Transforming The Health Sector |PGC"
+    },
+    {
+      "name": "og:description",
+      "content": "Find India's top wellness and health blogs on causes, prevention of health conditions, fitness, nutrition, mental and physical health areas."
+    },
+    {
+      "name": "og:image",
+      "content": "https://www.projectglobalcure.org/assets/images/og-image-logo2.jpg"
+    },
+    {
+      "name": "twitter:image",
+      "content": "https://www.projectglobalcure.org/assets/images/og-image-logo2.jpg"
+    },
+    {
+      "name": "twitter:card",
+      "content": "summary_large_image"
+    },
+    {
+      "name": "twitter:title",
+      "content": "Blogs | Project Global Cure -Transforming The Health Sector |PGC"
+    },
+    {
+      "name": "twitter:description",
+      "content": "Find India's top wellness and health blogs on causes, prevention of health conditions, fitness, nutrition, mental and physical health areas."
+    }
+  ]
+  },
+"accountability": {
+  "title": "Accountability | Project Global Cure -Transforming The Health Sector |PGC",
+  "meta": [
+    {
+      "name": "title",
+      "content": "Accountability | Project Global Cure -Transforming The Health Sector"
+    },
+    {
+      "name": "description",
+      "content": "PGC establishes a long-term commitment towards India's health with sincerity towards its members, donors, and needy people who approach us for help."
+    },
+   {
+    "name": "keywords",
+  "Content": "funds for medical emergency, Get help for medical treatment, help for poor people, charity donation, Donation online,help for poor people."
+  },
+    {
+      "name": "og:title",
+      "content": "Accountability | Project Global Cure -Transforming The Health Sector |PGC"
+    },
+    {
+      "name": "og:description",
+      "content": "PGC establishes a long-term commitment towards India's health with sincerity towards its members, donors, and needy people who approach us for help."
+    },
+    {
+      "name": "og:image",
+      "content": "https://www.projectglobalcure.org/assets/images/og-image-logo2.jpg"
+    },
+    {
+      "name": "twitter:image",
+      "content": "https://www.projectglobalcure.org/assets/images/og-image-logo2.jpg"
+    },
+    {
+      "name": "twitter:card",
+      "content": "summary_large_image"
+    },
+    {
+      "name": "twitter:title",
+      "content": "Accountability | Project Global Cure -Transforming The Health Sector |PGC"
+    },
+    {
+      "name": "twitter:description",
+      "content": "PGC establishes a long-term commitment towards India's health with sincerity towards its members, donors, and needy people who approach us for help."
+    }
+  ]
+  },
+"careers": {
+  "title": "Careers | Project Global Cure -Transforming The Health Sector |PGC",
+    "meta": [
+      {
+        "name": "title",
+        "content": "Careers | Project Global Cure -Transforming The Health Sector"
+      },
+      {
+        "name": "description",
+        "content": "Careers at PGC - find a job at Project Global Cure. Join our family for a unique working experience with our wide internship and job opportunities."
+      },
+	   {
+	    "name": "keywords",
+		"Content": "funds for medical emergency, Get help for medical treatment, help for poor people, charity donation, Donation online,help for poor people."
+	  },
+      {
+        "name": "og:title",
+        "content": "Careers | Project Global Cure -Transforming The Health Sector "
+      },
+      {
+        "name": "og:description",
+        "content": "Careers at PGC - find a job at Project Global Cure. Join our family for a unique working experience with our wide internship and job opportunities."
+      },
+      {
+        "name": "og:image",
+        "content": "https://www.projectglobalcure.org/assets/images/og-image-logo2.jpg"
+      },
+      {
+        "name": "twitter:image",
+        "content": "https://www.projectglobalcure.org/assets/images/og-image-logo2.jpg"
+      },
+      {
+        "name": "twitter:card",
+        "content": "summary_large_image"
+      },
+      {
+        "name": "twitter:title",
+        "content": "Careers | Project Global Cure -Transforming The Health Sector"
+      },
+      {
+        "name": "twitter:description",
+        "content": "Careers at PGC - find a job at Project Global Cure. Join our family for a unique working experience with our wide internship and job opportunities."
+      }
+    ]
+  },
+"covid19": {
+  "title": "Covid-19| Project Global Cure -Transforming The Health Sector |PGC",
+  "meta": [
+    {
+      "name": "title",
+      "content": "Covid-19 | Project Global Cure -Transforming The Health Sector"
+    },
+    {
+      "name": "description",
+      "content": "The urgent action we take today can prevent the COVID-19 pandemic from becoming a lasting crisis for everyone, especially the most vulnerable."
+    },
+  {
+    "name": "keywords",
+  "Content": "funds for medical emergency, Get help for medical treatment, help for poor people, charity donation, Donation online,help for poor people."
+  },
+    {
+      "name": "og:title",
+      "content": "Covid-19 | Project Global Cure -Transforming The Health Sector |PGC"
+    },
+    {
+      "name": "og:description",
+      "content": "The urgent action we take today can prevent the COVID-19 pandemic from becoming a lasting crisis for everyone, especially the most vulnerable."
+    },
+    {
+      "name": "og:image",
+      "content": "https://www.projectglobalcure.org/assets/images/og-image-logo2.jpg"
+    },
+    {
+      "name": "twitter:image",
+      "content": "https://www.projectglobalcure.org/assets/images/og-image-logo2.jpg"
+    },
+    {
+      "name": "twitter:card",
+      "content": "summary_large_image"
+    },
+    {
+      "name": "twitter:title",
+      "content": "Covid-19 | Project Global Cure -Transforming The Health Sector |PGC"
+    },
+    {
+      "name": "twitter:description",
+      "content": "The urgent action we take today can prevent the COVID-19 pandemic from becoming a lasting crisis for everyone, especially the most vulnerable."
+    }
+  ]
+  },
+
+"donate": {
+  "title": "Donate now | Project Global Cure -Transforming The Health Sector |PGC",
+    "meta": [
+      {
+        "name": "title",
+        "content": "Donate now | Project Global Cure -Transforming The Health Sector"
+      },
+      {
+        "name": "description",
+        "content": "Make your contributions from anywhere, anytime, using the payment mode of your choice. Donate for a good cause."
+      },
+	  {
+	    "name": "keywords",
+		"Content": "funds for medical emergency, Get help for medical treatment, help for poor people, charity donation, Donation online,help for poor people."
+	  },
+      {
+        "name": "og:title",
+        "content": "Donate | Project Global Cure -Transforming The Health Sector."
+      },
+      {
+        "name": "og:description",
+        "content": "Make your contributions from anywhere, anytime, using the payment mode of your choice. Donate for a good cause."
+      },
+      {
+        "name": "og:image",
+        "content": "https://www.projectglobalcure.org/assets/images/og-image-logo2.jpg"
+      },
+      {
+        "name": "twitter:image",
+        "content": "https://www.projectglobalcure.org/assets/images/og-image-logo2.jpg"
+      },
+      {
+        "name": "twitter:card",
+        "content": "summary_large_image"
+      },
+      {
+        "name": "twitter:title",
+        "content": "Donate | Project Global Cure -Transforming The Health Sector."
+      },
+      {
+        "name": "twitter:description",
+        "content": "Make your contributions from anywhere, anytime, using the payment mode of your choice. Donate for a good cause."
+      }
+    ]
+  },
+"termsCondition": {
+  "title": "Terms&Condition | Project Global Cure -Transforming The Health Sector |PGC",
+  "meta": [
+    {
+      "name": "title",
+      "content": "terms&condition | Project Global Cure -Transforming The Health Sector"
+    },
+    {
+      "name": "description",
+      "content": ""
+    },
+    {
+      "name": "og:title",
+      "content": "terms&condition | Project Global Cure -Transforming The Health Sector."
+    },
+  {
+    "name": "keywords",
+  "Content": "funds for medical emergency, Get help for medical treatment, help for poor people, charity donation, Donation online,help for poor people."
+  },
+    {
+      "name": "og:description",
+      "content": ""
+    },
+    {
+      "name": "og:image",
+      "content": "https://www.projectglobalcure.org/assets/images/og-image-logo2.jpg"
+    },
+    {
+      "name": "twitter:image",
+      "content": "https://www.projectglobalcure.org/assets/images/og-image-logo2.jpg"
+    },
+    {
+      "name": "twitter:card",
+      "content": "summary_large_image"
+    },
+    {
+      "name": "twitter:title",
+      "content": "terms&condition | Project Global Cure -Transforming The Health Sector."
+    },
+    {
+      "name": "twitter:description",
+      "content": ""
+    }
+  ]
+  },
+"privacyPolicy": {
+  "title": "privacy-policy| Project Global Cure -Transforming The Health Sector |PGC",
+  "meta": [
+    {
+      "name": "title",
+      "content": "privacy-policy | Project Global Cure -Transforming The Health Sector"
+    },
+    {
+      "name": "description",
+      "content": ""
+    },
+    {
+      "name": "og:title",
+      "content": "privacy-policy | Project Global Cure -Transforming The Health Sector."
+    },
+    {
+      "name": "og:description",
+      "content": ""
+    },
+    {
+      "name": "og:image",
+      "content": "https://www.projectglobalcure.org/assets/images/og-image-logo2.jpg"
+    },
+    {
+      "name": "twitter:image",
+      "content": "https://www.projectglobalcure.org/assets/images/og-image-logo2.jpg"
+    },
+    {
+      "name": "twitter:card",
+      "content": "summary_large_image"
+    },
+    {
+      "name": "twitter:title",
+      "content": "privacy-policy | Project Global Cure -Transforming The Health Sector."
+    },
+    {
+      "name": "twitter:description",
+      "content": ""
+    }
+  ]
+  },
+"login": {
+  "title": "login-page| Project Global Cure -Transforming The Health Sector |PGC",
+  "meta": [
+    {
+      "name": "title",
+      "content": "login_page | Project Global Cure -Transforming The Health Sector"
+    },
+    {
+      "name": "description",
+      "content": ""
+    },
+  {
+    "name": "keywords",
+  "Content": "funds for medical emergency, Get help for medical treatment, help for poor people, charity donation, Donation online,help for poor people."
+  },
+    {
+      "name": "og:title",
+      "content": "login_page | Project Global Cure -Transforming The Health Sector."
+    },
+    {
+      "name": "og:description",
+      "content": ""
+    },
+    {
+      "name": "og:image",
+      "content": "https://www.projectglobalcure.org/assets/images/og-image-logo2.jpg"
+    },
+    {
+      "name": "twitter:image",
+      "content": "https://www.projectglobalcure.org/assets/images/og-image-logo2.jpg"
+    },
+    {
+      "name": "twitter:card",
+      "content": "summary_large_image"
+    },
+    {
+      "name": "twitter:title",
+      "content": "Login-Page | Project Global Cure -Transforming The Health Sector."
+    },
+    {
+      "name": "twitter:description",
+      "content": ""
+    }
+  ]
+  },
+  "faq": {
+    "title": "For Organizers Are you raising funds on PGC? If yes, please read through the articles under this",
+    "meta": [
+      {
+        "name": "title",
+        "content": "For Organizers Are you raising funds on PGC? If yes, please read through the articles under this"
+      },
+      {
+        "name": "description",
+        "content": "Project Global Cure is an initiative of Humanity Welfare Council that aims to transform the health care sector in India by providing necessary funds to people in urgent need of medical assistance and advancing the medical system with increased accessibility. Our motto is to transform our health system and make medical care available for the general public without any burden of extra cos"
+      },
+    {
+      "name": "keywords",
+     "Content": "DONOR QUERIES,MEDICAL SUPPORT  QUERIES,PARTNERSHIP/NGO QUERIES,TRUST AND PRIVACY QUERIES,GENERAL QUERIES,MEMBER QUERIES"
+    },
+      {
+        "name": "og:title",
+        "content": "For Organizers Are you raising funds on PGC? If yes, please read through the articles under this"
+      },
+      {
+        "name": "og:description",
+        "content": "Project Global Cure is an initiative of Humanity Welfare Council that aims to transform the health care sector in India by providing necessary funds to people in urgent need of medical assistance and advancing the medical system with increased accessibility. Our motto is to transform our health system and make medical care available for the general public without any burden of extra cos"
+      },
+      {
+        "name": "og:image",
+        "content": "https://www.projectglobalcure.org/assets/images/og-image-logo2.jpg"
+      },
+      {
+        "name": "twitter:image",
+        "content": "https://www.projectglobalcure.org/assets/images/og-image-logo2.jpg"
+      },
+      {
+        "name": "twitter:card",
+        "content": "summary_large_image"
+      },
+      {
+        "name": "twitter:title",
+        "content": "For Organizers Are you raising funds on PGC? If yes, please read through the articles under this"
+      },
+      {
+        "name": "twitter:description",
+        "content": "Project Global Cure is an initiative of Humanity Welfare Council that aims to transform the health care sector in India by providing necessary funds to people in urgent need of medical assistance and advancing the medical system with increased accessibility. Our motto is to transform our health system and make medical care available for the general public without any burden of extra cos"
+      }
+    ]
+    }
+}
+

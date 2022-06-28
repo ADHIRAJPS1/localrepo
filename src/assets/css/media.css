@@ -1,0 +1,417 @@
+@media only screen and (max-width: 1400px) {
+    .color11::before {
+        border-bottom: 360px solid #f26f24;
+        border-right: 372px solid transparent;
+    }
+    .color12::before {
+        border-bottom: 360px solid #00ac68;
+        border-right: 372px solid transparent;
+    }
+    .color13::before {
+        border-bottom: 360px solid #ec4998;
+        border-right: 372px solid transparent;
+    }
+    .pgc-services-area P {
+        font-size: 18PX;
+        /* color: #fff; */
+    }
+
+    .we-are1::before {
+        border-bottom: 227px solid #f26f24;
+        border-right: 290px solid transparent;
+    }
+    .we-are2::before {
+        border-bottom: 227px solid #00ac68;
+        border-right: 290px solid transparent;
+    }
+    .we-are3::before {
+        border-bottom: 227px solid #ec4998;
+        border-right: 290px solid transparent;
+    }
+    .pgc-header-ul li a {
+        padding: 0px 5px !important;
+        font-size: 16px;
+    }
+    a.donate-now-btn-width {
+        padding: 10px 20px;
+    }
+    .share-now-btn-width{padding: 10px 20px;}
+}
+
+@media only screen and (max-width: 1200px) {
+    a.donate-now-btn-width {
+        padding: 10px 12px;
+    }
+    .share-now-btn-width{padding: 10px 12px;}
+
+    .color11::before {
+        border-bottom: 302px solid #f26f24;
+        border-right: 314px solid transparent;
+    }
+    .color12::before {
+        border-bottom: 302px solid #00ac68;
+        border-right: 314px solid transparent;
+    }
+    .color13::before {
+        border-bottom: 302px solid #ec4998;
+        border-right: 314px solid transparent;
+    }
+    .pgc-services-area P {
+        font-size: 15PX;
+
+    }
+    .we-are1::before {
+        border-bottom: 190px solid #f26f24;
+        border-right: 254px solid transparent;
+    }
+    .we-are2::before {
+        border-bottom: 190px solid #00ac68;
+        border-right: 254px solid transparent;
+    }
+    .we-are3::before {
+        border-bottom: 190px solid #ec4998;
+        border-right: 254px solid transparent;
+    }
+    .pgc-header-ul li a {
+        font-size: 13.3px;
+        margin: 0px 3px;
+        padding: 0px 1px !important;
+
+    }
+    .cause-raised-section {
+        display: block !important;
+    }
+    .btn-donatenow {
+        padding: 10px 40px !important;
+    }
+}
+@media only screen and (max-width: 1130px) {
+
+.donate-logo {
+    width: 80px;
+}
+}
+
+@media (min-width: 992px)
+{
+    .navbar-expand-lg .navbar-nav .dropdown-menu {
+        position: absolute;
+    }
+
+
+
+.sub-menu {
+  visibility: hidden;
+  opacity: 0;
+   display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  /* width: 100%; */
+  transform: translateY(-2em);
+  z-index: -1;
+  transition: all 0.3s ease-in-out 0s, visibility 0s linear 0.3s, z-index 0s linear 0.01s;
+}
+
+.sub-menu-parent:focus .sub-menu,
+/* .sub-menu-parent:focus-within .sub-menu, */
+.sub-menu-parent:hover .sub-menu {
+  visibility: visible; /* shows sub-menu */
+  opacity: 1;
+  display: block;
+  z-index: 1;
+  transform: translateY(0%);
+  transition-delay: 0s, 0s, 0.3s; /* this removes the transition delay so the menu will be visible while the other styles transition */
+}
+
+
+}
+
+@media only screen and (max-width: 991.5px) {
+    .news-section {position: relative; }
+    .pgc-home-banner-wrapper-container img{width: 100% !important; height: auto !important;}
+    .new-pgc-heading {padding: 17px; }
+    .news-section-width p{padding: 0px 10px;}
+    .news-section-width a{padding: 0px 10px;}
+    .home-global-presence {display: block; height: auto !important;}
+    .pgc-discover-feature {height: auto !important; display: flex; }
+    .pgc-discover-flex {padding: 60px 0px; }
+    .pgc-banner-container{position: relative;}
+    .fixed-top{position: relative;}
+
+
+    .home-banner-heaading{transform: translateY(50px); padding: 10px; font-size: 28px; text-transform: capitalize; line-height: 30px;}
+    .share-now-btn-width {padding: 10px 30px;}
+    a.donate-now-btn-width {padding: 10px 30px;}
+    .extra-link-list-container li{margin: 7px 0px;}
+    .accountability-providing-financial-container{height:260px;}
+    .pgc-donation-banner-heading-container{margin-top: 5vh !important;}
+    .blog-social-link li {text-align: left; }
+    .career-work-culture-section a{margin-bottom: 20px;}
+    .footer-links-container {display: block;}
+    .owl-carousel .owl-next {right: 0px;}
+    .owl-carousel .owl-prev {left: 0px; }
+    .pgc-refer-to-us-section a {
+        float: left;
+        margin-top: 10px;
+    }
+    .footer-links-right-container {
+        margin-left: 0px;
+    }
+    .searchbar:hover .search_input {
+        width: 84% !important;
+        transition: width 0.0s linear !important;
+    }
+    .pgc-discover-fea4 {
+        display: flex;
+        justify-content: center;
+    }
+    .pgc-discover-feature {
+        justify-content: center;
+    }
+    p.covid-19-date-paragraph {
+        text-align: center;
+    }
+    .pgc-header-ul li {
+        display: block;
+    }
+    .pgc-activities-img-content{
+        position: relative !important;
+        width: 100% !important;
+        left: 0 !important;
+    }
+    .pgc-header-ul {
+       background-color: #fff;
+    }
+    .pgc-header-ul li a {
+        font-size: 17px;
+        padding: 10px !important;
+    }
+    .color11::before {
+        border-bottom: 225px solid #f26f24;
+        border-right: 232px solid transparent;
+    }
+    .color12::before {
+        border-bottom: 225px solid #00ac68;
+        border-right: 232px solid transparent;
+    }
+    .color13::before {
+        border-bottom: 225px solid #ec4998;
+        border-right: 232px solid transparent;
+    }
+    .pgc-services-area P {
+        font-size: 12PX;
+
+    }
+
+    .we-are1::before {
+        border-bottom: 141px solid #f26f24;
+        border-right: 195px solid transparent;
+    }
+    .we-are2::before {
+        border-bottom: 141px solid #00ac68;
+        border-right: 195px solid transparent;
+    }
+    .we-are3::before {
+        border-bottom: 141px solid #ec4998;
+        border-right: 195px solid transparent;
+    }
+    .what-we-are1 h3 {
+        bottom: 26px;
+        margin-left: 23px;
+        font-size: 22px;
+    }
+    .about-we-are {
+        background: #ffffff59;
+    }
+    img.where-we-work-img {
+        margin-top: 0px;
+        margin-left: 0px;
+        width: 100%;
+    }
+    .where-we-work-container {
+        padding-bottom: 0px;
+    }
+    .where-we-work-container1 {
+        padding-top: 0px !important;
+    }
+    .where-we-work-img1 {
+        margin-bottom: 0px !important;
+        margin-left: 0px !important;
+    }
+    .arround-world-container {
+        padding-left: 0px !important;
+        margin-top:12px;
+    }
+    .accountability-p-section {
+        margin-right: 0px !important;
+        margin-bottom: 13px;
+    }
+    h1.where-we-work-h1 {
+        padding: 0px 0px !important;
+    }
+}
+
+
+
+@media only screen and (max-width: 767.5px) {
+    .pgc-discover{background-position: center;}
+    .case_details-banner{display: none;}
+    .pgc-blog-details{
+        margin-top:60px !important;
+    }
+    .blog-link-btn {
+        color: #000 !important;
+        padding: 10px 0px !important;
+    }
+    .mobile-banner-center-align{
+        background-position: center;
+      }
+    .mobile-banner-right-align{
+      background-position: right;
+    }
+    .home-banner{height:200px;}
+    .home-banner h1{margin-top:50px; font-size: 30px;}
+    .donate-know-more-heading{margin-top: 25px;}
+    .contact-pgc-info{width:100%; margin-left: 0px; margin-right: 0px;}
+    .bank-details-table tr td strong{float: none; display: block; margin-bottom: 10px;}
+    .bank-details-table tr td p{float: none;}
+    .b-details-descr img{width:100%; height:auto;}
+    .blog-details-business-info{color: #000 !important;}
+    .blog-details-social-icons{margin-bottom: 15px;}
+    .blog-details-related-article-title{margin: 10px 0px;}
+    .new-pgc-heading{padding: 10px;}
+    .covid-19-date-paragraph{text-align: center;}
+    .color11::before {
+        border-bottom: 500px solid #f26f24;
+        border-right: 517px solid transparent;
+    }
+    .color12::before {
+        border-bottom: 500px solid #00ac68;
+        border-right: 517px solid transparent;
+    }
+    .color13::before {
+        border-bottom: 500px solid #ec4998;
+        border-right: 517px solid transparent;
+    }
+    .pgc-services-area P {
+        font-size: 16PX;
+        /* color: #fff; */
+    }
+    .copyright_section p{margin-bottom: 40px !important;}
+
+
+    .we-are1::before {
+        border-bottom: 377px solid #f26f24;
+        border-right: 390px solid transparent;
+        /* width: 100%;
+        height: 104px;
+        background: #f26f24;
+        bottom: 0; */
+    }
+    .we-are2::before {
+        border-bottom: 377px solid #00ac68;
+        border-right: 390px solid transparent;
+        /* width: 100%;
+        height: 104px;
+        background: #f26f24;
+        bottom: 0; */
+    }
+    .we-are3::before {
+        border-bottom: 377px solid #ec4998;
+        border-right: 390px solid transparent;
+        /* width: 100%;
+        height: 104px;
+        background: #ec4998;
+        bottom: 0; */
+    }
+
+    .choose-us {
+        margin: 15px 0px;
+    }
+
+    .medical-nav-link {
+        margin: 0px 3px;
+    }
+    .medical-topics-mt{margin-top:10px !important;}
+
+}
+
+
+@media only screen and (max-width: 574.5px) {
+     body {
+        width: 100%;
+        display: block;
+    }
+    .color11::before {
+        border-bottom: 0px solid #f26f24;
+        border-right: 0px solid transparent;
+        width: 100%;
+        height: 80px;
+        background: #f26f24;
+        bottom: 0;
+    }
+    .color12::before {
+        border-bottom: 0px solid #00ac68;
+        border-right: 0px solid transparent;
+        width: 100%;
+        height: 80px;
+        background: #00ac68;
+        bottom: 0;
+    }
+    .color13::before {
+        border-bottom: 0px solid #ec4998;
+        border-right: 0px solid transparent;
+        width: 100%;
+        height: 80px;
+        background: #ec4998;
+        bottom: 0;
+    }
+    .pgc-services-area P {
+        font-size: 16PX;
+        /* color: #fff; */
+    }
+    .we-are1::before {
+        border-bottom: 0px solid #f26f24;
+        border-right: 0px solid transparent;
+        width: 100%;
+        height: 80px;
+        background: #f26f24;
+        bottom: 0;
+    }
+    .we-are2::before {
+        border-bottom: 0px solid #00ac68;
+        border-right: 0px solid transparent;
+         width: 100%;
+        height: 80px;
+        background: #00ac68;
+        bottom: 0;
+    }
+    .we-are3::before {
+        border-bottom: 0px solid #ec4998;
+        border-right: 0px solid transparent;
+         width: 100%;
+        height: 80px;
+        background: #ec4998;
+        bottom: 0;
+    }
+    .medical-topics-filter-list-heading::after{width: 90%;}
+
+}
+
+@media only screen and (max-width: 546px) {
+    .medical-nav-link {
+        font-size: 18px;
+        font-weight: 600;
+        margin: 0px 5px;
+    }
+    .cause-description-tab .nav-link{
+        padding: 11px 25px;
+    }
+    h1{
+      font-size: 25px !important;
+    }
+}
+
+
+

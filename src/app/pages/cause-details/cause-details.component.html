@@ -1,0 +1,391 @@
+<div *ngIf="storyData">
+   <div class="py-5"></div>
+   <div class="container mt-3">
+      <div class="row">
+         <div class="col-md-12">
+            <div class="case-edit-btn-open dropdown">
+               <p class="pgc-charges-tag"><span>Project Global Cure</span> does not charge any
+                  kind of fees from the patients. All the valid expenses are covered by us.
+               </p>
+            </div>
+         </div>
+      </div>
+   </div>
+   <section class="pgc-cause-details-section pb-5">
+      <div class="container">
+         <!--<div class="row">
+             <div class="col-md-12">
+              <h1 class="causes-progressbar-heading my-4 text-center" *ngIf="storyData?.status=='published'"
+                  data-aos="fade-down">
+                  {{storyData?.categoryname}}
+               </h1>
+               <h1 class="causes-progressbar-heading my-4 text-center" *ngIf="storyData?.status=='completed'"
+                  data-aos="fade-down">
+                  Our Success
+               </h1>
+            </div>
+         </div>-->
+         <div class="row">
+            <div class="col-md-1">
+               <div class="blog-details-social-icons text-center" data-aos="fade-up">
+                  <share-buttons class="social-icons-theme" [theme]="'circles-dark'"
+                     [include]="['facebook','twitter','linkedin','telegram','whatsapp']" [show]="9"
+                     [url]="currentPageUrl" [image]="storyData?.featuredimage" [title]="storyData.metatitle"
+                     [description]="'*'+storyData.metatitle+'* \n\n'+storyData.metadescription+'\n\n'+'Donate:'"
+                     [autoSetMeta]="false">
+                  </share-buttons>
+               </div>
+            </div>
+            <div class="{{columnLayout}}">
+               <div class="case-edit-btn-open mt-4 dropdown">
+                  <h1 *ngIf="!EditTitle" class="cause-description-heading fs-2b">
+                     {{storyData?.title}}
+                  </h1>
+                  <form [formGroup]="storyForm" *ngIf="EditTitle">
+                     <div class="row">
+                        <div class="col-12">
+                           <textarea type="text" rows="3" [(ngModel)]="storyData.title" formControlName="title"
+                              [hidden]="!EditTitle" placeholder="Edit Title" class="form-control">
+                          </textarea>
+                        </div>
+                        <div class="col-12 mt-3">
+                           <div (click)="updateTitle()" class="btn mr-5 rounded btn btn-bg">Save New Title</div>
+                           <div class="btn  btn-primary" (click)="EditTitle = !EditTitle">Cancel</div>
+                        </div>
+                     </div>
+                  </form>
+                  <button class="case-edit-btn"
+                     *ngIf="auth.currentUser?.roles[0]=='admin' || auth.currentUser?.roles[0]=='superadmin' || auth.currentUser?.roles[0]=='seoteam' || auth.currentUser?.roles[0]=='seoteamlead' || auth.currentUser?.roles[0]=='campaignmanager' || auth.currentUser?.roles[0]=='campaignmanagerteamlead' "
+                     (click)="EditTitle = !EditTitle"><i class="fas fa-edit"></i></button>
+               </div>
+               <div class="case-edit-btn-open mt-4 dropdown">
+                  <img style="max-height: 450px;" src="{{storyData?.featuredimage}}" *ngIf="!EditfImage" alt="PGC Cases Image" data-aos="flip-up" loading="lazy" onerror="this.onerror=null;this.src='assets/images/bg-gray-medium.jpg'" onload="this.classList.remove('image-loading');"
+                     class="img-fluid w-100 image-loading" />
+                  <a class="case-edit-btn"
+                     *ngIf="auth.currentUser?.roles[0]=='admin' || auth.currentUser?.roles[0]=='superadmin' || auth.currentUser?.roles[0]=='seoteam' || auth.currentUser?.roles[0]=='seoteamlead' || auth.currentUser?.roles[0]=='campaignmanager' || auth.currentUser?.roles[0]=='campaignmanagerteamlead' "
+                     (click)="EditfImage = !EditfImage"><i class="fas fa-edit"></i>
+                  </a>
+                  <form *ngIf="EditfImage">
+                     <div class="row">
+                        <div class="col-12">
+                           <upload requiredFileType="image/*" [placeholderImg]="storyData?.featuredimage"
+                              (fileSelected)="handleInputChange($event)">
+
+                           </upload>
+                        </div>
+                        <div class="col-12">
+                           <div class="row mt-3">
+                              <div class="col-12">
+                                 <button (click)="updateFImage()" class="btn mr-5 btn-bg" value="Update">Save
+                                    Image</button>
+                                 <div class="btn rounded  btn-primary" (click)="EditfImage = !EditfImage">Cancel</div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </form>
+               </div>
+               <div class="case-edit-btn-open mt-4 dropdown">
+                  <nav>
+                     <div class="nav nav-tabs cause-description-tab" id="nav-tab" role="tablist">
+                        <button class="nav-link" [ngClass]="(storyData?.status!='completed')? 'active':''" id="nav-home-tab" data-bs-toggle="tab"
+                           data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home"
+                           aria-selected="true">Story</button>
+                        <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile"
+                           type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Report</button>
+                        <button class="nav-link" [ngClass]="(storyData?.status=='completed')? 'active':''" id="nav-contact-tab" data-bs-toggle="tab" data-bs-target="#nav-contact"
+                           type="button" role="tab" aria-controls="nav-contact" aria-selected="false">Updates</button>
+                     </div>
+                  </nav>
+               </div>
+               <div class="tab-content cause-description-tab-content" id="nav-tabContent">
+                  <div class="tab-pane fade" [ngClass]="(storyData?.status!='completed')? 'show active':''" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                     <button class="btn mall-auto d-block text-right btn-bg"
+                        *ngIf="auth.currentUser?.roles[0]=='admin' || auth.currentUser?.roles[0]=='superadmin' || auth.currentUser?.roles[0]=='seoteam' || auth.currentUser?.roles[0]=='seoteamlead' || auth.currentUser?.roles[0]=='campaignmanager' || auth.currentUser?.roles[0]=='campaignmanagerteamlead'"
+                        (click)="EditStory = !EditStory"><i class="fa fa-edit"></i>
+                     </button>
+                     <form *ngIf="EditStory" [formGroup]="storyTabForm">
+                        <div class="row mt-3">
+                           <div class="col-12">
+                              <ckeditor [editor]="StoryData" formControlName="story" [data]="storyData?.story"
+                                 [(ngModel)]="storyData.story"></ckeditor>
+                           </div>
+                           <div class="col-12 mt-3">
+                              <button (click)="updateStory()" class="btn mr-5 btn-bg" value="Update">Save Story</button>
+                              <div class="btn rounded  btn-primary" (click)="EditStory = !EditStory">Cancel</div>
+                           </div>
+                        </div>
+                     </form>
+                     <!-- <p class="case-details-html-data" *ngIf="!EditStory" data-aos="fade-up"
+                        [innerHTML]="storyData?.story">
+                     </p> -->
+                     <p class="case-details-html-data" *ngIf="storyData?.story" data-aos="fade-up"
+                        [innerHTML]="storyData?.story">
+                     </p>
+                     <!--<p class="case-details-html-data" *ngIf="storyData?.successstory" data-aos="fade-up"
+                        [innerHTML]="storyData?.successstory">
+                     </p>-->
+                     <p class="case-details-html-data iframe-container" *ngIf="storyData.youtubeurl" data-aos="fade-up">
+                        <iframe srcdoc="<!DOCTYPE html><p style='color: #ccc;''><img src='assets/images/bg-gray-medium.jpg' width='100%'></p>" onload="this.removeAttribute('srcdoc')" width="100%" height="300px" [src]="sanitizer.bypassSecurityTrustResourceUrl(showYouTubeUrl)"></iframe>
+                     </p>
+                  </div>
+                  <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                     <div class="row">
+                        <div class="col-12" *ngFor="let url of storyData?.report">
+                           <img [src]="url" class="img-fluid my-2">
+                        </div>
+                     </div>
+                  </div>
+                  <div class="tab-pane fade" [ngClass]="(storyData?.status=='completed')? 'show active':''" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+                     <p class="case-details-html-data" *ngIf="storyData?.status=='completed'" data-aos="fade-up"
+                        [innerHTML]="storyData?.successstory">
+                     </p>
+                  </div>
+               </div>
+               <span *ngIf="storyData?.status=='published'">
+                  <h1 class="bank-details-heading fs-4">Details for direct bank transfer</h1>
+                  <div class="row">
+                     <div class="col-md-7">
+                        <table class="table table-borderless bank-details-table">
+                           <tbody>
+                              <tr>
+                                 <td style="width: 96px;"><strong>Name</strong></td>
+                                 <td><strong>:</strong></td>
+                                 <td>
+                                    <p>Humanity Welfare Council</p>
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td style="width: 96px;"><strong>Account</strong></td>
+                                 <td><strong>:</strong></td>
+                                 <td>
+                                    <p>201002023770</p>
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td style="width: 96px;"><strong>Branch</strong></td>
+                                 <td><strong>:</strong></td>
+                                 <td>
+                                    <p>Janakpuri, New Delhi - 110058</p>
+                                 </td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                     <div class="col-md-5">
+                        <table class="table table-borderless bank-details-table">
+                           <tbody>
+                              <tr>
+                                 <td style="width: 96px;"><strong>IFSC code</strong></td>
+                                 <td><strong>:</strong></td>
+                                 <td>
+                                    <p>INDB0000044</p>
+                                 </td>
+                              </tr>
+                              <tr>
+                                 <td style="width: 96px;"><strong>Bank </strong></td>
+                                 <td><strong>:</strong></td>
+                                 <td>
+                                    <p>Induslnd Bank</p>
+                                 </td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                  </div>
+               </span>
+
+
+               <div class="instruction-bank-transfer-section" *ngIf="storyData?.status=='published'">
+                  <h5 class="instruction-bank-transfer-heading">Instructions for bank transfer</h5>
+                  <ul class="instruction-bank-transfer-list">
+                     <li>Transfer allowed by domestic bank accounts only.</li>
+                     <li>This account will not support fund transfers from foreign banks.</li>
+                     <li>Please mention all the details correctly to save our time and efforts.</li>
+                     <li>In case of any issue, please email us at
+                        <a class="txt-primary" href="mailto:connect@projectglobalcure.org">{{
+                           config.contactEmail }}</a>
+                     </li>
+                  </ul>
+               </div>
+               <div class="pgc-refer-to-us-section">
+                  <p>Know someone in need of funds for medical emergency?</p>
+                  <a data-bs-toggle="modal" *ngIf="(!storyData.parentid && parseUserData?.roles == 'fieldexecutive');else refers_us" (click)="open(content)">Create
+                    Support Campaign</a>
+                  <ng-template #refers_us>
+                    <a data-bs-toggle="modal"  data-bs-target="#refersToUs">Refer to us</a>
+                  </ng-template>
+
+               </div>
+            </div>
+            <div class="col-md-4">
+               <div class="pgc-donate-section my-4">
+                  <div class="cause-raised-section w-100">
+                     <div class="cause-raise-container w-100">
+                        <div class="case-edit-btn-open dropdown">
+                           <!--<p class="cause-raised-price" *ngIf="storyData?.status!='completed'">Funds Required -
+                              <span>Rs.{{storyData?.targetamount| number:'1.0':'en-US'}}</span>
+                           </p>-->
+                           <div id="amountsliderpgc" *ngIf="storyData?.status!='completed'">
+                              <div class="range-wrap">
+                                 <div class="range-value" id="rangeV"><span id="rangeCountPGC">{{fundRaisedPer}}%</span></div>
+                              </div>
+                              <progress value="{{fundRaisedPer}}" max="100"></progress>
+                              <div id="minmaxfund">
+                                 <span class="minfund">Raised <br><span>₹ {{storyData?.fundraised| number:'1.0':'en-US'}}/-</span></span>
+                                 <span class="maxfund">Goal <br><span>₹ {{storyData?.targetamount| number:'1.0':'en-US'}}/-</span></span>
+                              </div>
+                           </div>
+                          
+                           <p class="cause-raised-price" *ngIf="storyData?.status=='completed'">We are here to inform the donors that the treatment was successful and the campaign has been closed.</p>
+                           <a class="case-edit-btn dropdown-toggle"
+                              *ngIf="auth.currentUser?.roles[0]=='admin' || auth.currentUser?.roles[0]=='superadmin' || auth.currentUser?.roles[0]=='seoteam' || auth.currentUser?.roles[0]=='seoteamlead' || auth.currentUser?.roles[0]=='campaignmanager' || auth.currentUser?.roles[0]=='campaignmanagerteamlead' "
+                              id="navbarScrollingDropdown" role="button" data-bs-toggle="dropdown"
+                              aria-expanded="false"><i class="fas fa-edit"></i></a>
+                           <div class="case-edit-inputbox dropdown-menu" aria-labelledby="navbarScrollingDropdown">
+                              <form class="w-100 d-flex" [formGroup]="storyAmountForm">
+                                 <input type="number" formControlName="targetamount"
+                                    [(ngModel)]="storyData.targetamount" placeholder="Edit Amount"
+                                    class="form-control" />
+                                 <input type="submit" (click)="updateAmount()" class="btn btn-primary" value="Update" />
+                              </form>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <campaign-donate allowDonation="{{allowDonation}}" redirectionUrl="{{currentPageUrl}}" campaignid="{{storyData.stid}}" (notifyParent)="notifyParent($event)"></campaign-donate>
+                  <p *ngIf="storyData?.status=='published'" class="text-center"><img src="./assets/images/case/payment_icon_list.png" class="payment-icon-list" alt="payment PGC" />
+                  </p>
+               </div>
+               <!--<div class="pgc-donate-section my-4 success-card-sidebar" *ngIf="storyData?.status=='completed'">
+                  <h3 style="text-decoration: underline;">Other Success Stories-</h3>
+                  <div class="card" *ngFor="let sc of successstories">
+                     <img class="card-img-sidebar" src="{{sc?.featuredimage}}" alt="Card image cap">
+                     <div class="card-body">
+                        <h5 class="card-title"><a routerLink="/medical-support/{{sc?.slug}}">{{sc?.title}}</a></h5>
+                     </div>
+                  </div>
+               </div>-->
+            </div>
+         </div>
+      </div>
+   </section>
+</div>
+
+<section class="other-medical-cases-section py-5" *ngIf="relatedStoriesData && relatedStoriesData.length > 0">
+   <div class="container">
+      <div class="row">
+         <div class="col-md-12">
+            <h4 class="other-medical-cases-heading">Other Medical Cases </h4>
+            <owl-carousel-o [options]="othermedicalcases" class="owl-readmore">
+               <ng-container *ngFor="let case of relatedStoriesData">
+                  <ng-template carouselSlide>
+                     <!--TESTIMONIAL 1 -->
+                     <div class="item">
+                        <div class="shadow-effect cursor">
+                           <a routerLink="../{{case.slug}}">
+                              <figure class="blog-responsive-height">
+                                 <img class="img-fluid" [src]="case.featuredimage" alt="{{case.title}}">
+                              </figure>
+                           </a>
+                           <div class="item-details medical-item-padding medical-border-bottom">
+                              <h5 class="text-wrapping-heading-height"><strong [innerText]="case.title"></strong></h5>
+                              <p class="text-wrapping-title-height" [innerHTML]="case.story.substring(0,125)">
+                              </p>
+                              <a routerLink="../{{case.slug}}"
+                                 class="donate-now-btn-width cause-donatenowbtn mx-auto">Donate Now</a>
+                           </div>
+                        </div>
+                     </div>
+                     <!--END OF TESTIMONIAL 1 -->
+                  </ng-template>
+               </ng-container>
+            </owl-carousel-o>
+         </div>
+      </div>
+   </div>
+</section>
+
+<div class="modal-c {{supportCampaignModalBox}}" >
+	<div class="modal-content-c">
+		<div class="modal-header-c">
+			<h5 class="modal-title-c">Create Support Campaign <button type="button" class="btn-close float-right" (click)="closeSupportCampaignModalBox()"></button></h5>
+		</div>
+		<div class="modal-body-c">
+			<form action="" method="post" [formGroup]="fieldexecutiveForm" (ngSubmit)="onSubmitFieldExecutive()">
+				<div class="row">
+					<div class="form-group col-sm-6">
+						<label class="form-label">Name <span class="text-danger">*</span></label>
+						<input type="text" formControlName="name" class="form-control" [(ngModel)]="childData.name" [ngClass]="{ 'is-invalid': fieldexecutiveSubmitted && f.name.errors }" />
+						<div *ngIf="fieldexecutiveSubmitted && f.name.errors" class="invalid-feedback">
+						  <div *ngIf="f.name.errors.required"> Name is required</div>
+						</div>
+					</div>
+					<div class="form-group col-sm-6">
+						<label class="form-label">Slug <span class="text-danger">*</span></label>
+						<input type="text" formControlName="slug" [(ngModel)]="childData.slug" class="form-control" appSlugTransform [ngClass]="{ 'is-invalid': fieldexecutiveSubmitted && f.slug.errors }" />
+						<div *ngIf="fieldexecutiveSubmitted && f.slug.errors" class="invalid-feedback">
+						  <div *ngIf="f.slug.errors.required">Slug is required</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-12">
+						<div>
+							<ckeditor formControlName="cloneDesstory" [(ngModel)]="childData.story"></ckeditor>
+						</div>
+					</div>
+					<div class="col-md-12 my-3 text-center">
+						<div class="form-group">
+							<button [disabled]="fieldexecutiveForm.invalid" class="btn btn-contact-submit">Create Support Campaign <img *ngIf="disableSubmitBtn" src="./assets/images/spinning-loading.gif" style="width:30px;"></button>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+
+<!--<ng-template #content let-modal>
+   <div class="modal-header">
+      <h4 class="modal-title" id="modal-basic-title">Support Campaign</h4>
+      <button #closeModal type="button" class="btn-close" aria-label="Close" (click)="modal.dismiss('Cross click')"></button>
+   </div>
+   <div class="modal-body">
+      <form action="" method="post" [formGroup]="fieldexecutiveForm" (ngSubmit)="onSubmitFieldExecutive()">
+         <div class="row">
+            <div class="form-group col-sm-6">
+               <label class="form-label">Name <span class="text-danger">*</span></label>
+               <input type="text" formControlName="name" class="form-control" [(ngModel)]="childData.name"
+                  [ngClass]="{ 'is-invalid': fieldexecutiveSubmitted && f.name.errors }" />
+               <div *ngIf="fieldexecutiveSubmitted && f.name.errors" class="invalid-feedback">
+                  <div *ngIf="f.name.errors.required"> Name is required</div>
+               </div>
+            </div>
+            <div class="form-group col-sm-6">
+               <label class="form-label">Slug <span class="text-danger">*</span></label>
+               <input type="text" formControlName="slug" [(ngModel)]="childData.slug" class="form-control"
+                  appSlugTransform [ngClass]="{ 'is-invalid': fieldexecutiveSubmitted && f.slug.errors }" />
+               <div *ngIf="fieldexecutiveSubmitted && f.slug.errors" class="invalid-feedback">
+                  <div *ngIf="f.slug.errors.required">Slug is required</div>
+               </div>
+            </div>
+         </div>
+         <div class="col-12">
+            <div>
+               <ckeditor [editor]="childData" formControlName="cloneDesstory" [(ngModel)]="childData.story"></ckeditor>
+            </div>
+         </div>
+         <div class="col-md-12 my-3 text-center">
+            <div class="form-group">
+               <button [disabled]="fieldexecutiveForm.invalid"
+                  class="btn btn-contact-submit">Create Support Campaign</button>
+            </div>
+         </div>
+
+      </form>
+   </div>
+</ng-template>-->
+
+
+<app-refers></app-refers>

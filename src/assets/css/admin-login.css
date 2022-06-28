@@ -1,0 +1,77 @@
+.pgc-login-header li a{color:#707070; font-weight:100;}
+.login-header-nav{background: #f1f2f6; border-bottom: 1.5px solid #bcbcbd;}
+
+.admin-login-section{min-height:75vh;}
+.admin-login-textbox{border-radius: 40px; padding-left: 25px; display: inline-block; margin: 15px 0px;}
+.admin-login-now-btn{border-radius: 40px; background: #a42a6a; color: #fff; margin-top: 30px; border: 2px solid #a42a6a; font-weight:600;
+    padding: 10px 40px;}
+    .admin-back-btn {
+        border-radius: 40px;
+        color: #fff;
+        margin-top: 30px;
+        padding: 10px 40px;
+        border: 2px solid #a42a6a;
+        color: #a42a6a;
+        font-weight: 600;
+        margin-right: 15px;
+    }
+.createaccountbtn{border-radius: 40px; background: #a42a6a; color: #fff; 
+    padding: 10px 40px; text-decoration: none; display: inline-block;}
+    .admin-login-account-section{text-align:center; position:relative; border-left:1px solid #ced4da;}
+    .login-color-gray{color:#707070;}
+    .login-section-footer{width:100%; padding: 30px; background: #fff; text-align: center;}
+    .pgc-link{color:#000; font-weight:600; text-decoration: none;}
+    .login-section-footer p{margin-bottom: 0px;}
+    .admin-login-padding{padding-top: 105px;}
+    .admin-login-account-section::before{
+        content: 'OR';
+        position: absolute;
+        left: 0;
+        /* transform: rotate(
+    -90deg
+    ); */
+        z-index: 000700;
+        margin-left: -10px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: #fff;
+        padding: 10px 0px;
+    }
+    .login-admin-container{background: #fff; padding: 20px;}
+    .form-control1 {
+        padding-left: 25px;
+        display: inline-block;
+        width: 100%;
+        padding: .375rem .75rem;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5;
+        color: #212529;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid #ced4da;
+        border-radius: .25rem;
+        transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+        margin: 15px 0px;
+    }
+
+    @media only screen and (max-width: 991.5px) {
+        .admin-login-account-section::before {
+            content: 'OR';
+            position: absolute;
+            z-index: 000700;
+            margin-top: 0px;
+            top: 0;
+            background: #fff;
+            padding: 10px;
+            margin-left: 62px;
+        }
+        .createaccountbtn{margin-top: 45px;}
+        .admin-login-account-section {
+            border-left: none;
+            margin-top: 35px;
+            text-align: left;
+            border-top:1px solid #ced4da;
+        }
+    }
+    

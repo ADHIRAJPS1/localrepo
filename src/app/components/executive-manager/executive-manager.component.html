@@ -1,0 +1,51 @@
+<div class="modal fade" id="Clone" tabindex="-1" aria-labelledby="cloneLabel"
+   aria-hidden="true">
+   <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content boxshadow-gray">
+         <div class="modal-header">
+            <p class="modal-title know-details" id="cloneLabel">Clone the story</p>
+            <button type="button" #closemodal  class="btn" data-bs-dismiss="modal" aria-label="Close">X</button>
+         </div>
+         <div class="modal-body">
+          <form action="" method="post" [formGroup]="executiveManagerForm" (ngSubmit)="onSubmitEManager()">
+            <div class="row">
+              <div class="form-group col-sm-6">
+                <label class="form-label">First Name <span class="text-danger">*</span></label>
+                <input type="text" formControlName="firstName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.firstName.errors }" />
+                <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+                    <div *ngIf="f.firstName.errors.required">First Name is required</div>
+                </div>
+               </div>
+               <div class="form-group col-sm-6">
+                <label class="form-label">Last Name <span class="text-danger">*</span></label>
+                <input type="text" formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
+                <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+                    <div *ngIf="f.lastName.errors.required">Last Name is required</div>
+                </div>
+               </div>
+               <div class="form-group col-sm-6">
+                <label class="form-label">Email <span class="text-danger">*</span></label>
+                <input type="text" formControlName="email" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.email.errors }" />
+                <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                    <div *ngIf="f.email.errors.required">Email Name is required</div>
+                </div>
+               </div>
+               <div class="form-group col-sm-6">
+                <label class="form-label">Last Name <span class="text-danger">*</span></label>
+                <input type="text" formControlName="lastName" class="form-control" [ngClass]="{ 'is-invalid': submitted && f.lastName.errors }" />
+                <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+                    <div *ngIf="f.lastName.errors.required">First Name is required</div>
+                </div>
+               </div>
+               <div class="col-md-12 my-3 text-center">
+                <div class="form-group">
+                    <button [disabled]="executiveManagerForm.invalid"
+                        class="btn btn-contact-submit">SUBMIT</button>
+                </div>
+            </div>
+            </div>
+          </form>
+        </div>
+      </div>
+   </div>
+</div>

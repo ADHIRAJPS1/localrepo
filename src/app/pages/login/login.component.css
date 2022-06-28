@@ -1,0 +1,15 @@
+.admin-login-now-btn{border-radius: 40px; background: #a42a6a; color: #fff; margin-top: 30px; border: 2px solid #a42a6a; font-weight:600;
+    padding: 10px 40px;}
+    .admin-back-btn {
+        border-radius: 40px;
+        color: #fff;
+        padding: 10px 30px;
+        border: 2px solid #a42a6a;
+        color: #a42a6a;
+        font-weight: 600;
+        margin-right: 15px;
+        margin-top: 30px;
+    }
+.invalid-feedback {
+    display: block !important;
+}

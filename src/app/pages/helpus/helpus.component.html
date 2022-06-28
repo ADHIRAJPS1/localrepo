@@ -1,0 +1,302 @@
+<section class="donation-banner"
+    style="background-image: url(./assets/images/donation/donate-bg.webp); background-attachment:fixed; background-repeat: no-repeat; background-size: cover;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-7">
+                <div class="pgc-donation-banner-heading-container">
+                    <h1 class="pgc-donation-banner-heading">Giving is not just about making a donation, its about making a difference.
+                    </h1>
+                </div>
+            </div>
+            <div class="col-lg-5">
+                <div class="tabbable boxed parentTabs pgc-donate-form-container">
+                    <div class="pgc-donate-form-innercontainer">
+                        <div class="tab-content">
+                            <div class="tab-pane fadein active" id="onetime">
+                                <h1 class="text-center fs-4">Donate for a good cause</h1>
+                                <div class="pgc-helpus-bg-section">
+                                    <app-donate allowDonation="true" redirectionUrl="{{currentPageUrl}}"
+                                        campaignid="00000000-0000-0000-0000-000000000000"></app-donate>
+                                    <hr />
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="gridCheck1">
+                                        <label class="form-check-label " for="gridCheck1">
+                                            Yes, I am ready to receive emails regarding PGC programs, donation
+                                            campaigns, and other activities.
+                                        </label>
+                                    </div>
+                                    <p class="pgc-forms-label-color my-3">By providing your contact details, you are
+                                        providing your consent to receive a call and SMS regarding your support for our
+                                        program.
+                                    </p>
+                                    <p class="pgc-forms-label-color my-3"> To opt-out of phone contact at any point,
+                                        please email
+                                        <a class="pgc-donate-support"
+                                            href="mailto:support@projectglobalcure.org">support@projectglobalcure.org</a>
+                                    </p>
+                                    <p class="pgc-forms-label-color my-3">
+                                        You can view our privacy policy <a routerLink="/privacy-policy"
+                                            class="pgc-donate-support">here.</a>
+                                    </p>
+                                    <hr />
+                                    <div class="debit-card-textbox-container">
+                                    </div>
+                                    <div class="pgc-donate-barcode-container">
+                                        <h5 class="pgc-helpus-pararapg">-- OR --</h5>
+                                        <img src="./assets/images/donation/paytm.jpg" class="donate-symbol-img-qr-code"
+                                            alt="PGC donation" />
+                                        <p class="donate-barcode-name mt-3">{{ config.appDisplayName }}</p>
+                                        <p class="donate-scan-app-text">Scan & Donate With Any App</p>
+                                        <img src="./assets/images/donation/logo-desktop.png" alt="PGC Logo"
+                                            class="donate-app-img" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="monthly" class="tab-pane fade">
+                                <h4 class="donate-mode-heading">Give Monthly Online</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="pgc-donate-funded-text-container">
+                        <p>We at Project Global Cure are working to transform the medical sector of India. Every life that is saved or improved by us, stems from your voluntary act of generosity. Your support can make a powerful impact in someone’s life.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="pgc-help-us-section py-5 overflow-hidden">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="donate-mode-heading fs-4">Donate Offline</h1>
+                <p class="pgc-helpus-pararapg text-center">You can also deposit it in person at the bank or make a
+                    direct transfer to our bank account mentioned below.
+                </p>
+            </div>
+            <div class="col-lg-6">
+                <div class="pgc-helpus-bg-section">
+                    <h5 class="instruction-bank-transfer-heading pgc-donate-offline-payment-table">Details for direct
+                        bank
+                        transfer
+                    </h5>
+                    <table class="table table-borderless bank-details-table">
+                        <thead>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="organization-width"><strong>Organization Name </strong> </td>
+                                <td><strong>:</strong></td>
+                                <td>
+                                    <p>Humanity Welfare Council</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="organization-width"><strong>Account </strong></td>
+                                <td><strong>:</strong></td>
+                                <td>
+                                    <p>201002023770</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="organization-width"><strong>IFSC code </strong></td>
+                                <td><strong>:</strong></td>
+                                <td>
+                                    <p>INDB0000044</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="organization-width"><strong>Bank </strong> </td>
+                                <td><strong>:</strong></td>
+                                <td>
+                                    <p>Induslnd Bank</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="organization-width"><strong>Branch </strong> </td>
+                                <td><strong>:</strong></td>
+                                <td>
+                                    <p>Janakpuri, New Delhi - 110058</p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col-lg-6 instruction-bank-account-innercontainer">
+                <div class="pgc-helpus-bg-section">
+                    <div class="pgc-helpus-bank-details">
+                        <h5 class="instruction-bank-transfer-heading">Instructions for bank transfer</h5>
+                        <ul class="instruction-bank-transfer-list">
+                            <li>Transfer allowed by domestic bank accounts only.</li>
+                            <li>This account will not support fund transfers from foreign banks.</li>
+                            <li>Please mention all the details correctly to save our time and efforts.</li>
+                            <li>In case of any issue, please email us at <br />
+                                <a href="mailto:{{ config.contactEmail }}" class="email">{{ config.contactEmail }}</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="py-5 d-none">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h4 class="donate-mode-heading">Employer Matching</h4>
+                <p class="pgc-helpus-pararapg text-center">The urgent action we take today can prevent the COVID-19
+                    pandemic from becoming a lasting crisis for children, especially the most vulnerable
+                </p>
+                <div class="input-group mb-2">
+                    <div class="input-group-prepend companytextbox">
+                        <div class="input-group-text searchbg"><i class="fa fa-search" aria-hidden="true"></i></div>
+                    </div>
+                    <input type="text" class="form-control search-text-box-padding" #searchbar [(ngModel)]="searchInput"
+                        (keyup)="fetchSeries(searchbar.value)" placeholder="Search Here">
+                </div>
+                <ul>
+                    <li *ngFor="let show of searchResult" class="pgc-employer-ul-list" (click)="showDetails(show)"
+                        [hidden]="toggle">
+                        <a> {{ show.name }}</a>
+                    </li>
+                </ul>
+                <div *ngIf="toggle" class="details mt-4">
+                    <p class="text-center"><strong>Yes! 👍</strong></p>
+                    <p class="text-center mt-3">Your company has a matching gift program.</p>
+                    <div class="row">
+                        <div class="col-md-12 mt-4">
+                            <h5 class="text-center"><strong>Match Amounts</strong></h5>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="match-amount-div text-center">
+                                <p>Minimum</p>
+                                <p><strong>$100</strong></p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="match-amount-div text-center">
+                                <p>Maximum</p>
+                                <p><strong>$1000</strong></p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="match-amount-div text-center">
+                                <p>Match Ratio</p>
+                                <p><strong>0.5:1</strong></p>
+                            </div>
+                        </div>
+                        <div class="col-md-12 mt-5">
+                            <h5 class="text-center"><strong>Employee Eligibility</strong></h5>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="match-amount-div text-center">
+                                <p>Full-Time Employees</p>
+                                <p><strong>Yes <i class="fa fa-check text-true"
+                                            aria-hidden="true"></i></strong></p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="match-amount-div text-center">
+                                <p>Part-Time Employees</p>
+                                <p><strong>Yes <i class="fa fa-check text-true"
+                                            aria-hidden="true"></i></strong></p>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="match-amount-div text-center">
+                                <p>Retired Employees</p>
+                                <p><strong>No <i class="fa fa-times text-no"
+                                            aria-hidden="true"></i></strong></p>
+                            </div>
+                        </div>
+                        <div class="col-md-12 mt-5">
+                            <h5 class="text-center"><strong>Matching Gift Information</strong></h5>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="match-amount-div">
+                                <p><strong>A&E Television Networks matches employee donations to most nonprofits
+                                        including:</strong>
+                                </p>
+                                <ul>
+                                    <li>Educational institutions (K-12 included)</li>
+                                    <li>Health and human services</li>
+                                    <li>Arts and cultural organizations</li>
+                                    <li>Civic and community organizations</li>
+                                    <li>Environmental organizations</li>
+                                    <li>And many other 501(c)(3) organizations</li>
+                                </ul>
+                                <p><strong>The program is open to employees at all of A&E's brands / subsidiaries
+                                        including:</strong>
+                                </p>
+                                <ul>
+                                    <li>A+E Television Networks</li>
+                                    <li>Lifetime Network</li>
+                                    <li>The History Channel</li>
+                                    <li>LMN</li>
+                                    <li>Lifetime Entertainment Services</li>
+                                    <li>Bio</li>
+                                    <li>H2</li>
+                                    <li>Crime & Investigation Network</li>
+                                    <li>Military HISTORY</li>
+                                    <li>CI</li>
+                                    <li>Lifetime Real Women (LRW)</li>
+                                    <li>HISTORY en Espanol</li>
+                                </ul>
+                                <p><strong>A&E Networks' Matching Gift Submission Process:</strong></p>
+                                <p>Employees should fill out the top section of the A&E Networks' matching gift form and
+                                    mail it to the nonprofit organization who will verify the donation. The most
+                                    up-to-date matching gift form can be found on the company intranet (recommended
+                                    method) by searching for "Matching Gifts".
+                                </p>
+                                <p><strong>A&E Networks' Submission Deadline:</strong></p>
+                                <p>The completed matching gift form must be received by A&E no later than January 31st
+                                    of the year following the date of the donation.
+                                </p>
+                                <h4 class="title">
+                                    Title: {{ selectedInput.name }}
+                                </h4>
+                                <p class="description">
+                                    <span class="sub-heading">Description: </span> {{selectedInput.description}}
+                                </p>
+                                <p class="release">
+                                    <span class="sub-heading">Release Date: </span>{{selectedInput.releaseDate}}
+                                </p>
+                                <p class="genre">
+                                    <span class="sub-heading">Genres: </span> {{selectedInput.genres}}
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-center mt-5"><strong>Yes! 👍</strong></p>
+                    <p class="text-center" style="margin-top: 20px;">Your company has a volunteer grant program.</p>
+                </div>
+                <div class="pgc-helpus-bg-section">
+                    <p><strong>Supporters</strong></p>
+                    <ul class="supporter-list">
+                        <li><span>kk</span> Kartik Kumar<br />500 ₹</li>
+                        <li><span>kk</span> Kartik Kumar<br />500 ₹</li>
+                        <li><span>kk</span> Kartik Kumar<br />500 ₹</li>
+                        <li><span>kk</span> Kartik Kumar<br />500 ₹</li>
+                    </ul>
+                    <a class="pgc-employee-donation">See all Matching Employee Donation </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class=""
+    style="background-image: url(./assets/images/donation/Group-43.webp);  background-repeat: no-repeat; background-size: cover;">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-9 d-flex ">
+                <h2 class="donate-know-more-heading">Know someone in need of funds for medical emergency?</h2>
+            </div>
+            <div class="col-lg-3"><a class="pgc-refer-to-us-btn" data-bs-toggle="modal"
+                    data-bs-target="#refersToUs">Refer to us </a></div>
+        </div>
+    </div>
+</section>
+<app-refers></app-refers>

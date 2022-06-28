@@ -1,0 +1,4 @@
+<label  class="d-block">
+    <span *ngFor="let t of tags"> {{t}} <span class="p-3"  (click)="removeTag(t)">x</span></span>
+</label>
+<input type="text" [(ngModel)]="tag" class="form-control bg-light" (keyup.enter)="addTag()" [placeholder]="label" />

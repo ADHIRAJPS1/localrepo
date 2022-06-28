@@ -1,0 +1,30 @@
+.pgc-login-header li a{color:#707070; font-weight:100;}
+.login-header-nav{background: #f1f2f6; border-bottom: 1.5px solid #bcbcbd;}
+
+.admin-login-section{height:auto;}
+.admin-login-textbox{border-radius: 40px; padding-left: 25px; margin: 15px 0px;}
+.admin-login-now-btn{border-radius: 40px; background: #a42a6a; color: #fff; margin-top: 30px;
+    padding: 10px 40px;}
+.createaccountbtn{border-radius: 40px; background: #a42a6a; color: #fff; 
+    padding: 10px 40px; text-decoration: none; display: inline-block;}
+    .admin-login-account-section{text-align:center; position:relative; border-left:1px solid #ced4da;}
+    .login-color-gray{color:#707070;}
+    .login-section-footer{width:100%; padding: 30px; background: #fff; text-align: center;}
+    .pgc-link{color:#000; font-weight:600; text-decoration: none;}
+    .login-section-footer p{margin-bottom: 0px;}
+    .admin-login-padding{padding-top: 105px;}
+    .admin-login-account-section::before{
+        content: 'OR';
+        position: absolute;
+        left: 0;
+        z-index: 000700;
+        margin-left: -10px;
+        top: 50%;
+        transform: translateY(-50%);
+        background: #fff;
+        padding: 10px 0px;
+    }
+    .login-admin-container{background: #fff; padding: 20px;}
+    h1{
+    font-size: 17px;
+}

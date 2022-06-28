@@ -1,0 +1,14 @@
+.img-upload-wrappper {
+  width: 100%;
+  min-height: 100px;
+  border: 2px solid #ccc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #aaa;
+  font-size: 24px;
+}
+
+.img-upload-wrappper img {
+  max-height: 200px;
+}

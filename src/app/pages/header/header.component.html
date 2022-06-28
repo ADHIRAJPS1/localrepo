@@ -1,0 +1,80 @@
+<header>
+    <nav id="pgcheader" class="pgcheader navbar navbar-expand-lg navbar-light  fixed-top"
+        [ngClass]="{'mat-elevation-z5' : true, 'sticky' : isSticky}">
+        <div class="container">
+            <a class="navbar-brand" routerLink="/"><img class="header-logo" alt="PGC LOGO "
+                    src="./assets/images/pgc_logo.svg" /></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0 pgc-header-ul">
+                    <li class="nav-item">
+                        <a class="nav-link pgc-nav-link" routerLink="aboutpgc">About PGC</a>
+                    </li>
+                    <li class="dropdown nav-item  sub-menu-parent">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button"
+                            data-bs-toggle="dropdown" data-bs-auto-close="inside" aria-expanded="false">
+                            We Offer
+                        </a>
+                        <ul class="dropdown-menu sub-menu" aria-labelledby="navbarDropdown1">
+                            <li><a class="dropdown-item pgc-nav-link" routerLink="medical-support">Medical Support</a>
+                            </li>
+                            <li><a class="dropdown-item pgc-nav-link" routerLink="medical-awareness">Medical Awareness
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown sub-menu-parent" tab-index="0">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Explore
+                        </a>
+                        <ul class="dropdown-menu sub-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item pgc-nav-link" routerLink="blogs">Blogs</a></li>
+                            <li><a class="dropdown-item pgc-nav-link" routerLink="accountability">Accountability </a>
+                            </li>
+                            <li><a class="dropdown-item pgc-nav-link" routerLink="careers">Careers </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link button pgc-nav-link" routerLink="covid-19">Covid-19</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link pgc-nav-link" routerLink="contactus">Contact
+                            us</a>
+                    </li>
+                    <li class="nav-item dropdown sub-menu-parent" *ngIf="auth.currentUser?.userId">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            My Account
+                        </a>
+                        <ul class="dropdown-menu sub-menu" aria-labelledby="navbarDropdown">
+                            <li>
+                                <a class="dropdown-item" routerLink="/profile">Profile</a>
+                            </li>
+                            <li>
+                              <a class="dropdown-item" (click)="gotoEditUser(auth.currentUser?.userId)">Edit profile</a>
+                          </li>
+                            <li>
+                                <a class="dropdown-item" routerLink="/change-password">Change Password</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" (click)="logout()">Log out</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link pgc-nav-link" routerLink="donate">
+                            <img class="donate-logo" alt="donate LOGO" src="./assets/images/donate-black.png" />
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>

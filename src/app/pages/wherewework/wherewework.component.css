@@ -1,0 +1,27 @@
+.where-we-work-h{position: relative;}
+.where-we-work-h::before{content: ''; width: 100px; height:1.5px; bottom: 0; position: absolute; background-color: #a42a6a;}
+.where-we-work-h::after{content: ''; width: 20px; left:115px; height:1.5px; bottom: 0; position: absolute; background-color: #a42a6a;}
+
+.where-we-work-p{margin: 40px 0px; padding-right: 45px;}
+.pgc-globe-section{background-color: #fbf8f6;}
+
+.where-we-work-container1{background: #a42a6a; width: 100%; height:auto; padding-top: 35px;}
+.where-we-work-img1{
+    margin-bottom: -35px;
+    margin-left: -35px;
+}
+.arround-world-container{padding-right: 35px;}
+.our-work-timer{ text-align: center; box-shadow: 0px 0px 10px #e5e5e5;}
+.our-work-timer-border-right{border-right:1px solid #e5e5e5;}
+.india-map-width{width: 75%; float: right;}
+
+.pgc-globe-container h1{margin:10px 0px;}
+.pgc-globe-container h3{margin:10px 0px;}
+.pgc-globe-container h5{margin:10px 0px;}
+.pgc-globe-container p{margin:10px 0px;}
+.state-h1{ position: relative; padding: 8px 0px; margin: 10px 0px;}
+.state-name-h1::after{content: ''; width: 100px; height: 2.5px; background: #a42a6a; left: 0; bottom: 0; position: absolute;}
+.state-name-h1{color:#a42a6a; padding: 8px 0px; margin: 10px 0px; position: relative;}
+.state-h5{font-weight:600;}
+.pgc-help-h3{font-weight:600;}
+.Statebtn{padding: 13px 18px; margin-top: 20px; background: #a42a6a; text-decoration: none; color: #fff; border-radius: 10px; display: inline-block;}

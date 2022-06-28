@@ -1,0 +1,117 @@
+<div class="modal fade" id="refersToUs" tabindex="-1" aria-labelledby="donateFormOurWokrModalSaloniLabel"
+   aria-hidden="true">
+   <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content boxshadow-gray">
+         <div class="modal-header">
+            <p class="modal-title know-details" id="donateFormOurWokrModalSaloniLabel">Fill your details so that we can
+               send you updates about the cases.</p>
+            <button type="button" #closemodal class="btn-close" data-bs-dismiss="modal" aria-label="Close">X</button>
+         </div>
+         <div class="modal-body">
+            <form action="" method="post" [formGroup]="refersForm" (ngSubmit)="onSubmitEnquiry()">
+               <div class="card border-global rounded-0">
+                  <div class="card-body p-3">
+                     <!--Body-->
+                     <div class="form-group">
+                        <div class="input-group mb-2 form-border">
+                           <div class="input-group-prepend">
+                              <div class="input-group-text"><i class="fa fa-user "></i></div>
+                           </div>
+                           <input type="text" class="form-control border-none" id="fullname" name="fullname"
+                              pattern="[a-zA-Z\s]+" formControlName="fullname" [(ngModel)]="data.fullname"
+                              [ngClass]="{'is-invalid':submitted  &&  g.fullname.errors}" placeholder="Enter  Name *">
+                        </div>
+                        <div *ngIf="refersForm.get('fullname').touched && refersForm.get('fullname').invalid">
+                           <div class="alert-danger1" *ngIf="refersForm.get('fullname').errors.required">Name is
+                              required</div>
+                           <div class="alert-danger1" *ngIf="refersForm.get('fullname').errors.pattern">Name should be
+                              Alpha vise only</div>
+                        </div>
+                     </div>
+                     <div class="form-group">
+                        <div class="input-group mb-2 form-border">
+                           <div class="input-group-prepend">
+                              <div class="input-group-text"><i class="fa fa-envelope "></i></div>
+                           </div>
+                           <input type="email" class="form-control border-none" id="email" formControlName="email"
+                              [(ngModel)]="data.email" [ngClass]="{ 'is-invalid': submitted && g.email.errors}"
+                              placeholder="Enter  Email Id *" required>
+                        </div>
+                        <div *ngIf="refersForm.get('email').touched && refersForm.get('email').invalid">
+                           <div class="alert-danger1" *ngIf="refersForm.get('email').errors.required">Email Id is
+                              required</div>
+                           <div class="alert-danger1" *ngIf="refersForm.get('email').errors.pattern">Email must be a
+                              valid email address (eg:abc@gmail.com)</div>
+                        </div>
+                     </div>
+                     <div class="form-group">
+                        <div class="input-group mb-2 form-border">
+                           <div class="input-group-prepend">
+                              <div class="input-group-text"><i class="fa fa-phone "></i></div>
+                           </div>
+                           <input [type]="'tel'" class="form-control border-none " id="phonenumber" name="mobile"
+                              formControlName="phonenumber" [(ngModel)]="data.phonenumber"
+                              placeholder="Enter  Phone No."
+                              [ngClass]="{ 'is-invalid': submitted  && g.phonenumber.errors}"
+                              onKeyPress="if(this.value.length==14) return false;">
+                           <div *ngIf="g.phonenumber.touched && g.phonenumber.errors" class="invalid-feedback">
+                              <div *ngIf="g.phonenumber.errors.required">Phone Number is required</div>
+                              <div *ngIf="g.phonenumber.errors.min">Phone number should be 10</div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="input-group mb-2 form-border">
+                        <div class="input-group-prepend">
+                           <div class="input-group-text"><i class="fa fa-comment"></i></div>
+                        </div>
+                        <input type="text" class="form-control border-none" id="casesummary"
+                           formControlName="casesummary" [(ngModel)]="data.casesummary"
+                           [ngClass]="{ 'is-invalid': submitted && g.casesummary.errors}" placeholder="Case Summary *"
+                           required>
+                     </div>
+                     <div *ngIf="refersForm.get('casesummary').touched && refersForm.get('casesummary').invalid">
+                        <div class="alert-danger1" *ngIf="refersForm.get('casesummary').errors.required">Case Summary is
+                           required
+                        </div>
+                     </div>
+                     <div class="form-group mb-2">
+                        <select formControlName="categoryid" name="categoryid" class="form-control">
+                           <option *ngFor="let c of categories;" value="{{c.categoryid}}">
+                              {{ c.title }}
+                           </option>
+                        </select>
+                        <div *ngIf="refersForm.get('categoryid').touched && refersForm.get('categoryid').invalid">
+                           <div class="alert-danger1" *ngIf="refersForm.get('categoryid').errors.required">Category is
+                              required
+                           </div>
+                        </div>
+                     </div>
+                     <div class="input-group mb-2 form-border">
+                        <div class="input-group-prepend">
+                           <div class="input-group-text"><i class="fa fa-file"></i></div>
+                        </div>
+                        <input name="files" id="file" type="file" formControlName="files"
+                           (change)="changeListener($event)" multiple
+                           [ngClass]="{ 'is-invalid': g.files.touched && g.files.errors }" accept="image/*">
+                        <div *ngIf="g.files.touched && g.files.errors" class="invalid-feedback">
+                           <div *ngIf="g.files.errors.required">You can upload only 5 images</div>
+                        </div>
+                        <div *ngIf="fileLengthErr" class="invalid-feedback">You can upload only 5 images</div>
+                        <img *ngFor='let url of images' alt="Refer to Us PGC" [src]="url" class="refers_img"/>
+                     </div>
+                     <div class="text-center">
+                        <div class="row">
+                           <div class="col-12  m-auto">
+                              <input type="submit" value="Submit" [disabled]="refersForm.invalid ||  fileLengthErr"
+                                 class="btn btn-global btn-block  py-2">
+                           </div>
+                        </div>
+
+                     </div>
+                  </div>
+               </div>
+            </form>
+         </div>
+      </div>
+   </div>
+</div>

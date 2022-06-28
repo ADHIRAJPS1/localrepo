@@ -1,0 +1,40 @@
+<section class="case_details-banner" style="background: #702d276b;"></section>
+<div *ngIf="news">
+    <section class="blog-business-section pgc-blog-details overflow-hidden">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <a class="blog-link-btn" routerLink="/">
+                        <i class="fa fa-arrow-left" aria-hidden="true"></i> Home
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-7" data-aos="fade-right">
+                    <figure class="blog-details-featured-img" *ngIf="news?.featuredimage">
+                        <img src="{{news?.featuredimage}}" class="img-fluid " alt="{{news?.title}}" />
+                    </figure>
+                </div>
+                <div class="col-md-5" data-aos="fade-up">
+                    <div class="blog-details-business-info mb-5">
+                        <h5>{{news?.categoryname}}</h5>
+                        <h1 class="fs-2 fw-bold">{{news?.title}}</h1>
+                        <!-- <h1 class="fs-6" [innerHTML]="news?.description"></h1> -->
+                    </div>
+                    <ul class="blog-business-time">
+                        <li class="border-0">{{news?.createdat | date :'MMM d,yyy'}}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="blog-details-long-info py-5 overflow-hidden">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 mt-4" data-aos="fade-down">
+                    <p [innerHTML]="news?.description"></p>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

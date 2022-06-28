@@ -1,0 +1,1224 @@
+<div class="container bg-light mt-7">
+   <div class="row">
+      <div class="col-lg-12">
+      </div>
+   </div>
+   <div class="row mt-4">
+      <div class="col-lg-12">
+         <div class="row">
+            <div class="col-lg-4 my-4">
+               <form action="" method="post" enctype="multipart/form-data">
+                  <label class="adminprofile-innercontainer" for="fileToUpload">
+                     <div class="admin-profile-pic" *ngIf="!usrDetails?.profilepic">
+                        <span><i class="fas fa-camera"></i></span>
+                        <input type="File" name="fileToUpload" id="adminfileToUpload">
+                     </div>
+                     <div class="admin-profile-pic" *ngIf="usrDetails?.profilepic">
+                        <img [src]="usrDetails?.profilepic" class="img-fluid" />
+                     </div>
+                     <div class="admin-profile-name">
+                        <h5>{{usrDetails?.firstname}} {{usrDetails?.middlename}}
+                           {{usrDetails?.lastname}}
+                        </h5>
+                        <p>{{usrDetails?.designation}}</p>
+                     </div>
+                  </label>
+               </form>
+            </div>
+            <div class="col-lg-4 my-4"></div>
+            <div class="col-lg-4 my-4">
+               <ul class="pgc-admin-profile-contact-list">
+                  <li><span><i class="fas fa-phone"></i></span>Phone: {{usrDetails?.phonenumber}}</li>
+                  <li><span><i class="fas fa-envelope"></i></span>Email: {{usrDetails?.email}}</li>
+                  <li><span><i class="fas fa-map-marker-alt"></i></span>Address: {{usrDetails?.city}}
+                     {{usrDetails?.country}}
+                  </li>
+               </ul>
+               <ul class="pgc-admin-profile-social-links">
+                  <li><a><i class="fab fa-twitter"></i></a></li>
+                  <li><a><i class="fab fa-facebook-f"></i></a></li>
+                  <li><a><i class="fab fa-linkedin-in"></i></a></li>
+               </ul>
+            </div>
+         </div>
+      </div>
+      <div class="col-lg-12 py-4 pgc-admin-profile-tabs-container">
+         <ul class="nav nav-pills mb-3 pgc-admin-profile-tabs" id="pills-tab" role="tablist">
+            
+            <li class="nav-item" role="presentation">
+               <button (click)="changeTab('profile')" class="nav-link active" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Profile</button>
+            </li>
+
+            <li class="nav-item" role="presentation">
+               <button (click)="changeTab('campaignlist')" class="nav-link" id="pills-list-user-tab" data-bs-toggle="pill" data-bs-target="#pills-list-user" type="button" role="tab" aria-controls="pills-list-user" aria-selected="false">Campaign List </button>
+            </li>
+            
+            <li class="nav-item" role="presentation" *ngIf="!seoTeamRoles.includes(usrDetails?.rolename)">
+               <button (click)="changeTab('donationlist')" class="nav-link" id="pills-donations-tab" data-bs-toggle="pill" data-bs-target="#pills-donations" type="button" role="tab" aria-controls="pills-donations" aria-selected="false">Donations List</button>
+            </li>
+
+            <li class="nav-item" role="presentation" *ngIf="seoTeamRoles.includes(usrDetails?.rolename) || usrDetails?.rolename =='superadmin'">
+               <button (click)="changeTab('bloglist')" class="nav-link" id="pills-bloglist-tab" data-bs-toggle="pill" data-bs-target="#pills-bloglist" type="button" role="tab" aria-controls="pills-bloglist" aria-selected="false">Blog List </button>
+            </li>
+
+            <li class="nav-item" role="presentation" *ngIf="usrDetails?.rolename =='superadmin'">
+               <button (click)="changeTab('employeelist')" class="nav-link" id="pills-employeelist-tab" data-bs-toggle="pill" data-bs-target="#pills-employeelist" type="button" role="tab" aria-controls="pills-employeelist" aria-selected="false">Employee List </button>
+            </li>
+
+            <li class="nav-item" role="presentation" *ngIf="usrDetails?.rolename =='superadmin'">
+               <button (click)="changeTab('referralList')" class="nav-link" id="pills-referralList-tab" data-bs-toggle="pill" data-bs-target="#pills-referralList" type="button" role="tab" aria-controls="pills-referralList" aria-selected="false">Referred List </button>
+            </li>
+
+         </ul>
+      </div>
+   </div>
+</div>
+
+<div class="tab-content" id="pills-tabContent">
+   
+   <div class="container tab-pane fade show active" id="pills-profile" role="tabpanel"
+      aria-labelledby="pills-profile-tab">
+      <div class="row" *ngIf="showSpinner && selectedTab=='profile'" style="text-align:center;padding-left: 25%">
+         <img style="width: 350px;" src="./assets/images/loading.gif" />
+      </div>
+      <div *ngIf="!showSpinner && selectedTab=='profile'" class="row">
+         <div class="col-lg-4">
+            <table class="table table-borderless" *ngIf="usrDetails">
+               <tbody>
+                  <tr>
+                     <td colspan="2" class="text-muted">CONTACT INFORMATION</td>
+                  </tr>
+                  <tr>
+                     <td><strong>Name:</strong></td>
+                     <td>
+                        <p class="text-muted mb-0">{{usrDetails?.firstname}}
+                           {{usrDetails?.middlename}}
+                           {{usrDetails?.lastname}}
+                        </p>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td><strong>Phone:</strong></td>
+                     <td>
+                        <p class="text-muted mb-0">{{usrDetails?.phonenumber}}</p>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td><strong>Designation:</strong></td>
+                     <td>
+                        <p class="text-muted mb-0">{{usrDetails?.designation}}</p>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td><strong>Email:</strong></td>
+                     <td>
+                        <p class="text-muted mb-0">{{usrDetails?.email}}</p>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td><strong>DOB:</strong></td>
+                     <td>
+                        <p class="text-muted mb-0">{{usrDetails?.dob}}</p>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td><strong>Gender</strong></td>
+                     <td>
+                        <p class="text-muted mb-0">{{usrDetails?.gender}}</p>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td colspan="2">
+                        <a routerLink="/edit-profile/{{this.usrId}}"
+                           class="btn redbg text-white px-4 rounded-pill">Edit
+                        Profile</a>
+                     </td>
+                  </tr>
+               </tbody>
+            </table>
+         </div>
+         <div class="col-lg-4">
+            <table class="table table-borderless">
+               <tbody>
+                  <tr>
+                     <td colspan="2" class="text-muted"> &nbsp; </td>
+                  </tr>
+                  <tr>
+                     <td><strong>Address Line 1:</strong></td>
+                     <td>
+                        <p class="text-muted mb-0">{{usrDetails?.address1}}</p>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td><strong>Address Line 2:</strong></td>
+                     <td>
+                        <p class="text-muted mb-0">{{usrDetails?.address2}}</p>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td><strong>City:</strong></td>
+                     <td>
+                        <p class="text-muted mb-0">{{usrDetails?.city}}</p>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td><strong>State:</strong></td>
+                     <td>
+                        <p class="text-muted mb-0">{{usrDetails?.state}}</p>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td><strong>country:</strong></td>
+                     <td>
+                        <p class="text-muted mb-0">{{usrDetails?.country}}</p>
+                     </td>
+                  </tr>
+                  <tr>
+                     <td><strong>Postal Code:</strong></td>
+                     <td>
+                        <p class="text-muted mb-0">{{usrDetails?.postalcode}}</p>
+                     </td>
+                  </tr>
+                  <!-- <tr *ngIf="auth.currentUser?.storiesnotifytype">
+                     <td><strong>storiesnotifytype:</strong></td>
+                     <td>
+                         <p class="text-muted mb-0">{{auth.currentUser?.storiesnotifytype}}</p>
+                     </td>
+                     </tr>
+                     <tr *ngIf="auth.currentUser?.emailnotifytype">
+                     <td><strong>emailnotifytype:</strong></td>
+                     <td>
+                         <p class="text-muted mb-0">{{auth.currentUser?.emailnotifytype}}</p>
+                     </td>
+                     </tr> -->
+               </tbody>
+            </table>
+         </div>
+         <div class="col-lg-4">
+            <div class="card campaign-card-border-radius p-2 mt-5">
+               <div class="card-body">
+                  <h5>Need Help?</h5>
+                  <p>We can answer your questions via one of these methods:</p>
+                  <a routerLink="/faqs" class="text-decoration-underline text-red d-block my-3">Frequently
+                  Asked Questions</a>
+                  <a routerLink="/contactus" class="text-decoration-underline text-red d-block">Contact us
+                  Online</a>
+                  <a href="tel:18003094055">18003094055</a>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+
+   <div class="container tab-pane fade" id="pills-list-user" role="tabpanel" aria-labelledby="pills-list-user-tab">
+      <div *ngIf="selectedTab=='campaignlist'">
+         <div class="row my-3 align-items-center">
+            <div class="col-lg-2 my-2">
+               <h2 class="fs-5 text-center"><button [disabled]="showSpinner" (click)="showAddModal(content)" class="btn bg-light-gray">Add Campaign</button></h2>
+            </div>
+            <div class="col-lg-6 my-2">
+               <form name="form" (ngSubmit)="searchStoryList()" #f="ngForm">
+                  <div class="d-flex border rounded-2 overflow-hidden">
+                     <input type="text" [(ngModel)]="filterBy" [ngModelOptions]="{standalone: true}" (ngModelChange)="resetGetStoryList(false)"
+                     class="form-control border-0" placeholder="Search  Stories" />
+                     <button class="btn  redbg text-white rounded-0" [disabled]="showSpinner">Search</button>
+                  </div>
+               </form>
+            </div>
+            <div class="col-lg-1" *ngIf="filterBy && filterBy.length > 0">
+               <button class="btn btn-danger text-white" (click)="resetGetStoryList(true)">Clear</button>
+            </div>
+            <div class="col-lg-3">
+               <select  class="form-control bg-light" [(ngModel)]="selected" name="status" (ngModelChange)="onOptionsSelected()" [disabled]="showSpinner">
+               <option *ngFor="let s of statusList" [value]="s.value">{{s.title}}({{statuscounts[s.value]}})
+               </option>
+               </select>
+            </div>
+            <!--<div class="col-lg-3 my-2">
+               <ul class="blog-search-list list-style-none ps-0">
+                   <li class="nav-item dropdown d-inline-flex text-capitalize">
+                       <a class="nav-link dropdown-toggle text-dark" id="navbarDropdown" role="button"
+                           data-bs-toggle="dropdown" aria-expanded="false">
+                       {{ options.categoryname ? options.categoryname : 'Search Category'}}
+                       </a>
+                       <ul class="dropdown-menu " aria-labelledby="navbarDropdown">
+                           <li class="w-100" *ngFor="let storyfilter of storycategory;  let i = index">
+                               <a class="dropdown-item text-dark" (click)="searchevent(storyfilter.title)">
+                               {{storyfilter.title}}
+                               </a>
+                           </li>
+                       </ul>
+                   </li>
+               </ul>
+               </div>-->
+         </div>
+         <div class="row" *ngIf="story?.length === 0 && !showSpinner" style="text-align:center;margin-top:50px;margin-bottom:50px;">
+            <h2>No matching record</h2>
+         </div>
+         
+         <div class="search-results" infiniteScroll [infiniteScrollDistance]="2" [infiniteScrollUpDistance]="1.5"
+         [infiniteScrollThrottle]="50" (scrolled)="onScrollDown()" (scrolledUp)="onScrollUp()">
+            <div class="row justify-content-start" >
+               <div class="col-md-6 col-lg-4 col-xl-3 my-3" *ngFor="let campaign of story">
+                  <div class="card  campaign-box-shadow border-0 h-100">
+                     <div class="d-flex justify-content-between card-status">
+                        <span class="redbg px-1 mt-2 ms-2 me-2 text-white rounded hidden">
+                        {{campaign.targetcurrency}}
+                        {{campaign.targetamount}}
+                        </span>
+                        <span class="capitalize st-status"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8"> <g id="Group_112" data-name="Group 112" transform="translate(-308 -618)"> <g id="Ellipse_2" data-name="Ellipse 2" transform="translate(308 618)" fill="none" stroke="#b14d81" stroke-width="1"> <circle cx="4" cy="4" r="4" stroke="none"/> <circle cx="4" cy="4" r="3.5" fill="none"/> </g> <circle id="Ellipse_3" data-name="Ellipse 3" cx="2" cy="2" r="2" transform="translate(310 620)" fill="#b14d81"/> </g></svg>{{campaign.status}}
+                        <span class="position-absolute fa-childicon" *ngIf="campaign.parentid != null"><i
+                           class="fa fa-child"></i></span>
+                        </span>
+                     </div>
+                     <a class="text-decoration-none pointer">
+                        <div class="position-relative d-flex align-items-center card-img">
+                           <img [src]="campaign.featuredimage" loading="lazy" onload="this.classList.remove('image-loading');" onerror="this.onerror=null;this.src='assets/images/bg-gray-medium.jpg'" class="me-0 image-loading" alt="{{campaign.name}}">
+                        </div>
+                     </a>
+                     <div class="card-body">
+                        <div class="campaign-title-height">{{removeHTML(campaign?.title, 50)}}</div>
+
+                        <div *ngIf="campaign.status !='completed'" class="campaign-story-height" [innerHTML]="removeHTML(campaign?.story, 60)"></div>
+
+                        <div *ngIf="campaign.status =='completed'" class="campaign-story-height" [innerHTML]="removeHTML(campaign?.successstory, 60)"></div>
+
+                        <div class="campaign-story-amount"><svg xmlns="http://www.w3.org/2000/svg" width="6.977" height="11.016" viewBox="0 0 6.977 11.016"><path id="Path_84" data-name="Path 84" d="M249.418,121.13v1.492c.872.046,3.1-.138,3.443.941h-3.443v1.331h3.6a2.182,2.182,0,0,1-1.7,1.239l-1.9.046-.023,1.331,3.994,4.636h2.066l-3.764-4.613a3.4,3.4,0,0,0,3.19-2.708l1.446.046v-1.262h-1.561a2.123,2.123,0,0,0-.436-1.17h2.043V121.13Z" transform="translate(-249.395 -121.13)" fill="#b14d81" fill-rule="evenodd"/></svg> {{campaign?.targetamount}}/-</div>
+                     </div>
+                     <div class="card-body graybg justify-content-between d-flex card-list">
+
+                        <a class="card-link text-decoration-none text-dark btn redbg text-white" routerLink="/medical-support/{{campaign?.slug}}" target="_blank"><svg id="Group_1" data-name="Group 1" xmlns="http://www.w3.org/2000/svg" width="12.128" height="6.984" viewBox="0 0 12.128 6.984"> <path id="Path_76" data-name="Path 76" d="M286.083,220.04a1.642,1.642,0,1,1-1.642-1.642,1.642,1.642,0,0,1,1.642,1.642" transform="translate(-278.381 -216.547)" fill="#fff"/> <path id="Path_77" data-name="Path 77" d="M123.117,148.96h-.06a7.106,7.106,0,0,0-4.015,1.418,9.864,9.864,0,0,0-1.97,1.821.493.493,0,0,0,0,.612c1.731,2.045,3.626,3.1,5.656,3.134h.09a7.312,7.312,0,0,0,4.059-1.343,11.62,11.62,0,0,0,2.1-1.806.5.5,0,0,0,0-.627C127.147,150.049,125.177,148.96,123.117,148.96Zm-.09,5.731a2.239,2.239,0,1,1,2.239-2.239A2.236,2.236,0,0,1,123.028,154.691Z" transform="translate(-116.967 -148.96)" fill="#fff"/></svg>View</a>
+
+                        <a *ngIf="!seoTeamRoles.includes(usrDetails?.rolename)" class="card-link text-decoration-none text-dark pointer btn bg-light-gray"
+                           (click)="storyupdate(campaign)"><svg xmlns="http://www.w3.org/2000/svg" width="7.318" height="9.155" viewBox="0 0 7.318 9.155"> <g id="Group_111" data-name="Group 111" transform="translate(-229.417 -958.71)"> <path id="Union_1" data-name="Union 1" d="M-103.836-2060.845v-1h7v1Zm-.088-1.907a.222.222,0,0,1-.069-.227l.444-1.865,1.727,1.707-1.865.444a.127.127,0,0,1-.059.01A.236.236,0,0,1-103.924-2062.752Zm1.411-1.756,3.345-3.345,1.115,1.115-3.345,3.345Zm-.77-.77,3.345-3.344.346.354-3.345,3.345Zm3.7-3.69.958-.958a.239.239,0,0,1,.345,0l1.53,1.53a.283.283,0,0,1,.01.354l-.958.958Z" transform="translate(333.418 3028.71)" fill="#5a5a5a"/> </g></svg><span>Edit</span></a>
+
+                        <a *ngIf="seoTeamRoles.includes(usrDetails?.rolename)" class="card-link text-decoration-none text-dark pointer btn bg-light-gray"
+                           data-bs-toggle="modal" data-bs-target="#editStoryMetaData"
+                           (click)="storyMetaUpdate(campaign)"><svg xmlns="http://www.w3.org/2000/svg" width="7.318" height="9.155" viewBox="0 0 7.318 9.155"> <g id="Group_111" data-name="Group 111" transform="translate(-229.417 -958.71)"> <path id="Union_1" data-name="Union 1" d="M-103.836-2060.845v-1h7v1Zm-.088-1.907a.222.222,0,0,1-.069-.227l.444-1.865,1.727,1.707-1.865.444a.127.127,0,0,1-.059.01A.236.236,0,0,1-103.924-2062.752Zm1.411-1.756,3.345-3.345,1.115,1.115-3.345,3.345Zm-.77-.77,3.345-3.344.346.354-3.345,3.345Zm3.7-3.69.958-.958a.239.239,0,0,1,.345,0l1.53,1.53a.283.283,0,0,1,.01.354l-.958.958Z" transform="translate(333.418 3028.71)" fill="#5a5a5a"/> </g></svg><span>Edit</span></a>
+
+                        <a *ngIf="(campaign.status =='published' || campaign.status =='completed') && !seoTeamRoles.includes(usrDetails?.rolename)" class="card-link text-decoration-none text-dark pointer btn bg-light-gray" (click)="openModal(template,campaign.stid, 'disable')"><svg xmlns="http://www.w3.org/2000/svg" width="9.012" height="9.012" viewBox="0 0 9.012 9.012"> <path id="Path_92" data-name="Path 92" d="M88.506,14a4.506,4.506,0,1,0,4.506,4.506A4.51,4.51,0,0,0,88.506,14Zm-3.263,4.506a3.285,3.285,0,0,1,.56-1.831l4.535,4.535a3.266,3.266,0,0,1-5.094-2.7Zm5.967,1.831L86.675,15.8a3.266,3.266,0,0,1,4.535,4.535Z" transform="translate(-84 -14)" fill="#5a5a5a"/></svg><span>Disable</span></a>
+
+                        <a *ngIf="campaign.status =='hold' && !seoTeamRoles.includes(usrDetails?.rolename)" class="card-link text-decoration-none text-dark pointer btn bg-light-gray" (click)="openModal(template,campaign.stid, 'enable')"><i class="fa fa-check"></i><span>Enable</span></a>
+
+                     </div>
+                     <div class="card-body graybg justify-content-between d-flex card-list">
+                        <a *ngIf="campaign.status !='deleted' && usrDetails?.rolename =='superadmin'" class="card-link text-decoration-none text-dark pointer btn w-100 bg-light-gray" (click)="openModal(template,campaign.stid, 'delete')"><svg xmlns="http://www.w3.org/2000/svg" width="8.855" height="10.491" viewBox="0 0 8.855 10.491"> <g id="Group_5" data-name="Group 5" transform="translate(-391.468 -1061)"> <path id="Path_82" data-name="Path 82" d="M134.6,15.325h-.42a.8.8,0,0,0-.785-.63h-1.8v-.232a.467.467,0,0,0-.464-.464h-1.415a.467.467,0,0,0-.464.464V14.7h-1.791a.8.8,0,0,0-.785.63h-.42a.25.25,0,0,0-.254.254v.442a.25.25,0,0,0,.254.254H134.6a.25.25,0,0,0,.254-.254V15.58a.257.257,0,0,0-.254-.254Z" transform="translate(265.469 1047.001)" fill="#5a5a5a"/> <path id="Path_83" data-name="Path 83" d="M166.365,161.28h-7.23a.157.157,0,0,0-.155.177l.84,6.743a.762.762,0,0,0,.752.663h4.355a.754.754,0,0,0,.752-.663l.84-6.743a.156.156,0,0,0-.155-.177Zm-5.129,6.2a.285.285,0,0,1-.287-.287l-.033-4.234a.287.287,0,1,1,.575,0l.033,4.234a.285.285,0,0,1-.287.287Zm1.8-.287a.287.287,0,1,1-.575,0V162.96a.287.287,0,1,1,.575,0Zm1.515,0a.287.287,0,1,1-.575,0l.033-4.234a.287.287,0,1,1,.575,0Z" transform="translate(233.139 902.627)" fill="#5a5a5a"/> </g></svg><span>Delete</span></a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="row" *ngIf="showSpinner" style="text-align:center;padding-left: 25%"><img style="width: 350px;" src="./assets/images/loading.gif" />
+         </div>
+      </div>
+   </div>
+
+   <div class="container tab-pane fade" id="pills-bloglist" role="tabpanel" aria-labelledby="pills-bloglist-tab">
+      <div *ngIf="selectedTab=='bloglist'">
+          <div class="row my-3 align-items-center">
+            <div class="col-lg-2 my-2">
+               <h2 class="fs-5 text-center"><button [disabled]="showSpinner" (click)="showBlogModalBoxhtml(null)" class="btn bg-light-gray">Add Blog</button></h2>
+            </div>
+            <div class="col-lg-4 my-2">
+               <form name="form">
+                  <div class="d-flex border rounded-2 overflow-hidden">
+                     <input type="text" [(ngModel)]="filterBlogBy" [ngModelOptions]="{standalone: true}" class="form-control border-0" placeholder="Search Blogs" />
+                     <button class="btn  redbg text-white rounded-0" [disabled]="!filterBlogBy ||showSpinner" (click)="searchBlogs()">Search</button>
+                  </div>
+               </form>
+            </div>
+            <div class="col-lg-1" *ngIf="filterBlogBy && filterBlogBy.length > 0">
+               <button class="btn btn-danger text-white" (click)="onBlogOptionsSelected()">Clear</button>
+            </div>
+
+            <div class="col-lg-2">
+               <select class="form-control bg-light blog-dropdown" [(ngModel)]="selectedBlogStatus" name="selectedBlogStatus" (ngModelChange)="onBlogOptionsSelected()" [disabled]="showSpinner">
+                  <option *ngFor="let s of blogsStatus" [value]="s.title" selected>
+                     {{s.level}}({{s.value}})
+                  </option>
+               </select>
+            </div>
+            
+            <div class="col-lg-3 my-2">
+               <select class="form-control bg-light blog-dropdown" [(ngModel)]="selectedBlogCategory" name="selectedBlogCategory" (ngModelChange)="onBlogCategorySelected()" [disabled]="showSpinner">
+                  <option value="Category" [selected]="true">Search By Category</option>
+                  <option *ngFor="let c of blogCategories" [value]="c.cslug" >
+                     {{c.title}}
+                  </option>
+               </select>
+            </div>
+         </div>
+         <div class="row" *ngIf="blogs.list.length === 0 && !showSpinner" style="text-align:center;margin-top:50px;margin-bottom:50px;">
+               <h2>No matching record</h2>
+         </div>
+         <div class="search-results" infiniteScroll [infiniteScrollDistance]="2" [infiniteScrollUpDistance]="1.5"
+         [infiniteScrollThrottle]="50" (scrolled)="onScrollDownBlogList()" (scrolledUp)="onScrollUpBlogList()">
+            <div class="row justify-content-start" >
+               <div class="col-md-6 col-lg-4 col-xl-3 my-3" id="bloglistDescription" *ngFor="let blog of blogs.list">
+                  <div class="card  campaign-box-shadow border-0 h-100">
+                     <div class="d-flex justify-content-between card-status">
+                        <span class="redbg px-1 mt-2 ms-2 me-2 text-white rounded hidden">0</span>
+                        <span class="capitalize st-status"><svg xmlns="http://www.w3.org/2000/svg" width="8" height="8" viewBox="0 0 8 8"> <g id="Group_112" data-name="Group 112" transform="translate(-308 -618)"> <g id="Ellipse_2" data-name="Ellipse 2" transform="translate(308 618)" fill="none" stroke="#b14d81" stroke-width="1"> <circle cx="4" cy="4" r="4" stroke="none"/> <circle cx="4" cy="4" r="3.5" fill="none"/> </g> <circle id="Ellipse_3" data-name="Ellipse 3" cx="2" cy="2" r="2" transform="translate(310 620)" fill="#b14d81"/> </g></svg>{{blog.status}}
+                        </span>
+                     </div>
+                     <a class="text-decoration-none pointer">
+                        <div class="position-relative d-flex align-items-center card-img">
+                           <img [src]="blog.featuredimage" loading="lazy" onload="this.classList.remove('image-loading');" onerror="this.onerror=null;this.src='assets/images/bg-gray-medium.jpg'" class="me-0 image-loading" alt="{{blog.title}}">
+                        </div>
+                     </a>
+                     <div class="card-body">
+                        <div class="campaign-title-height">{{removeHTML(blog?.title, 60)}}</div>
+                        <div class="campaign-story-height" [innerHTML]="removeHTML(blog?.description, 60)"></div>
+                     </div>
+                     <div class="card-body graybg justify-content-between d-flex card-list">
+
+                        <a class="card-link text-decoration-none text-dark btn redbg text-white" routerLink="/blogs/{{blog?.slug}}" target="_blank"><svg id="Group_1" data-name="Group 1" xmlns="http://www.w3.org/2000/svg" width="12.128" height="6.984" viewBox="0 0 12.128 6.984"> <path id="Path_76" data-name="Path 76" d="M286.083,220.04a1.642,1.642,0,1,1-1.642-1.642,1.642,1.642,0,0,1,1.642,1.642" transform="translate(-278.381 -216.547)" fill="#fff"/> <path id="Path_77" data-name="Path 77" d="M123.117,148.96h-.06a7.106,7.106,0,0,0-4.015,1.418,9.864,9.864,0,0,0-1.97,1.821.493.493,0,0,0,0,.612c1.731,2.045,3.626,3.1,5.656,3.134h.09a7.312,7.312,0,0,0,4.059-1.343,11.62,11.62,0,0,0,2.1-1.806.5.5,0,0,0,0-.627C127.147,150.049,125.177,148.96,123.117,148.96Zm-.09,5.731a2.239,2.239,0,1,1,2.239-2.239A2.236,2.236,0,0,1,123.028,154.691Z" transform="translate(-116.967 -148.96)" fill="#fff"/></svg>View</a>
+
+                        <a (click)="showBlogModalBoxhtml(blog)" class="card-link text-decoration-none text-dark pointer btn bg-light-gray"><svg xmlns="http://www.w3.org/2000/svg" width="7.318" height="9.155" viewBox="0 0 7.318 9.155"> <g id="Group_111" data-name="Group 111" transform="translate(-229.417 -958.71)"> <path id="Union_1" data-name="Union 1" d="M-103.836-2060.845v-1h7v1Zm-.088-1.907a.222.222,0,0,1-.069-.227l.444-1.865,1.727,1.707-1.865.444a.127.127,0,0,1-.059.01A.236.236,0,0,1-103.924-2062.752Zm1.411-1.756,3.345-3.345,1.115,1.115-3.345,3.345Zm-.77-.77,3.345-3.344.346.354-3.345,3.345Zm3.7-3.69.958-.958a.239.239,0,0,1,.345,0l1.53,1.53a.283.283,0,0,1,.01.354l-.958.958Z" transform="translate(333.418 3028.71)" fill="#5a5a5a"/> </g></svg><span>Edit</span></a>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+
+         <div class="row" *ngIf="showSpinner" style="text-align:center;padding-left: 25%"><img style="width: 350px;" src="./assets/images/loading.gif" />
+         </div>
+      </div>
+   </div>
+
+   <div class="container tab-pane fade" id="pills-donations" role="tabpanel" aria-labelledby="pills-donations-tab">
+      <div *ngIf="selectedTab=='donationlist'">
+         <donation-list></donation-list>
+      </div>
+   </div>
+
+   <div class="container tab-pane fade" id="pills-employeelist" role="tabpanel" aria-labelledby="pills-employeelist-tab">
+      <div *ngIf="selectedTab=='employeelist'">
+         <employee-list></employee-list>
+      </div>
+   </div>
+
+   <div class="container tab-pane fade" id="pills-referralList" role="tabpanel" aria-labelledby="pills-referralList-tab">
+      <div *ngIf="selectedTab=='referralList'">
+         <referral-list></referral-list>
+      </div>
+   </div>
+   
+
+</div>
+
+<!--Update story Modal -->
+<div id="myModal" class="modal-c {{showModalUpdateStoryBox}}" >
+   <div class="modal-content-c">
+      <div class="modal-header-c">
+         <h5 class="modal-title-c">Edit Campaign <button type="button" class="btn-close float-right" (click)="hideModalUpdateStoryBox()"></button></h5>
+      </div>
+      <div class="modal-body-c">
+         <div class="row">
+            <div class="col-lg-12">
+               <form [formGroup]="updateStoryEditForm" *ngIf="storyedit">
+               <div class="row">
+                  <div class="col-lg-12">
+                     <div class="card  border-0">
+                        <div class="card-body">
+                           <div class="row">
+                              <div class="col-lg-6 my-3">
+                                 <label>Select Category</label>
+                                 <select
+                                 class="form-select"
+                                 aria-label="Default categoryid example"
+                                 [(ngModel)]="storyedit.categoryid" formControlName="categoryid"
+                                 [ngClass]="{ 'is-invalid': f1.categoryid.touched && f1.categoryid.errors }">
+                                 <option value="" disabled >Category*</option>
+                                 <option *ngFor="let c of storycategory" [value]="c.categoryid" [selected]="storyedit.categoryid==c.categoryid" >{{c.title}} </option>
+                                 </select>
+                              </div>
+                              <div class="col-lg-6 my-3">
+                                 <label>Patient Full Name</label>
+                                 <input type="text"
+                                 class="form-control "
+                                 placeholder="Patient Full Name*" formControlName="name"
+                                 [(ngModel)]="storyedit.name"
+                                 [ngClass]="{ 'is-invalid': f1.name.touched && f1.name.errors }" required />
+                                 <div *ngIf="(f1.name.touched && f1.name.errorss) || storyedit.name.length < 2 || storyedit.name.length > 25"
+                                    class="invalid-feedback">
+                                    <div *ngIf="f1.name.errors.required">Name is required</div>
+                                    <div *ngIf="f1.name.errors.pattern">Name should be Alphabetic
+                                    </div>
+                                    <div *ngIf="f1.name.errors.minlength || storyedit.name.length < 2"> Name should be min 2
+                                       chars 
+                                    </div>
+                                    <div *ngIf="f1.name.errors.maxlength || storyedit.name.length > 25"> Name should be Max 25
+                                       chars 
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="col-lg-6 my-3">
+                                 <label>Youtube Url</label>
+                                 <input type="text"
+                                 class="form-control "
+                                 placeholder="Enter Youtube Url" formControlName="youtubeurl"
+                                 [(ngModel)]="storyedit.youtubeurl" />
+                              </div>
+                              <div class="col-lg-6 my-3">
+                                 <label>Title</label>
+                                 <input type="text"
+                                 class="form-control "
+                                 placeholder="Enter Your Fundraiser Name" formControlName="title"
+                                 [(ngModel)]="storyedit.title"
+                                 [ngClass]="{ 'is-invalid': f1.title.touched && f1.title.errors }"
+                                 required />
+                                 <div *ngIf="f1.title.touched && f1.title.errors"
+                                    class="invalid-feedback">
+                                    <div *ngIf="f1.title.errors.required">Fundraiser Name is
+                                       required
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="col-lg-6 my-3">
+                                 <label>Slug</label>
+                                 <input type="text"
+                                 class="form-control "
+                                 placeholder="Enter Your Fundraiser Slug" formControlName="slug"
+                                 [(ngModel)]="storyedit.slug"
+                                 [ngClass]="{ 'is-invalid': f1.slug.touched && f1.slug.errors }"
+                                 required />
+                                 <div *ngIf="f1.title.touched && f1.title.errors"
+                                    class="invalid-feedback">
+                                    <div *ngIf="f1.slug.errors.required">Fundraiser Slug is
+                                       required
+                                    </div>
+                                 </div>
+                              </div>
+                              <!--<div class="col-lg-6 my-3" *ngIf="usrDetails?.rolename =='fieldexecutive'">
+                                 <label>Status</label>
+                                 <select
+                                 class="form-select  "
+                                 aria-label="Default select example"
+                                 [(ngModel)]="storyedit.status" formControlName="status"
+                                 [ngClass]="{ 'is-invalid': f1.status.touched && f1.status.errors }">
+                                 <option value="" disabled selected>status*</option>
+                                 <option value="draft" [selected]="storyedit.status==='draft'">Draft</option>
+                                 <option value="pending" [selected]="storyedit.status==='pending'">Pending</option>
+                                 <option value="completed" [selected]="storyedit.status==='completed'">Completed</option>
+                                 <option value="published" [selected]="storyedit.status==='published'">Published</option>
+                                 </select>
+                                 <div *ngIf="f1.status.touched && f1.status.errors"
+                                    class="invalid-feedback">
+                                    <div *ngIf="f1.status.errors.required">Status is required
+                                    </div>
+                                 </div>
+                              </div>-->
+                              <div class="col-lg-6 my-3">
+                                 <label>Status</label>
+                                 <select
+                                 class="form-select  "
+                                 aria-label="Default select example"
+                                 [(ngModel)]="storyedit.status" formControlName="status"
+                                 [ngClass]="{ 'is-invalid': f1.status.touched && f1.status.errors }">
+                                 <option value="" disabled selected>status*</option>
+                                 <option *ngFor="let s of statusList" [value]="s.value" [selected]="storyedit.status==s.value" >{{s.title}} </option>
+                                 </select>
+                                 <div *ngIf="f1.status.touched && f1.status.errors"
+                                    class="invalid-feedback">
+                                    <div *ngIf="f1.status.errors.required">Status is required
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="col-lg-4 my-3">
+                                 <label>Currency</label>
+                                 <select
+                                 class="form-select  "
+                                 aria-label="Default select example"
+                                 [(ngModel)]="storyedit.targetcurrency"
+                                 formControlName="targetcurrency"
+                                 [ngClass]="{ 'is-invalid': f1.targetcurrency.touched && f1.targetcurrency.errors }">
+                                 <option value="INR" selected>Currency</option>
+                                 <option value="INR" [selected]="storyedit.targetcurrency=='INR'">INR</option>
+                                 </select>
+                                 <div *ngIf="f1.targetcurrency.touched && f1.targetcurrency.errors"
+                                    class="invalid-feedback">
+                                    <div *ngIf="f1.targetcurrency.errors.required">Currency is
+                                       required
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="col-lg-4 my-3">
+                                 <label>Target Amount</label>
+                                 <input type="text"
+                                 class="form-control "
+                                 placeholder="Amount" formControlName="targetamount"
+                                 [(ngModel)]="storyedit.targetamount"
+                                 [ngClass]="{ 'is-invalid': f1.targetamount.touched && f1.targetamount.errors }"
+                                 required />
+                                 <div *ngIf="f1.targetamount.touched && f1.targetamount.errors"
+                                    class="invalid-feedback">
+                                    <div *ngIf="f1.targetamount.errors.required">Amount is required
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="col-lg-4 my-3">
+                                 <label>Target Date</label>
+                                 <input type="date"
+                                 class="form-control "
+                                 placeholder="date" formControlName="targetdate" [min]="mindate"
+                                 [ngModel]="storyedit.targetdate | date:'yyyy-MM-dd'"
+                                 [ngClass]="{ 'is-invalid': f1.targetdate.touched && f1.targetdate.errors }"
+                                 required />
+                                 <div *ngIf="f1.targetdate.touched && f1.targetdate.errors"
+                                    class="invalid-feedback">
+                                    <div *ngIf="f1.targetdate.errors.required">Date is required
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="col-lg-12 my-3" *ngIf="storyedit.featuredimage">
+                                 <div class="row">
+                                    <div class="col-lg-6">
+                                       <label class="hoverable w-100" for="fileInput">
+                                          <img class="uploadimage w-100"
+                                             [src]="base64code ? base64code : storyedit.featuredimage">
+                                          <!-- <button class="hover-text">Choose file</button> -->
+                                          <div class="background"></div>
+                                       </label>
+                                    </div>
+                                    <div class="col-lg-6">
+                                       <input id="fileInput" type='file'
+                                          accept="image/png, image/jpg,  image/jpeg"
+                                          (change)="onSelectFile($event)">
+                                       <button *ngIf="base64code"
+                                       (click)="delete()">delete</button>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="col-lg-12 my-3" *ngIf="!storyedit.featuredimage">
+                                 <div class="row">
+                                    <div class="col-lg-6">
+                                       <label class="hoverable w-100" for="fileInput">
+                                          <img class="uploadimage w-100"
+                                             [src]="base64code ? base64code : 'https://www.w3schools.com/howto/img_avatar.png'">
+                                          <!-- <button class="hover-text">Choose file</button> -->
+                                          <div class="background"></div>
+                                       </label>
+                                    </div>
+                                    <div class="col-lg-6">
+                                       <input id="fileInput" type='file'
+                                          accept="image/png, image/jpg, image/jpeg"
+                                          (change)="onSelectFile($event)">
+                                       <button *ngIf="base64code"
+                                       (click)="delete()">delete</button>
+                                    </div>
+                                 </div>
+                              </div>
+                              <div class="col-lg-12 my-3">
+                                 <label for="formFileMultiple" class="form-label">Attach Supporting Document</label>
+                                 <input class="form-control" type='file'
+                                    accept="image/png, image/jpg,  image/jpeg"
+                                    (change)="onmultipleSelectFile($event)">
+                                 <img class="me-3" [src]="urls" height="80">
+                                 <br />
+                                 {{supportingDoc}}
+                              </div>
+                              <div class="col-lg-12 my-3" *ngIf="storyedit.status!='completed'">
+                                 <label class="mb-3">Story</label>
+                                 <ckeditor [editor]="editor" formControlName="story"
+                                 [(ngModel)]="storyedit.story"
+                                 [ngClass]="{ 'is-invalid': f1.story.touched && f1.story.errors }">
+                                 </ckeditor>
+                                 <div *ngIf="f1.story.touched && f1.story.errors"
+                                    class="invalid-feedback">
+                                    <div *ngIf="f1.story.errors.required">Story is required</div>
+                                    <div *ngIf="f1.story.errors.minlength">Story Should be atleast 500 Character </div>
+                                 </div>
+                              </div>
+
+                              <div class="col-lg-12 my-3" *ngIf="storyedit.status=='completed'">
+                                 <label class="mb-3">Success Story</label>
+                                 <ckeditor [editor]="editor" formControlName="successstory"
+                                 [(ngModel)]="storyedit.successstory"
+                                 [ngClass]="{ 'is-invalid': f1.successstory.touched && f1.successstory.errors }">
+                                 </ckeditor>
+                              </div>
+                              <div class="col-lg-12" >
+                                 <div class="row">
+                                    <div class="col-lg-12 mt-2">
+                                       <small>Report</small>
+                                    </div>
+                                    <div class="col-2">
+                                       <div class="form-group">
+                                          <div *ngIf="storyedit?.report[0]">
+                                             <div *ngIf="storyedit?.report[0]" (click)="removeSelectedFile(storyedit?.report[0])" class="attachment"> <i class="removeAttachment fas fa-times cursor"  ></i>
+                                             </div>
+                                             <multiple-file-upload  requiredFileType="image/*"
+                                                [placeholderImg]="storyedit?.report[0]"  (fileSelected)="handleInputChangeReport($event)">
+                                             </multiple-file-upload>
+                                          </div>
+                                          <div *ngIf="!storyedit?.report[0]">
+                                             <multiple-file-upload  requiredFileType="image/*"
+                                                [placeholderImg]="storyedit?.report[0]"  (fileSelected)="handleInputChangeReport($event)">
+                                             </multiple-file-upload>
+                                          </div>
+                                       </div>
+                                    </div>
+                                    <div class="col-2">
+                                       <div class="form-group">
+                                          <div *ngIf="storyedit?.report[1]">
+                                             <div *ngIf="storyedit?.report[1]" (click)="removeSelectedFile(storyedit?.report[1])" class="attachment"> <i class="removeAttachment fas fa-times cursor"  ></i>
+                                             </div>
+                                             <multiple-file-upload  requiredFileType="image/*"
+                                             [placeholderImg]="storyedit?.report[1]"  (fileSelected)="handleInputChangeReport($event)">
+                                             </multiple-file-upload>
+                                          </div>
+                                          <div *ngIf="!storyedit?.report[1]">
+                                             <multiple-file-upload  requiredFileType="image/*"
+                                             [placeholderImg]="storyedit?.report[1]"  (fileSelected)="handleInputChangeReport($event)">
+                                             </multiple-file-upload>
+                                          </div>
+                                       </div>
+                                    </div>
+                                    <div class="col-2">
+                                       <div class="form-group">
+                                          <div *ngIf="storyedit?.report[2]">
+                                             <div *ngIf="storyedit?.report[2]" (click)="removeSelectedFile(storyedit?.report[2])" class="attachment"> <i class="removeAttachment fas fa-times cursor"  ></i>
+                                             </div>
+                                             <multiple-file-upload  requiredFileType="image/*"
+                                             [placeholderImg]="storyedit?.report[2]"  (fileSelected)="handleInputChangeReport($event)">
+                                             </multiple-file-upload>
+                                          </div>
+                                          <div *ngIf="!storyedit?.report[2]">
+                                             <multiple-file-upload  requiredFileType="image/*"
+                                             [placeholderImg]="storyedit?.report[2]"  (fileSelected)="handleInputChangeReport($event)">
+                                             </multiple-file-upload>
+                                          </div>
+                                       </div>
+                                    </div>
+                                    <div class="col-2">
+                                       <div class="form-group">
+                                          <div *ngIf="storyedit?.report[3]">
+                                             <div *ngIf="storyedit?.report[3]" (click)="removeSelectedFile(storyedit?.report[3])" class="attachment"> <i class="removeAttachment fas fa-times cursor"  ></i>
+                                             </div>
+                                             <multiple-file-upload  requiredFileType="image/*"
+                                             [placeholderImg]="storyedit?.report[3]"  (fileSelected)="handleInputChangeReport($event)">
+                                             </multiple-file-upload>
+                                          </div>
+                                          <div *ngIf="!storyedit?.report[3]">
+                                             <multiple-file-upload  requiredFileType="image/*"
+                                             [placeholderImg]="storyedit?.report[3]"  (fileSelected)="handleInputChangeReport($event)">
+                                             </multiple-file-upload>
+                                          </div>
+                                       </div>
+                                    </div>
+                                    <div class="col-2">
+                                       <div class="form-group">
+                                          <div *ngIf="storyedit?.report[4]">
+                                             <div *ngIf="storyedit?.report[4]" (click)="removeSelectedFile(storyedit?.report[4])" class="attachment"> <i class="removeAttachment fas fa-times cursor"  ></i>
+                                             </div>
+                                             <multiple-file-upload  requiredFileType="image/*"
+                                             [placeholderImg]="storyedit?.report[4]"  (fileSelected)="handleInputChangeReport($event)">
+                                             </multiple-file-upload>
+                                          </div>
+                                          <div *ngIf="!storyedit?.report[4]">
+                                             <multiple-file-upload  requiredFileType="image/*"
+                                             [placeholderImg]="storyedit?.report[4]"  (fileSelected)="handleInputChangeReport($event)">
+                                             </multiple-file-upload>
+                                          </div>
+                                       </div>
+                                    </div>
+                                 </div>
+                              </div>
+
+                              <div class="col-lg-12">
+                                 <button type="submit" class="btn btn-main" [disabled]="updateStoryEditForm.invalid || disableSubmitBtn" (click)="onSubmitUpdateStory()">Submit <img *ngIf="disableSubmitBtn" src="./assets/images/spinning-loading.gif" style="width:30px;"></button>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               </form>
+            </div>
+         </div>
+      </div>
+      <!-- <div class="modal-footer">
+         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+         <button type="button" class="btn btn-primary">Understood</button>
+         </div> -->
+   </div>
+</div>
+
+<!--Update story Meta Data Modal -->
+<div class="modal fade" id="editStoryMetaData" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+   aria-labelledby="staticBackdropLabel" aria-hidden="true">
+   <div class="modal-dialog modal-lg">
+      <div class="modal-content" *ngIf="storyedit">
+         <div class="modal-header">
+            <h5 class="modal-title" id="staticBackdropLabel">Update Meta Data-{{storyedit.name}}</h5>
+            <button type="button" #closebutton class="btn-close" data-bs-dismiss="modal"
+               aria-label="Close"></button>
+         </div>
+         <div class="modal-body">
+            <div class="row">
+               <div class="col-lg-12">
+                  <form [formGroup]="updateStoryMetaEditForm">
+                  <div class="row">
+                     <div class="col-lg-12">
+                        <div class="card  border-0">
+                           <div class="card-body">
+                              <div class="row">
+                                 <div class="col-lg-6 my-3">
+                                    <label>Meta Title</label>
+                                    <input type="text"
+                                    class="form-control "
+                                    placeholder="Meta Title*" formControlName="metatitle"
+                                    [(ngModel)]="storyedit.metatitle" required />
+                                 </div>
+                                 <div class="col-lg-6 my-3">
+                                    <label>Meta Description</label>
+                                    <input type="text"
+                                    class="form-control "
+                                    placeholder="Meta Description*" formControlName="metadescription"
+                                    [(ngModel)]="storyedit.metadescription" required />
+                                 </div>
+                                 <div class="col-lg-6 my-3">
+                                    <label>Meta Tags</label>
+                                    <input type="text"
+                                    class="form-control "
+                                    placeholder="Meta Tags*" formControlName="metakeywords"
+                                    [(ngModel)]="storyedit.metakeywords" required />
+                                 </div>
+                                 <div class="col-lg-6">
+                                    <button type="submit" class="btn btn-main" [disabled]="updateStoryMetaEditForm.invalid || disableSubmitBtn" (click)="onSubmitUpdateStoryMetaData()">Submit <img *ngIf="disableSubmitBtn" src="./assets/images/spinning-loading.gif" style="width:30px;"></button>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  </form>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+
+<ng-template #template>
+   <div class="modal-body text-center card-action">
+      <p *ngIf="deletionType=='disable'">Are you sure, you want to disable this?</p>
+      <p *ngIf="deletionType=='enable'">Are you sure, you want to enable this campaign as?</p>
+      <p *ngIf="deletionType=='delete'">Are you sure, you want to delete this?</p>
+      <div class="card card-block card-header card-confirmation" *ngIf="deletionType=='enable'">
+         <form>
+            <div class="form-check-inline">
+               <label class="form-check-label" for="radio1">
+               <input type="radio" class="form-check-input" id="radio1" name="optradioenable" value="published" (click)="optRadioEnable('published')" checked>Active</label>
+            </div>
+            <div class="form-check-inline">
+               <label class="form-check-label" for="radio2">
+               <input type="radio" class="form-check-input" id="radio2" (click)="optRadioEnable('completed')" name="optradioenable" value="completed">Completed</label>
+            </div>
+         </form>
+      </div>
+      <button type="button" class="btn btn-danger" (click)="confirm()">Yes</button>
+      <button type="button" class="btn btn-primary" (click)="decline()">No</button>
+   </div>
+</ng-template>
+
+<!--Add story Modal -->
+<div id="addModal" class="modal-c {{showModalAddStoryBox}}" *ngIf="showModalAddStoryBox=='show'" >
+	<div class="modal-content-c">
+		<div class="modal-header-c">
+			<h5 class="modal-title-c">{{ action}} Campaign <button type="button" class="btn-close float-right" (click)="hideModalAddStoryBox()"></button></h5>
+		</div>
+      <div class="modal-body-c">
+         <div class="card-body">
+            <div class="form-step-header">
+               <div class="step" [class.active]="step == 1">
+                  <span class="step-circle">1</span>
+                  <span class="step-label">Campaign Title</span>
+               </div>
+               <div class="line"></div>
+               <div class="step" [class.active]="step == 2">
+                  <span class="step-circle">2</span>
+                  <span class="step-label">Campaign Body</span>
+               </div>
+            </div>
+            <form class="p-0" [formGroup]="storyForm">
+               <div class="content" [hidden]="step != 1">
+                  <div class="row">
+                     <div class="col-lg-12">
+                        <div class="form-group">
+                           <label>Title *</label>
+                           <input type="text" formControlName="title" class="form-control bg-light"
+                              placeholder="Title*" />
+                           <div *ngIf="errStep1 && f.title.errors" class="invalid-feedback">
+                              <div *ngIf="f.title.errors.required">Title is required.</div>
+                              <div *ngIf="f.title.errors.minlength || f.title.errors.maxlength">Title should be 25-125 characters.</div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-lg-6">
+                        <div class="form-group">
+                           <label>Name *</label>
+                           <input  type="text"  (keyup)="updateSlug()" formControlName="name" class="form-control bg-light" placeholder="Name*" />
+                           <div *ngIf="errStep1 && f.name.errors" class="invalid-feedback">
+                              <div *ngIf="f.name.errors.required">Name is required.</div>
+                              <div *ngIf="f.name.errors.minlength || f.name.errors.maxlength">Name should be 3-25 characters.</div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-lg-6">
+                        <div class="form-group">
+                           <label>Category *</label>
+                           <select formControlName="categoryid" class="form-control bg-light" >
+                           <option *ngFor="let cat of storycategory" [value]="cat.categoryid"> {{ cat.title }}
+                           </option>
+                           </select>
+                           <div *ngIf="errStep1 && f.categoryid.errors" class="invalid-feedback">
+                              <div *ngIf="f.categoryid.errors.required">Category is required.</div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-lg-6">
+                        <div class="form-group">
+                           <label>Status *</label>
+                           <select formControlName="status" class="form-control bg-light" >
+                           <option *ngFor="let s of statusList" [value]="s.value">{{ s.title }}</option>
+                           </select>
+                           <div *ngIf="errStep1 && f.status.errors" class="invalid-feedback">
+                              <div *ngIf="f.status.errors.required">Status is required.</div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-lg-6">
+                        <div class="form-group">
+                           <label>Slug *</label>
+                           <input type="text" formControlName="slug"  class="form-control bg-light"
+                              placeholder="Slug*" >
+                           <div *ngIf="errStep1 && f.slug.errors" class="invalid-feedback">
+                              <div *ngIf="f.slug.errors.required">Slug is required.</div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <button (click)="next()" [disabled]="disableSubmitBtn" class="btn btn-main">Next <img *ngIf="disableSubmitBtn" src="./assets/images/spinning-loading.gif" style="width:30px;"></button>
+               </div> 
+               <div class="content" [hidden]="step != 2">
+                  <div class="row">
+                     <div class="col-lg-12" >
+                        <div class="form-group">
+                           <image-compress label="Featured Image" requiredFileType="image/*"
+                           [placeholderImg]="temp?.featuredimage"
+                           (fileSelected)="handleInputChange($event)"></image-compress>
+                        </div>
+                     </div>
+                     <div class="col-lg-12 my-3">
+                        <label for="formFileMultiple" class="form-label">Attach Supporting Document</label>
+                        <input class="form-control" type='file'
+                           accept="image/png, image/jpg,  image/jpeg"
+                           (change)="onmultipleSelectFile($event)">
+                        <img class="me-3" [src]="urls" height="80">
+                        <br />
+                        {{supportingDoc}}
+                     </div>
+                     <div class="col-lg-12">
+                        <div class="form-group">
+                           <label for="text">Description</label>
+                           <ckeditor [editor]="editor" formControlName="description" ></ckeditor>
+                           <div *ngIf="errStep2 && f.description.errors" class="invalid-feedback">
+                              <div *ngIf="f.description.errors.required">Description is required.</div>
+                              <div
+                                 *ngIf="f.description.hasError('minlength') && !f.description.hasError('required')">
+                                 Description should be minimum 500 characters.
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-lg-12">
+                        <div class="form-group">
+                           <label>YouTube URL</label>
+                           <input type="text" formControlName="youtubeurl" class="form-control bg-light"
+                              />
+                           <div *ngIf="errStep2 && f.youtubeurl.errors" class="invalid-feedback">
+                              <div *ngIf="f.youtubeurl.errors.pattern">Please enter a valid URL.</div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-lg-12" >
+                        <div class="row">
+                           <div class="col-lg-12 mt-2">
+                              <small>Reports</small>
+                           </div>
+                           <div class="col-2">
+                              <div class="form-group">
+                                 <div *ngIf="storyedit?.report[0]">
+                                    <div *ngIf="storyedit?.report[0]" (click)="removeSelectedFile(storyedit?.report[0])" class="attachment"> <i class="removeAttachment fas fa-times cursor"  ></i>
+                                    </div>
+                                    <multiple-file-upload  requiredFileType="image/*"
+                                       [placeholderImg]="storyedit?.report[0]"  (fileSelected)="handleInputChangeReport($event)">
+                                    </multiple-file-upload>
+                                 </div>
+                                 <div *ngIf="!storyedit?.report[0]">
+                                    <multiple-file-upload  requiredFileType="image/*"
+                                       [placeholderImg]="storyedit?.report[0]"  (fileSelected)="handleInputChangeReport($event)">
+                                    </multiple-file-upload>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-2">
+                              <div class="form-group">
+                                 <div *ngIf="storyedit?.report[1]">
+                                    <div *ngIf="storyedit?.report[1]" (click)="removeSelectedFile(storyedit?.report[1])" class="attachment"> <i class="removeAttachment fas fa-times cursor"  ></i>
+                                    </div>
+                                    <multiple-file-upload  requiredFileType="image/*"
+                                    [placeholderImg]="storyedit?.report[1]"  (fileSelected)="handleInputChangeReport($event)">
+                                    </multiple-file-upload>
+                                 </div>
+                                 <div *ngIf="!storyedit?.report[1]">
+                                    <multiple-file-upload  requiredFileType="image/*"
+                                    [placeholderImg]="storyedit?.report[1]"  (fileSelected)="handleInputChangeReport($event)">
+                                    </multiple-file-upload>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-2">
+                              <div class="form-group">
+                                 <div *ngIf="storyedit?.report[2]">
+                                    <div *ngIf="storyedit?.report[2]" (click)="removeSelectedFile(storyedit?.report[2])" class="attachment"> <i class="removeAttachment fas fa-times cursor"  ></i>
+                                    </div>
+                                    <multiple-file-upload  requiredFileType="image/*"
+                                    [placeholderImg]="storyedit?.report[2]"  (fileSelected)="handleInputChangeReport($event)">
+                                    </multiple-file-upload>
+                                 </div>
+                                 <div *ngIf="!storyedit?.report[2]">
+                                    <multiple-file-upload  requiredFileType="image/*"
+                                    [placeholderImg]="storyedit?.report[2]"  (fileSelected)="handleInputChangeReport($event)">
+                                    </multiple-file-upload>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-2">
+                              <div class="form-group">
+                                 <div *ngIf="storyedit?.report[3]">
+                                    <div *ngIf="storyedit?.report[3]" (click)="removeSelectedFile(storyedit?.report[3])" class="attachment"> <i class="removeAttachment fas fa-times cursor"  ></i>
+                                    </div>
+                                    <multiple-file-upload  requiredFileType="image/*"
+                                    [placeholderImg]="storyedit?.report[3]"  (fileSelected)="handleInputChangeReport($event)">
+                                    </multiple-file-upload>
+                                 </div>
+                                 <div *ngIf="!storyedit?.report[3]">
+                                    <multiple-file-upload  requiredFileType="image/*"
+                                    [placeholderImg]="storyedit?.report[3]"  (fileSelected)="handleInputChangeReport($event)">
+                                    </multiple-file-upload>
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="col-2">
+                              <div class="form-group">
+                                 <div *ngIf="storyedit?.report[4]">
+                                    <div *ngIf="storyedit?.report[4]" (click)="removeSelectedFile(storyedit?.report[4])" class="attachment"> <i class="removeAttachment fas fa-times cursor"  ></i>
+                                    </div>
+                                    <multiple-file-upload  requiredFileType="image/*"
+                                    [placeholderImg]="storyedit?.report[4]"  (fileSelected)="handleInputChangeReport($event)">
+                                    </multiple-file-upload>
+                                 </div>
+                                 <div *ngIf="!storyedit?.report[4]">
+                                    <multiple-file-upload  requiredFileType="image/*"
+                                    [placeholderImg]="storyedit?.report[4]"  (fileSelected)="handleInputChangeReport($event)">
+                                    </multiple-file-upload>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-lg-6">
+                        <div class="form-group position-relative">
+                           <label>Target Date</label>
+                           <input class="form-control bg-light" [readonly]="true" formControlName="targetdate"
+                           ngbDatepicker #dp="ngbDatepicker" [minDate]="mnDate" [maxDate]="mxDate"
+                           [attr.disabled]="auth.currentUser.roles.includes('seo')" />
+                           <button class="btn btn-link calendar" (click)="dp.toggle()" type="button"></button>
+                           <div *ngIf="errStep2 && f.targetdate.errors" class="invalid-feedback">
+                              Target date is required.
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-lg-6">
+                        <div class="form-group position-relative">
+                           <label>Target Amount</label>
+                           <input type="number" formControlName="targetamount"
+                              class="form-control bg-light target-amt"
+                              />
+                           <select formControlName="targetcurrency"
+                              class="form-control bg-light target-currency"
+                              >
+                              <option value="INR" selected>INR</option>
+                           </select>
+                           <div *ngIf="errStep2 && f.targetamount.errors" class="invalid-feedback">
+                              <div *ngIf="f.targetamount.errors.required">Amount is required.</div>
+                              <div *ngIf="f.targetamount.errors.min">Amount must be greater than 100.</div>
+                           </div>
+                           <div *ngIf="errStep2 && f.targetcurrency.errors" class="invalid-feedback">
+                              <div *ngIf="f.targetcurrency.errors.required">Currency is required.</div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="d-flex">
+                     <button class="btn btn-main mr-3" (click)="previous()">Previous</button>
+                     <button class="btn btn-main" [disabled]="disableSubmitBtn" (click)="submitModal(modal)">Submit <img *ngIf="disableSubmitBtn" src="./assets/images/spinning-loading.gif" style="width:30px;"></button>
+                  </div>
+               </div>
+            </form>
+         </div>
+      </div>
+		<!-- <div class="modal-footer-c">
+		<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+		<button type="button" class="btn btn-primary">Understood</button>
+		</div> -->
+	</div>
+</div>
+
+<!--Add/Edit Blog Modal -->
+<div id="blogModal" class="modal-c {{showBlogModalBox}}" *ngIf="showBlogModalBox=='show'" >
+	<div class="modal-content-c">
+		<div class="modal-header-c">
+			<h5 class="modal-title-c">{{ blogAction}} Blog <button type="button" class="btn-close float-right" (click)="hideBlogModalBoxhtml()"></button></h5>
+		</div>
+      <div class="modal-body-c">
+         <div class="card-body">
+            <div class="form-step-header">
+               <div class="step" [class.active]="step == 1">
+                  <span class="step-circle">1</span>
+                  <span class="step-label">Blog Title</span>
+               </div>
+               <div class="line"></div>
+               <div class="step" [class.active]="step == 2">
+                  <span class="step-circle">2</span>
+                  <span class="step-label">Blog Body</span>
+               </div>
+            </div>
+            <form class="p-0" [formGroup]="blogForm">
+               <div class="content" [hidden]="step != 1">
+                  <div class="row">
+                        <div class="col-lg-12">
+                           <div class="form-group">
+                              <label>Title *</label>
+                              <input (ngModelChange)="onChangeBlogTitle(this.value)" type="text" formControlName="title" class="form-control bg-light"
+                                    [ngClass]="{ 'is-invalid': errStep1 && b.title.errors }" placeholder="Title*" />
+                              <div *ngIf="errStep1 && b.title.errors" class="invalid-feedback">
+                                    <div *ngIf="b.title.errors.required">Title is required.</div>
+                                    <div
+                                       *ngIf="(b.title.hasError('maxlength') || b.title.hasError('minlength')) && !b.title.hasError('required')">
+                                       Title should be 50 - 125 characters.</div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-lg-12">
+                           <div class="form-group">
+                              <label>Category *</label>
+                              <select formControlName="categoryid" class="form-control bg-light">
+                                    <option *ngFor="let c of blogCategories" [value]="c.categoryid" [selected]="selectedBlog?.categoryid == c.categoryid">{{ c.title }}
+                                    </option>
+                              </select>
+                              <div *ngIf="errStep1 && b.categoryid.errors" class="invalid-feedback">
+                                    <div *ngIf="b.categoryid.errors.required">Category is required.</div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-lg-12">
+                           <div class="form-group">
+                              <label>Status *</label>
+                              <select formControlName="status" class="form-control bg-light">
+                                    <option *ngFor="let s of blogsStatus" [value]="s.title" [selected]="selectedBlog?.status==s.title">{{ s.level }}</option>
+                              </select>
+                              <div *ngIf="errStep1 && b.status.errors" class="invalid-feedback">
+                                    <div *ngIf="b.status.errors.required">Status is required.</div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-lg-12">
+                           <div class="form-group">
+                              <label>Slug *</label>
+                              <input type="text" formControlName="slug" class="form-control bg-light"
+                                    placeholder="Slug*"  />
+                              <div *ngIf="errStep1 && b.slug.errors" class="invalid-feedback">
+                                    <div *ngIf="b.slug.errors.required">Slug is required.</div>
+                              </div>
+                           </div>
+                        </div>
+                  </div>
+                  <button (click)="blogNextStep()" [disabled]="showSpinner" class="btn btn-main">Next<img *ngIf="showSpinner" src="./assets/images/spinning-loading.gif" style="width:30px;"></button>
+               </div>
+               <div class="content" [hidden]="step != 2">
+                  <div class="row">
+                        <div class="col-lg-12">
+                           <div class="form-group">
+                              <image-compress label="Featured Image" requiredFileType="image/*"
+                                    [placeholderImg]="selectedBlog?.featuredimage"
+                                    (fileSelected)="uploadBlogFeaturedImage($event)"></image-compress>
+                           </div>
+                        </div>
+                        <div class="col-lg-12">
+                           <div class="form-group mt-4">
+                              <image-compress label="Additional Image" requiredFileType="image/*"
+                                    [placeholderImg]="selectedBlog?.additionalimage"
+                                    (fileSelected)="blogAdditionalImages($event)"></image-compress>
+                           </div>
+                           {{selectedBlog?.additionalimage}}
+
+                        </div>
+                        <div class="col-lg-12">
+                           <div class="form-group">
+                              <label for="text">Body</label>
+                              <ckeditor [editor]="editor" formControlName="description" 
+                                 [ngClass]="{ 'is-invalid': b.description.touched && b.description.errors }">
+                                 </ckeditor>
+                              <div *ngIf="errStep2 && b.description.errors" class="invalid-feedback">
+                                    <div *ngIf="b.description.errors.required">Description is required.</div>
+                                    <div *ngIf="b.description.hasError('minlength') && !b.description.hasError('required')">Description should be minimum 500 characters.</div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-lg-12">
+                           <div class="form-group">
+                              <label>Meta Title</label>
+                              <input type="text" formControlName="metatitle" class="form-control bg-light"
+                                    [ngClass]="{ 'is-invalid': errStep2 && b.metatitle.errors }"
+                                    placeholder="Meta Title" />
+                              <div *ngIf="errStep2 && b.metatitle.errors" class="invalid-feedback">
+                                    <div *ngIf="b.metatitle.errors.required">Meta Title is required.</div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-lg-12">
+                           <div class="form-group">
+                              <label>Meta Description</label>
+                              <input type="text" formControlName="metadescription" class="form-control bg-light"
+                                    [ngClass]="{ 'is-invalid': errStep2 && b.metadescription.errors }"
+                                    placeholder="Meta Description" />
+                              <div *ngIf="errStep2 && b.metadescription.errors" class="invalid-feedback">
+                                    <div *ngIf="b.metadescription.errors.required">Meta Description is required.
+                                    </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="col-lg-12">
+                           <div class="form-group keywords">
+                              <label>Meta Keywords</label>
+                              <tag-input class="tag-input" formControlName="metakeywords" label="Meta Keywords"></tag-input>
+                              <div *ngIf="errStep2 && b.metakeywords.errors" class="invalid-feedback">
+                                    <div *ngIf="b.metakeywords.errors.required">Meta Keywords are required.</div>
+                              </div>
+                           </div>
+                        </div>
+                  </div>
+                  <div class="d-flex">
+                        <button class="btn btn-main mr-3" (click)="blogPreviousStep()" [disabled]="showSpinner">Previous</button>
+                        <button class="btn btn-main" (click)="submitBlogModal()" [disabled]="showSpinner">Submit<img *ngIf="showSpinner" src="./assets/images/spinning-loading.gif" style="width:30px;"></button>
+                  </div>
+               </div>
+            </form>
+         </div>
+      </div>
+	</div>
+</div>

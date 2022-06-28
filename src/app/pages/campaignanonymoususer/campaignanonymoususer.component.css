@@ -1,0 +1,63 @@
+.form-step-header {
+    align-items: center;
+    display: flex;
+}
+.form-step-header .line {
+    background-color: rgba(0,0,0,.12);
+    flex: 1 0 32px;
+    margin: auto;
+    min-height: 1px;
+    min-width: 1px;
+}
+.form-step-header .step {
+    align-items: center;
+    background-color: initial;
+    border: none;
+    border-radius: .25rem;
+    color: #6c757d;
+    display: inline-flex;
+    flex-wrap: wrap;
+    font-size: 1rem;
+    font-weight: 700;
+    justify-content: center;
+    line-height: 1.5;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color .15s ease-out,color .15s ease-out;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+.form-step-header .step span.step-circle {
+    align-content: center;
+    background-color: #6c757d;
+    border-radius: 1em;
+    color: #fff;
+    display: inline-flex;
+    height: 2em;
+    justify-content: center;
+    line-height: 1em;
+    margin: .25rem;
+    padding: .5em 0;
+    width: 2em;
+}
+
+.form-step-header .step.active span.step-circle {
+    background-color: #007bff !important;
+}
+
+.form-step-header .step span.step-label {
+    display: inline-block;
+    margin: .25rem;
+}
+  
+.campaign-anonymous-form{box-shadow: 0px 0px 2px #90497d;
+}
+.admin-login-now-btn{background-color: rgb(164, 42, 106); color: #fff; padding: 7px 20px;}
+.ml-px-5{
+  margin-left: 5px;
+}

@@ -1,0 +1,82 @@
+<section class="home-banner"
+    style="background-image: url(./assets/images/gallery/14-SM112680.png); background-repeat: no-repeat; background-size: cover;">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-6 offset-md-6">
+            </div>
+        </div>
+    </div>
+</section>
+<section class="our-gallery-section py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h2 class="pgc-ourgallery-heading">Promote well being, protect the world, serve the needy</h2>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 my-4">
+                <div align="center">
+                    <button class="btn btn-default filter-button active" data-filter="all">View all</button>
+                    <button class="btn btn-default filter-button" data-filter="event">Event</button>
+                    <button class="btn btn-default filter-button" data-filter="humanity">Humanity</button>
+                    <button class="btn btn-default filter-button" data-filter="volunteer">Volunteer</button>
+                    <button class="btn btn-default filter-button" data-filter="fooddonation">Food Donation</button>
+                </div>
+            </div>
+            <div class="gallery_product col-lg-3 col-md-3 col-sm-3 col-xs-6 filter fooddonation thumb"
+                *ngFor="let fooddonation1 of fooddonationgallery">
+                <div class="gallery-container">
+                    <a href="{{fooddonation1.img}}" class="fancybox" rel="biharligthbox">
+                        <img [src]="fooddonation1.img" alt="Avatar" class="img-fluid gallery-image" />
+                        <div class="overlay">
+                            <div class="text-eye"><i class="fas fa-eye"></i></div>
+                            <span class="pgc-gallery-category">[ {{fooddonation1.title}} ]</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="gallery_product col-lg-3 col-md-3 col-sm-3 col-xs-6 filter volunteer thumb"
+                *ngFor="let volunteer of volunteergallery">
+                <div class="gallery-container">
+                    <a href="{{volunteer.img}}" class="fancybox" rel="biharligthbox">
+                        <img [src]="volunteer.img" alt="Avatar" class="img-fluid gallery-image" />
+                        <div class="overlay">
+                            <div class="text-eye"><i class="fas fa-eye"></i></div>
+                            <span class="pgc-gallery-category">[ {{volunteer.title}} ]</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="gallery_product col-lg-3 col-md-3 col-sm-3 col-xs-6 filter humanity thumb"
+                *ngFor="let humanity of humanitygallery">
+                <div class="gallery-container">
+                    <a href="{{humanity.img}}" class="fancybox" rel="biharligthbox">
+                        <img [src]="humanity.img" alt="Avatar" class="img-fluid gallery-image" />
+                        <div class="overlay">
+                            <div class="text-eye"><i class="fas fa-eye"></i></div>
+                            <span class="pgc-gallery-category">[ {{humanity.title}} ]</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="gallery_product col-lg-3 col-md-3 col-sm-3 col-xs-6 filter event thumb"
+                *ngFor="let event of eventgallery">
+                <div class="gallery-container">
+                    <a href="{{event.img}}" class="fancybox" rel="biharligthbox">
+                        <img [src]="event.img" alt="Avatar PGC" class="img-fluid gallery-image" />
+                        <div class="overlay">
+                            <div class="text-eye"><i class="fas fa-eye"></i></div>
+                            <span class="pgc-gallery-category">[ {{event.title}}]</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <a class="blog-loadmore-btn" hidden>Load More</a>
+            </div>
+        </div>
+    </div>
+</section>

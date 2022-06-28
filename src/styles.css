@@ -1,0 +1,80 @@
+.ng-invalid~.invalid-feedback {
+    display: block !important;
+}
+
+.custom-select.pagination {
+    width: auto;
+    padding-left: 5px;
+    height: 38px;
+}
+
+.cursor {
+    cursor: pointer;
+}
+
+/* Start: Bootstrap overriding colors to match our color scheme */
+.page-item.active .page-link {
+    color: #fff !important;
+    background-color: #a42a6a !important;
+    border-color: #a42a6a !important;
+}
+
+.page-link {
+    color: #632494 !important;
+}
+
+/* End: Bootstrap overriding colors to match our color scheme */
+
+/* Datepicker calendar icon */
+button.calendar,
+button.calendar:active {
+    width: 2.75rem;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACIAAAAcCAYAAAAEN20fAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAOxAAADsQBlSsOGwAAABl0RVh0U29mdHdhcmUAd3d3Lmlua3NjYXBlLm9yZ5vuPBoAAAEUSURBVEiJ7ZQxToVAEIY/YCHGxN6XGOIpnpaEsBSeQC9ArZbm9TZ6ADyBNzAhQGGl8Riv4BLAWAgmkpBYkH1b8FWT2WK/zJ8ZJ4qiI6XUI3ANnGKWBnht2/ZBDRK3hgVGNsCd7/ui+JkEIrKtqurLpEWaphd933+IyI3LEIdpCYCiKD6HcuOa/nwOa0ScJEnk0BJg0UTUWJRl6RxCYEzEmomsIlPU3IPW+grIAbquy+q6fluy/28RIBeRMwDXdXMgXLj/B2uimRXpui4D9sBeRLKl+1N+L+t6RwbWrZliTTTr1oxYtzVWiTQAcRxvTX+eJMnlUDaO1vpZRO5NS0x48sIwfPc87xg4B04MCzQi8hIEwe4bl1DnFMCN2zsAAAAASUVORK5CYII=') !important;
+    background-repeat: no-repeat;
+    background-size: 23px;
+    background-position: center;
+}
+
+/* End of Datepicker calendar icon */
+
+.form-group label {
+    margin-bottom: 4px;
+    margin-top: 12px;
+}
+
+.txt-primary {
+    color: #a42a6a;
+}
+
+/* .cke_reset{
+    height: 100vh !important;
+} */
+.primary-link {
+    color: #a42a6a;
+}
+
+.text-wrapping-heading-height12 {
+    height: 46px !important;
+    overflow-y: hidden;
+}
+
+.fa-childicon {
+    background-color: #a42a6a;
+    text-transform: uppercase;
+    font-weight: bold;
+    width: 23px;
+    height: 23px;
+    color: #fff;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 15px;
+    top: 0;
+    right: 5px;
+}
+
+.custom-class {
+    overflow: hidden !important;
+}
+.iti {
+   width: 100%;
+}

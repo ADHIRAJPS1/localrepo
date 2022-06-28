@@ -1,0 +1,161 @@
+.pgc-blog{text-align: right; font-weight: 600;}
+.covid-position{position:relative;}
+.covid-urgent-section {
+    background: #fff;
+    padding: 15px 20px;
+    height:98%;
+    box-shadow:0px 0px 7px #000000a1;
+}
+.covid-urgent-action-heading{color:#a52a69;
+    margin: 15px 0px;
+    line-height: 1.5;}
+.covid-donate-tab{display:flex; margin-bottom:15px;}
+.covid-donate-tab li {
+    flex: 1 1 auto;
+}
+.covid-donate-tab li a {
+    width:100%;
+    background:#e2e2e2;
+    color:#000;
+    border:1px solid #e2e2e2;
+    border-radius:0px;
+    display:block;
+    text-decoration:none;
+    padding:10px;
+    text-align:center;
+}
+.covid-donate-tab li a.active {
+    width:100%;
+    background:#ffffff;
+    color:#a52a69;
+    border:1px solid #e2e2e2;
+}
+
+.amount-content{
+    border-radius: 8px;
+    border: 3px solid #91a0ae;
+    margin: 1.5625em auto 0;
+    padding: 1.25em;
+    position: relative;
+    }
+.pgc-helpus-bank-details{padding: 15px;}
+.helpus-knowmore{border-radius: 40px 0px 40px 0px;}
+
+.amount-selected-tab1{border-bottom: none; display:flex; flex-wrap: wrap;}
+.amount-selected-tab1 li{flex:1 1 auto;}
+.amount-selected-tab1 li a{text-decoration: none;
+  background-color: #ececec;
+  color: #b3b3b3;
+  padding: 7px 5px;
+  display: block;
+  margin-right: 3px;
+  font-size: 14px;
+  position: relative;
+  border-radius: 10px;
+  text-align: center;
+}
+.amount-selected-tab1 li a.active:after {
+  width: 24.3px;
+  height: 6px;
+  position: absolute;
+  background: #fff;
+  bottom: 0px;
+  left: 0;
+  margin-bottom: -31px;
+  margin-left: 3.75em;
+  visibility: hidden;
+}
+
+.amount-selected-tab1 li a.active:before {
+ z-index: 005555;
+  margin-top: 5px;
+}
+.amount-selected-tab1 li a.active{background: #a42a6a; color: #fff;}
+.make-donation-btn {
+    padding: 10px 25px;
+    margin: 18px auto;
+    background: #a42a6a;
+    color: #fff;
+    display: table;
+    font-weight: 600;
+    margin-top: 30px;
+    font-size: 18px;
+}
+
+.select-amount-pgc {
+    font-weight: 600;
+    margin-bottom: 22px;
+}
+
+/* Reset Select */
+select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    outline: 0;
+    box-shadow: none;
+    border: 0 !important;
+    background-image: none;
+  }
+  /* Remove IE arrow */
+  select::-ms-expand {
+    display: none;
+  }
+  /* Custom Select */
+  .select {
+    position: relative;
+    display: inline-flex;
+    width: 5em;
+    height: 2em;
+    overflow: hidden;
+    border-radius: .25em;
+  }
+  select {
+    flex: 1;
+    padding: 0 .5em;
+    color: #000;
+    cursor: pointer;
+  }
+  /* Arrow */
+  .select::after {
+    content: '\25BC';
+    position: absolute;
+    top: 7px;
+    right: 0;
+    padding: 0 1em;
+    cursor: pointer;
+    pointer-events: none;
+    -webkit-transition: .25s all ease;
+    -o-transition: .25s all ease;
+    transition: .25s all ease;
+    transform: rotateZ(-90deg);
+  }
+
+  .covid-short-info-section h4{margin: 30px 0px; line-height: 1.7;}
+ .covid-relief-heading-section{padding:15px; background:#a52a69; color:#fff; width:100%; height:98.8%;}
+  .covid-relief-heading-section h1,h5{font-weight:600; line-height:1.4}
+  .covid-relief-heading-section h1{margin-bottom:25px; font-size:3.5rem;}
+  .covid-relief-heading-section h5{font-size:2rem;}
+
+  .covid-story-tab li button{color:#4e4e4e; background: #e2e2e2; border-radius: 0px; padding:8px 60px; text-align:center;}
+  .covid-story-tab li button.active{background:#a52a69; color:#fff;}
+  .covid-requirement-container h5{font-weight:600; color:#4e4e4e;}
+  .covidnews-sticky{
+    position: sticky;
+    top: 100px;
+  }
+  .page-link {
+    color: #d82138 !important;
+    background-color: #f3ebeb !important;
+}
+.video-wh{
+  width: 100% !important;
+ height:385px !important
+}
+.pe-none{
+  pointer-events: none;
+}
+.w-96p{
+  width: 96px;
+}

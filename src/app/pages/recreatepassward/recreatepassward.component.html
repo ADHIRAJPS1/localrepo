@@ -1,0 +1,53 @@
+<section class="admin-login-section guest-bg mt-5">
+    <div class="container py-5">
+        <div *ngIf="isToken" class="login-admin-container" id="token-verify">
+            <div class="row">
+                <div *ngIf="isSuccessMsg" class="col-lg-12">
+                    <h1 class="login-color-gray">Your token validated!</h1>
+                    <p class="login-color-gray">Please wait......</p>
+                </div>
+                <div *ngIf="isErrorMsg" class="col-lg-12">
+                    <h4 class="login-color-gray">Invalid Token, Please check again</h4>
+                </div>
+            </div>
+        </div>
+
+        <div *ngIf="!isToken" class="login-admin-container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h4 class="login-color-gray">Can't Sign-In? Recreate Password!</h4>
+                    <p class="login-color-gray">Recreate your password below & get Login:</p>
+                </div>
+                <div class="col-lg-8">
+                    <form class="contact-form bg-white shadow rounded p-4" [formGroup]="recreateForm" (ngSubmit)="resetPass()">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <input type="password" class="form-control admin-login-textbox" formControlName="newpassword" [ngClass]="{ 'is-invalid': submitted && f.newpassword.errors }" placeholder="Enter Your New Password" />
+                                <div *ngIf="submitted && f.newpassword.errors" class="invalid-feedback">
+                                    <div *ngIf="f.newpassword.errors.required">Password is required</div>
+                                    <div *ngIf="f.newpassword.errors.mustMatch">Passwords must match.</div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <input type="password" class="form-control admin-login-textbox" formControlName="confirmpassword" [ngClass]="{ 'is-invalid': submitted && f.confirmpassword.errors }" placeholder="Enter Your Confirm Password" />
+                                <div *ngIf="submitted && f.confirmpassword.errors" class="invalid-feedback">
+                                    <div *ngIf="f.confirmpassword.errors.required">Password is required</div>
+                                    <div *ngIf="f.confirmpassword.errors.mustMatch">Passwords must match.</div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6">
+                                <input type="submit" class="btn admin-login-now-btn" value="Re-Create Password" />
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="col-lg-4">
+                    <div class="admin-login-account-section">
+                        <p class="login-color-gray">Don't have an account?</p>
+                        <a routerLink="/login" class="createaccountbtn mb-3">Login Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

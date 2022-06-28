@@ -1,0 +1,78 @@
+
+<section class="case_details-banner" style="background: #702d276b;">
+</section>
+<div *ngIf="blogData">
+    <section class="blog-business-section pgc-blog-details overflow-hidden">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <a class="blog-link-btn" routerLink="/blogs">
+                        <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                        Back
+                    </a>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-7" data-aos="zoom-in-right">
+                    <figure class="blog-details-featured-img">
+                        <img src="{{blogData?.featuredimage}}" class="img-fluid " alt="{{blogData?.title}}" />
+                    </figure>
+                </div>
+                <div class="col-md-5" data-aos="zoom-in-left">
+                    <div class="blog-details-business-info">
+                        <h5>{{blogData?.categoryname}}</h5>
+                        <h1 class="fs-2 fw-bold">{{blogData?.title}}</h1>
+                    </div>
+                    <ul class="blog-business-time">
+                        <li>{{blogData?.createdat | date :'MMM d'}}</li>
+                        <li>{{blogData?.createdat | date :'y mm'}} Mins Read.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="blog-details-long-info py-5 overflow-hidden">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-1">
+                    <div class="blog-details-social-icons" data-aos="fade-up" style="text-align: center;">
+                        <share-buttons class="social-icons-theme" [theme]="'circles-dark'"
+                            [include]="['facebook','twitter','linkedin','telegram','whatsapp']" [show]="9"
+                            [url]="currentPageUrl" [title]="blogData.metatitle"
+                            [description]="'*'+ blogData.metatitle+'*'+'\n\n'+blogData.metadescription+'\n\nRead More:'"
+                            [autoSetMeta]="true">
+                        </share-buttons>
+                    </div>
+                </div>
+                <div class="col-md-11">
+                    <p class="b-details-descr" data-aos="fade-up" [innerHTML]="blogData?.description">
+                    </p>
+
+                    <h1 class="fs-2 text">Contact us</h1>
+                    <a routerLink="/contactus" class="request-proposal">
+                        <strong>Request a Proposal</strong>
+                        <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                    <!-- <div class="row">
+                        <div class="col-md-12">
+                            <hr />
+                            <h1 class="text-center related-article-heading">Related Articles</h1>
+                        </div>
+                        <div class="col-md-6" data-aos="fade-up"
+                            *ngFor="let rblog of relatedBlogsData.slice(0, 2);">
+                            <div class="row cursor">
+                                <div class="col-md-4">
+                                    <img class="img-fluid" [src]="rblog?.featuredimage" alt="PGC image" />
+                                </div>
+                                <div class="col-md-8">
+                                    <h4 [routerLink]="'/blogs/'+rblog?.slug" class="blog-details-related-article-title">
+                                        {{ rblog?.title }} </h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

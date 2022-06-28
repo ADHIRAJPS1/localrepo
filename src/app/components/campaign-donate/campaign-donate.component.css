@@ -1,0 +1,125 @@
+ .pgc-donate-text-box{
+      padding: 5px;
+  }
+  .btn-donatenow{
+    background-color: #a42a6a;
+    color: #fff;
+    padding: 10px 50px;
+    border-radius: 26px;
+    text-align: center;
+    margin: 0 auto;
+    display: table;
+    font-size: 18px;
+  }
+  
+  label.form-check-label {
+    color: #000 !important;
+    padding-top: 0px !important;
+    margin-top: 0px !important;
+    padding-left: 10px;
+}
+
+.show{display:block !important;}
+.hide{display:none !important}
+.image-loading { background: #f1f1f1;}
+.btn-default-inr {border: 1px solid #ccc;}
+.input-group-addon {
+    width: 30px;
+    background: #ccc;
+    padding: 8px;
+}
+.tag-input span{
+  margin-top: 5px;
+  margin-bottom: 5px
+}
+
+/* The Modal (background) */
+.modal-c {
+  position: fixed; /* Stay in place */
+  z-index: 8; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+.modal-title-c {
+  padding-top: 20px;
+  padding-bottom: 5px;
+  text-align: center;
+  text-transform: uppercase;
+}
+/* Modal Content */
+.modal-content-c {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 50%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+  from {top:-300px; opacity:0} 
+  to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.close-c {
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close-c:hover,
+.close-c:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-header-c {
+  padding: 2px 16px;
+  color: #000;
+}
+.float-right{
+  float:right !important;
+}
+
+.modal-body-c {padding: 2px 16px;}
+
+.modal-footer-c {
+  padding: 2px 16px;
+  background-color: #90497d;
+  color: white;
+}
+
+ @media only screen and (max-width: 480px) {
+  .donation-form .col-sm-4 {
+      width: 30%;
+      margin-top: 10px;
+  }
+  .modal-content-c{
+    width:90% !important;
+  }
+  label.form-check-label {
+    width:90% !important;
+  }
+ }
+
+ 

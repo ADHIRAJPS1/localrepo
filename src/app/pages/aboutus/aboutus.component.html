@@ -1,0 +1,470 @@
+<section class="home-banner"
+    style="background-image: url(./assets/images/About-us/About-us.webp); background-repeat: no-repeat; background-size: cover;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="about-future-funding-section overflow-hidden">
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-md-6 d-flex align-items-center">
+                <div class="know-about-pgc" data-aos="fade-right">
+                    <h5>GET TO KNOW ABOUT <span class="text-uppercase">{{ config.appDisplayName }}</span>
+                    </h5>
+                    <h1>Transforming Healthcare In Every Possible Way.</h1>
+                    <p><strong>{{ config.appDisplayName }}</strong> is a <strong>Humanity Welfare Council</strong>
+                        initiative
+                        that aims to
+                        transform the health care sector in India by providing necessary funds to people in urgent need
+                        of medical
+                        assistance and advancing the medical system with increased accessibility. Our motto is to
+                        transform our
+                        health system and make medical care available for the general public without any burden of extra
+                        cost.
+                        Access to healthcare is a basic human right that every citizen should be able to afford.</p>
+
+                    <p>Our team comprises highly driven and committed individuals dedicated to creating a developed and
+                        healthy
+                        world. And in our race towards a developed India, the health sector is our priority. Our
+                        initiative
+                        symbolizes our philanthropist nature, and we have been making a profound difference in the lives
+                        of many.
+                    </p>
+
+                    <p>The healthcare system in our country is fighting various problems, including the insufficient
+                        number of
+                        institutions and short-staffed human resources. A few people get expensive, world-class care,
+                        while a large
+                        part of the population doesn't even get the primary quality care. Over 60% of our population
+                        pays out of
+                        pocket for healthcare, driving millions into poverty.</p>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <img class="img-fluid" data-aos="fade-left" src="./assets/images/About-us/about-img.webp"
+                    alt="About-us" />
+            </div>
+            <div class="col-md-12 my-4">
+                <div class="know-about-pgc " data-aos="flip-up">
+                    <p>A healthy human is the best resource for any nation. They are the basis of the development of a
+                        country.
+                        Only if a person is physically and mentally fit, he thinks beyond his zone and works for the
+                        upliftment of
+                        the nation. As the saying goes, a healthy body is a temple where a healthy mind resides.</p>
+
+
+                    <p>We focus on creating a strong, robust and healthy environment as a progressive approach towards
+                        the
+                        developing world. We strive to provide medical access for every individual and build a
+                        disease-free human
+                        race. Therefore, we are creating a broader platform where everyone can easily reach in case of a
+                        medical
+                        emergency without any unnecessary formalities and delayed time in attending to their medical
+                        concerns.</p>
+
+                    <p>On this platform, we also aim to unite the medical researchers, medical institutions, government
+                        and
+                        non-government bodies under one roof to attain solutions to globally arising medical concerns.
+                        We are also
+                        working on creating advanced and high medical solutions at affordable costs.</p>
+
+                    <p>We maintain transparency regarding our daily fund operations and assistance services. However, we
+                        hold
+                        ourselves liable to our trusted donors and people who approach us for help.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="about-volunteer-section py-5 overflow-hidden">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <h2>Your time and skills could help us in saving a precious life!</h2>
+            </div>
+            <div class="col-md-3">
+                <a data-bs-toggle="modal" data-bs-target="#volunteerModel">Become a Volunteer</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="about-our-mission-section py-5 overflow-hidden">
+    <div class="container">
+        <div class="row mx-0">
+            <div class="col-md-12 px-0">
+                <div data-aos="zoom-out-up">
+                    <h1>Our Mission & Vision</h1>
+                    <h2>Making healthcare accessible to all and transforming health sector to make India healthy by 2030
+                    </h2>
+                </div>
+
+            </div>
+            <div class="col-lg-6">
+                <div data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine">
+                    <h2>Mission</h2>
+                    <p>We aim to create innovative technology and finance solutions to empower Indians concerning
+                        healthcare. We
+                        create a system to raise funds for medical emergencies, critical illnesses, and a range of
+                        social
+                        and personal
+                        causes. Lakhs have used our platform to change lives through timely contributions, fundraisers
+                        and
+                        auctions.
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div data-aos="fade-left" data-aos-offset="300" data-aos-easing="ease-in-sine">
+                    <h2>Vision</h2>
+                    <p>We envision a country where medical care is available and accessible for every citizen without
+                        any
+                        burden of
+                        extra costs. We aim to reconstruct the healthcare system in India by providing necessary funds
+                        to
+                        people in
+                        desperate need of medical assistance and bringing advancement in the medical system.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="pgc-annual-report-section  py-5 d-none">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 mb-4">
+                <h1 class="pgc-text-bold">Annual Report</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <owl-carousel-o [options]="reportAnnual" class="owl-carousel-btn-position">
+                    <ng-container *ngFor="let news of annualreport">
+                        <ng-template carouselSlide>
+                            <!--TESTIMONIAL 1 -->
+                            <div class="item">
+                                <div class="card annual-report-card mb-5">
+                                    <div class="row no-gutters">
+                                        <div class="col-md-4 px-0">
+                                            <img class="img-responsive" [src]="news.img" alt="{{news.title}}">
+                                        </div>
+                                        <div class="col-md-8 px-0">
+                                            <div class="card-body">
+                                                <p class="annual-report-p">Annual Report</p>
+                                                <h6 class="annual-report-h6"><strong [innerHTML]="news.title"></strong>
+                                                </h6>
+                                                <p class="annual-report-p" [innerText]="news.calender"></p>
+                                                <a class="annual-report-btn"><img
+                                                        src="./assets/images/About-us/noun_PDF_3071298.png"
+                                                        alt="Download" />
+                                                    Download</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card annual-report-card mb-3">
+                                    <div class="row no-gutters">
+                                        <div class="col-md-4 px-0">
+                                            <img class="img-responsive" [src]="news.img1" alt="{{news.title}}">
+                                        </div>
+                                        <div class="col-md-8 px-0">
+                                            <div class="card-body">
+                                                <p class="annual-report-p">Annual Report</p>
+                                                <h6 class="annual-report-h6"><strong [innerText]="news.title"></strong>
+                                                </h6>
+                                                <p class="annual-report-p" [innerText]="news.calender"></p>
+                                                <a class="annual-report-btn"><img
+                                                        src="./assets/images/About-us/noun_PDF_3071298.png"
+                                                        alt="Download" />
+                                                    Download</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--END OF TESTIMONIAL 1 -->
+                        </ng-template>
+                    </ng-container>
+                </owl-carousel-o>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="latest-update py-5 d-none">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 mb-4">
+                <h1 class="pgc-text-bold">Impact Report</h1>
+                <p>Each life touched by Season of Sharing has a story. Throughout its 20 continuous years, Season of
+                    Sharing has
+                    embraced the belief that heartfelt storytelling – by learning about someone’s personal
+                    experiences—can unite
+                    and inspire our community.</p>
+                <p>The courageous families and individuals who share their stories during their most difficult times
+                    demonstrate
+                    how we are all deeply affected by the current pandemic, including those who have recently received
+                    support:
+                </p>
+            </div>
+        </div>
+        <div class="row mb-5 mx-0">
+            <div class="col-lg-8 px-0"
+                style="background-image: url(./assets/images/About-us/120-SM878051.png); background-repeat: no-repeat; background-size: cover;">
+            </div>
+            <div class="col-lg-4 px-0 impact-report">
+                <div class="p-3">
+                    <h5 class="impact-report-h5">17 Aug 2021</h5>
+                    <h2 class="impact-report-h2">{{ config.appDisplayName }} receive
+                        $10,000 Grant for helping
+                        people</h2>
+                    <p>Each life touched by Season of Sharing has a story. Throughout its 20 continuous years, Season of
+                        Sharing
+                        has embraced the belief that heartfelt storytelling – by learning about someone’s personal
+                        experiences—can
+                        unite and inspire our community.</p>
+                    <a class="impact-report-btn">Read more</a>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 mt-5">
+                <owl-carousel-o [options]="reportImpact" class="owl-carousel-btn-position">
+                    <ng-container *ngFor="let news of impactreport">
+                        <ng-template carouselSlide>
+                            <!--TESTIMONIAL 1 -->
+                            <div class="item impact-report-card-container">
+                                <div class="shadow-effect">
+                                    <img class="img-responsive" [src]="news.img" alt="news">
+                                    <div class="item-details news-content">
+                                        <p class="report-readmore-para" [innerText]="news.summary"></p>
+                                        <h5><strong [innerText]="news.title"></strong></h5>
+                                        <a class="report-readmore-btn">Readmore</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--END OF TESTIMONIAL 1 -->
+                        </ng-template>
+                    </ng-container>
+                </owl-carousel-o>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="about-our-mission-section overflow-hidden">
+    <div class="container text-center py-5">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Meet Our Team</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-2"></div>
+           <!--  <div class="col-lg-4">
+                <div class="about-our-team" data-aos="fade-up">
+                    <a class="aboutus-team-member-name" data-bs-toggle="modal" data-bs-target="#suryapratap">
+                        <figure class="image-box">
+                            <img src="./assets/images/About-us/t-cl2.jpg" alt="Meet Out Team PGC" />
+                        </figure>
+                    </a>
+                    <div class="lower-content">
+                        <div class="author-box">
+                            <a class="aboutus-team-member-name" data-bs-toggle="modal" data-bs-target="#suryapratap">
+                                <h5>Mr. Surya Pratap Singh</h5>
+                            </a>
+                            <p>Administrative Director</p>
+                        </div>
+                        <ul class="othre-info clearfix" hidden>
+                            <li class="mail-box"><a href="mailto:info@whitehall.com"><i class="fa fa-envelope"
+                                        aria-hidden="true"></i>
+                                    &nbsp; Email</a></li>
+
+                            <li class="share-option">
+                                <i class="fas fa-share-alt"></i>
+                                <ul class="share-links clearfix">
+                                    <li><a target="_blank"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div> -->
+            <div class="col-lg-4">
+                <div class="about-our-team" data-aos="fade-up">
+                    <a class="aboutus-team-member-name" data-bs-toggle="modal" data-bs-target="#uditasaikia">
+                        <figure class="image-box">
+                            <img src="./assets/images/About-us/uditamam.jpg" alt="uditasaikia" />
+                        </figure>
+                    </a>
+                    <div class="lower-content">
+                        <div class="author-box">
+                            <a class="aboutus-team-member-name" data-bs-toggle="modal" data-bs-target="#uditasaikia">
+                                <h5>Ms. Udita Saikia</h5>
+                            </a>
+                            <p>Co-Founder</p>
+                        </div>
+                        <ul class="othre-info clearfix" hidden>
+                            <li class="mail-box"><a href="mailto:info@whitehall.com"><i class="fa fa-envelope"
+                                        aria-hidden="true"></i>
+                                    &nbsp; Email</a></li>
+
+                            <li class="share-option">
+                                <i class="fas fa-share-alt"></i>
+                                <ul class="share-links clearfix">
+                                    <li><a target="_blank"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="about-our-team" data-aos="fade-down">
+                    <a class="aboutus-team-member-name" data-bs-toggle="modal" data-bs-target="#shwetasingh">
+                        <figure class="image-box">
+                            <img src="./assets/images/About-us/shweta-mam.jpg" alt="shwetasingh" />
+                        </figure>
+                    </a>
+                    <div class="lower-content">
+                        <div class="author-box">
+                            <a class="aboutus-team-member-name" data-bs-toggle="modal" data-bs-target="#shwetasingh">
+                                <h5>Ms. Shweta Singh</h5>
+                            </a>
+                            <p>Co-Founder</p>
+                        </div>
+                        <ul class="othre-info clearfix" hidden>
+                            <li class="mail-box"><a href="mailto:info@whitehall.com"><i class="fa fa-envelope"
+                                        aria-hidden="true"></i>
+                                    &nbsp; Email</a></li>
+
+                            <li class="share-option">
+                                <i class="fas fa-share-alt"></i>
+                                <ul class="share-links clearfix">
+                                    <li><a target="_blank"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-2"></div>
+        </div>
+    </div>
+</section>
+<!-- Surya Pratap Modal -->
+<div class="modal fade" id="suryapratap" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog  modal-dialog-scrollable modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Meet Our Team</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div class="mx-auto d-table">
+                            <figure class="image-box">
+                                <img src="./assets/images/About-us/t-cl2.jpg" alt="PGC Logo" />
+                            </figure>
+                        </div>
+                        <h5 class="text-center">Surya Pratap Singh <span
+                                class="d-block my-2 team-profile">(Administrative
+                                Director)</span>
+                        </h5>
+                    </div>
+                    <div class="col-lg-9">
+                        <p>Mr. Surya Pratap Singh is the founder of Humanity Welfare Council and the Director of Project
+                            Global Cure, which aims at transforming the health care sector of India. He is a visionary
+                            who builds bold start-ups and happy families. He is an idea aficionado and makes ideas turn
+                            into reality. He loves working with people and is a man of hope, dedicated to bringing about
+                            a change for a better tomorrow.
+                        </p>
+                        <p>Surya Pratap Singh has set up many business verticals aimed at helping people. He dreams of a
+                            healthy, happy and disease-free India. With a vision to build a platform that would cater to
+                            all the medical requirements of the people of India, Project Global Cure was launched on
+                            13th November 2020.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Udita Saikia Modal -->
+<div class="modal fade" id="uditasaikia" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog  modal-dialog-scrollable modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Meet Our Team</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div class="mx-auto d-table">
+                            <figure class="image-box"> <img src="./assets/images/About-us/uditamam.jpg"
+                                    alt="uditasaikia" /></figure>
+
+                        </div>
+                        <h5 class="text-center">Ms. Udita Saikia <span class="d-block my-2 team-profile">(Co-Founder)</span></h5>
+                    </div>
+                    <div class="col-lg-9">
+                        <p>Udita is a young and enthusiastic social worker who genuinely cares for society and wants to
+                            make it better in every possible way. She holds a Master's degree in Social Work from Amity
+                            University and has gained valuable work experience working for many major welfare
+                            organizations in different parts of the country. She takes a positive approach to every
+                            situation and connects well with people from diverse backgrounds and age groups. She builds
+                            a bond of trust and wins hearts with her dedication to work. She says, "Since I was a child,
+                            helping others has given me immense satisfaction. The caring attitude and my compassionate
+                            nature certainly inspired me to choose this career as a social worker." She quotes - "A
+                            change starts from you so, be the change you wish to see in the world."
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="shwetasingh" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog  modal-dialog-scrollable modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Meet Our Team</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div class="mx-auto d-table">
+                          <a href="https://www.projectglobalcure.org/" target="_blank">
+                            <figure class="image-box"> <img src="./assets/images/About-us/shweta-mam.jpg"
+                              alt="shwetasingh" /></figure>
+                          </a>
+                        </div>
+                        <h5 class="text-center">Ms. Shweta Singh <span class="d-block my-2 team-profile">Co-Founder</span> </h5>
+                    </div>
+                    <div class="col-lg-9">
+                        <p>Shweta has always been passionate about her profession, and she believes in contributing to
+                            society through her works. She has done a Master's in Social Work and carries over eight
+                            years of experience in the social development sector. She has primarily worked in the
+                            education and healthcare sector in her past years and has also done her research projects in
+                            rural areas. In addition, she has been involved in community service at orphanages, NGOs,
+                            and with the NSS since her college days.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<app-volunteer></app-volunteer>

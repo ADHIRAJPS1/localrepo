@@ -1,0 +1,104 @@
+<div class="py-5"></div>
+<div class="container py-4 mb-4">
+   <div class="row">
+      <div class="col-lg-6 offset-lg-3">
+         <div class="p-5 campaign-anonymous-form">
+             <div class="form-step-header">
+              <div class="step" [class.active]="step == 1">
+                  <span class="step-circle">1</span>
+              </div>
+              <div class="line"></div>
+              <div class="step" [class.active]="step == 2">
+                  <span class="step-circle">2</span>
+              </div>
+          </div>
+         <h2 class="text-center">Campaign Anonymous user Form</h2>
+          <form class="p-0" [formGroup]="startAFundraiserForm">
+            <div class="content" [hidden]="step != 1">
+            <div class="row">
+               <div class="col-lg-6 my-3">
+                  <select class="form-select" formControlName="categoryid"
+                     [ngClass]="{ 'is-invalid': errStep1 && f.categoryid.errors }">
+                      <option *ngFor="let cat of categories" [value]="cat.categoryid"> {{ cat.title }}
+                      </option>
+                  </select>
+                  <div *ngIf="errStep1 && f.categoryid.errors" class="invalid-feedback">
+                     <div *ngIf="f.categoryid.errors.required">Category is required</div>
+                  </div>
+               </div>
+               <div class="col-lg-6 my-3">
+                  <input type="email" class="form-control admin-login-textbox" placeholder="User Email" formControlName="userEmail"
+                     [ngClass]="{ 'is-invalid': f.userEmail.touched && f.userEmail.errors }" required />
+                  <div *ngIf="errStep1 && f.userEmail.errors" class="invalid-feedback">
+                     <div *ngIf="f.userEmail.errors.required">User Email is required</div>
+                     <div *ngIf="f.userEmail.errors.pattern">User Email must be a valid email address</div>
+                  </div>
+               </div>
+               <div class="col-lg-6 my-3">
+                  <input type="text" class="form-control admin-login-textbox" placeholder="User First Name"
+                     formControlName="userFirstName" pattern="^[a-zA-Z._-]+$"
+                     [ngClass]="{ 'is-invalid': f.userFirstName.touched && f.userFirstName.errors }" required />
+                  <div *ngIf="errStep1 && f.userFirstName.errors" class="invalid-feedback">
+                     <div *ngIf="f.userFirstName.errors.required">User First Name is required</div>
+                     <div *ngIf="f.userFirstName.errors.pattern">User First Name should be Alphabetic</div>
+                  </div>
+               </div>
+               <div class="col-lg-6 my-3">
+                  <input type="text" class="form-control admin-login-textbox" placeholder="User Last Name"
+                     formControlName="userLastName" pattern="^[a-zA-Z._-]+$"
+                     [ngClass]="{ 'is-invalid': errStep1 && f.userLastName.errors }" required />
+                  <div *ngIf="errStep1 && f.userLastName.errors" class="invalid-feedback">
+                     <div *ngIf="f.userLastName.errors.required">User Last Name is required</div>
+                     <div *ngIf="f.userLastName.errors.pattern">User Last Name should be Alphabetic</div>
+                  </div>
+               </div>
+               <div class="col-lg-12 justify-content-center d-flex">
+                <button (click)="next()" class="btn  admin-login-now-btn">Next</button>
+               </div>
+            </div>
+           </div>
+            <div class="content" [hidden]="step != 2">
+            <div class="row">
+                <div class="col-lg-6 my-3">
+                  <input type="text" class="form-control admin-login-textbox" placeholder="Phone Number"   formControlName="phonenumber" 
+                     [ngClass]="{ 'is-invalid': errStep2 && f.phonenumber.errors }" required />
+                  <div *ngIf="errStep2 && f.phonenumber.errors" class="invalid-feedback">
+                     <div *ngIf="f.phonenumber.errors.required">Phone Number is required</div>
+                    
+                  </div>
+               </div>
+               <div class="col-lg-6 my-3">
+                  <input type="text" class="form-control admin-login-textbox" placeholder="Story Title"
+                     formControlName="title"
+                     [ngClass]="{ 'is-invalid': f.title.touched && f.title.errors }" />
+                  <div *ngIf="errStep2 && f.title.errors" class="invalid-feedback">
+                     <div *ngIf="f.title.errors.required">Story Title is required</div>
+                  </div>
+               </div>
+               <div class="col-lg-6  my-3">
+                  <input type="text" class="form-control admin-login-textbox" placeholder="Story Name"
+                     formControlName="name"
+                     [ngClass]="{ 'is-invalid': f.name.touched && f.name.errors }" />
+                  <div *ngIf="errStep2 && f.name.errors" class="invalid-feedback">
+                     <div *ngIf="f.name.errors.required">Story Name is required</div>
+                  </div>
+               </div>
+               <div class="col-lg-6 my-3">
+                  <input type="text" class="form-control admin-login-textbox" placeholder="Slug"
+                     formControlName="slug"
+                     [ngClass]="{ 'is-invalid': f.slug.touched && f.slug.errors }" />
+                  <div *ngIf="errStep2 && f.slug.errors" class="invalid-feedback">
+                     <div *ngIf="f.slug.errors.required">Slug is required</div>
+                  </div>
+               </div>
+               <div class="col-lg-12 justify-content-center d-flex">
+                  <button  class="btn admin-login-now-btn" (click)="previous()">Previous</button>
+                  <button  (click)="newFundRaiser()" [disabled]="startAFundraiserForm.invalid" class="btn admin-login-now-btn ml-px-5">Submit</button>
+               </div>
+            </div>
+           </div>
+            </form>
+         </div>
+      </div>
+   </div>
+</div>

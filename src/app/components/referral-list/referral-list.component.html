@@ -1,0 +1,113 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-4">
+            Referred List
+        </div>
+        <div class="col-sm-4 filter-section">
+            <input class="filter-input form-control" name="searchTerm" [(ngModel)]="referralList.options.search" placeholder="Search..." />
+        </div>
+        <div class="col-sm-2 filter-section">
+            <button [disabled]="referralList.options.search?.length < 1" (click)="search()" class="btn bg-light-gray">Submit</button>
+        </div>
+        <div class="col-sm-2 filter-section">
+            <button *ngIf="referralList.options.search?.length > 0" (click)="clearSearch()" class="btn btn-danger">Clear</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12 my-4">
+            <table class="table table-striped">
+                <thead class="pgc-help-desk-ticket-listening-header-bg">
+                    <tr>
+                        <th class="serial">S.No</th>
+                        <th>Name</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                        <th>Category</th>
+                        <th>Case summary</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody class="pgc-case-details-list-body-section">
+                    <tr *ngFor="let b of referralList.list; let i = index">
+                        <td> {{ i+1 }} </td>
+                        <td>{{ b.fullname }}</td>
+                        <td> {{ b.phonenumber }} </td>
+                        <td> {{ b.email }} </td>
+                        <td> {{ b.categoryname }}</td>
+                        <td> {{ b.casesummary}}</td>
+                        <td> {{ b.status}}</td>
+                        <td class="actions">
+                            <span>
+                                <a class="help-desk-ticket-action mr-5"><i class="fas fa-eye"  (click)="getModaldata(content, b)"></i></a>
+                                <a class="help-desk-ticket-action text-danger"><i class="fas fa-edit" (click)="StatusModel(statusModel, b)"></i></a>
+                            </span>
+                        </td>
+                    </tr>
+                    <tr *ngIf="referralList.options.total==0"><td colspan="8" style="text-align: center;">0 Result found</td></tr>
+                </tbody>
+            </table>
+            <div class="d-flex justify-content-between p-2 my-pag">
+                <ngb-pagination [collectionSize]="referralList.options.total" [pageSize]="referralList.options.limit" [(page)]="referralList.options.pageno" [maxSize]="5" [rotate]="true" (pageChange)="onPagination($event)">
+                </ngb-pagination>
+                <select class="custom-select pagination" [(ngModel)]="referralList.options.limit"
+                    (ngModelChange)="setPageSize()">
+                    <option [ngValue]="10" selected>10 items per page</option>
+                    <option [ngValue]="50">50 items per page</option>
+                    <option [ngValue]="100">100 items per page</option>
+                </select>
+            </div>
+        </div>
+    </div>
+    <div class="row" *ngIf="showLoader" style="text-align:center;padding-left: 25%">
+        <img style="width: 350px;" src="./assets/images/loading.gif" />
+    </div>
+</div>
+<ng-template #content let-modal>
+    <div class="modal-content shadow-lg">
+        <div class="modal-header">
+            <h4 class="modal-title">Referred Details</h4>
+            <a class="close text-dark" aria-label="Close" (click)="modal.dismiss()">
+                <i class="fas fa-times cursor"></i>
+            </a>
+        </div>
+        <div class="modal-body p-0">
+            <div class="card-body">
+                <ul class="list-group">
+                  <li class="list-group-item border-0 border-bottom"><b> Name:</b> {{temp.fullname}}</li>
+                  <li class="list-group-item border-0 border-bottom"><b> Phone:</b> {{temp.phonenumber}}</li>
+                  <li class="list-group-item border-0 border-bottom"><b>Email:</b> {{temp.email}}</li>
+                  <li class="list-group-item border-0 border-bottom"><b>Category:</b> {{temp.categoryname}}</li>
+                  <li class="list-group-item border-0 border-bottom"><b>Case Summary:</b> {{temp.casesummary}}</li>
+                </ul>
+               
+            </div>  
+        </div>  
+     </div> 
+ </ng-template>  
+ <ng-template #statusModel let-modal>
+    <div class="modal-content shadow-lg">
+        <div class="modal-header">
+            <h4 class="modal-title">Status Update</h4>
+            <a class="close text-dark" aria-label="Close" (click)="modal.dismiss()">
+                <i class="fas fa-times cursor"></i>
+            </a>
+        </div>
+        <div class="modal-body">
+        <form class="p-0" [formGroup]="StatusForm">
+            <div class="row">
+                <div class="col-lg-12">
+                <div class="form-group">
+                    <label>Status *</label>
+                    <input type="text"  formControlName="status" class="form-control bg-light" [ngClass]="{ 'is-invalid':submitting && f.status.errors }" placeholder="Status*" />
+                    <div *ngIf="submitting && f.status.errors" class="invalid-feedback">
+                    <div *ngIf="f.status.errors.required">Status is required.</div>
+                    </div>
+                </div>
+            </div>
+            </div>
+            <button class="btn mt-4 btn-primary" (click)="updateStatus(status)">Submit</button>
+         </form>   
+        </div>  
+     </div> 
+ </ng-template>

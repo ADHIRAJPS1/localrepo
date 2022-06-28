@@ -1,0 +1,13 @@
+.press-releases-main-heading{font-weight:600; text-align:center;}
+.press-releases-container h4{margin:2px ​0px 15px;}
+.press-releases-download{
+    text-align: center;
+}
+.press-releases-download p{margin-bottom: 25px;}
+
+.press-releases-section1{background: #c4252d17;}
+.press-release-readmore a{ color: #a52a69; font-weight: 600; text-decoration: none; position: relative;}
+.press-release-readmore{
+    border-bottom: 3px solid #a52a69;;
+}
+.press-releases-container p{text-align:justify;}

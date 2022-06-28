@@ -1,0 +1,15 @@
+.activities-details-heading{font-weight: 600;}
+.activities-details-h5{color: #a42a6a;}
+.activities-more-details-h {font-weight: 600; margin: 0px 0px 40px; text-transform: capitalize;}
+.activities-details-container{background: #a42a6a; position: sticky;
+    top: 85px; padding: 80px 65px; text-align: center; position: sticky;}
+.activities-details-container h1{margin: 70px 0px; color: #fff;}
+.activities-details-donate-btn{background: #fff;
+    color: #a42a6a;
+    padding: 12px 45px;
+    border-radius: 40px;
+    display: inline-block;
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none; }
+    .activity-details-section1{background: #faf2f6;}

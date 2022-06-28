@@ -1,0 +1,22 @@
+<div class="py-5"></div>
+<div *ngIf="medicalData" class="overflow-hidden">
+    <div class="pgc-medical-decease-name">
+        <div class="container">
+            <h1 class="fs-6"><a class="healthdetails-topic" routerLink="/medical-awareness"><span
+                        class="float-start">Medical
+                        Awareness</span></a> >> &nbsp;
+                {{medicalData?.name}}</h1>
+        </div>
+    </div>
+    <div class="container py-5">
+        <h1 class="text-center fs-2"> {{medicalData?.name}} </h1>
+        <div class="row">
+            <div class="col-lg-8" data-aos="fade-up" [innerHtml]="medicalData?.description">
+            </div>
+            <div class="col-lg-4" *ngIf="medicalData?.imageurl">
+                <img src="{{medicalData?.imageurl}}" alt="{{medicalData?.name}}" data-aos="fade-left"
+                    class="img-fluid medical-deceases-position" />
+            </div>
+        </div>
+    </div>
+</div>

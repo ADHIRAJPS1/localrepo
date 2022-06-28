@@ -1,0 +1,4 @@
+#!/bin/bash
+#sudo cp -R /home/ubuntu/backends/pgc-api-server-15-12-21/config /home/ubuntu/backends/pgc-api-server/;
+pm2 restart pgc-main-server;
+pm2 save

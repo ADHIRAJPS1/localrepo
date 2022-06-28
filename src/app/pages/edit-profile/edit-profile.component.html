@@ -1,0 +1,391 @@
+<!-- <div class="container bg-light_0 mt-7">
+    <div class="row">
+        <div class="col-lg-12">
+        </div>
+    </div>
+    <div class="row mt-4">
+        <div class="col-lg-12">
+            <form action="" method="post" [formGroup]="userEditForm" (ngSubmit)="onSubmitUpdateUser()">
+                <div class="row">
+                    <div class="form-group col-sm-6">
+                        <label class="form-label">First Name <span class="text-danger">*</span></label>
+                        <input type="text" formControlName="firstname" [(ngModel)]="usrDetails.firstname"
+                            class="form-control" [ngClass]="{ 'is-invalid': userSubmitted && f.firstname.errors }" />
+                        <div *ngIf="userSubmitted && f.firstname.errors" class="invalid-feedback">
+                            <div *ngIf="f.firstname.errors.required">First Name is required</div>
+                        </div>
+                    </div>
+                    <div class="form-group col-sm-6">
+                        <label class="form-label">Last Name <span class="text-danger">*</span></label>
+                        <input type="text" formControlName="lastname" [(ngModel)]="usrDetails.lastname"
+                            class="form-control" [ngClass]="{ 'is-invalid': userSubmitted && f.lastname.errors }" />
+                        <div *ngIf="userSubmitted && f.lastname.errors" class="invalid-feedback">
+                            <div *ngIf="f.lastname.errors.required">Last Name is required</div>
+                        </div>
+                    </div>
+                    <div class="form-group col-sm-6">
+                        <label class="form-label">Middle Name</label>
+                        <input type="text" formControlName="middlename" [(ngModel)]="usrDetails.middlename"
+                            class="form-control" />
+                    </div>
+                    <div class="form-group col-sm-6">
+                        <label class="form-label">Address1 <span class="text-danger">*</span></label>
+                        <input type="text" formControlName="address1" [(ngModel)]="usrDetails.address1"
+                            class="form-control" [ngClass]="{ 'is-invalid': userSubmitted && f.address1.errors }" />
+                        <div *ngIf="userSubmitted && f.address1.errors" class="invalid-feedback">
+                            <div *ngIf="f.address1.errors.required">Address1 is required</div>
+                        </div>
+                    </div>
+                    <div class="form-group col-sm-6">
+                        <label class="form-label">Address2</label>
+                        <input type="text" formControlName="address2" [(ngModel)]="usrDetails.address2"
+                            class="form-control" />
+                    </div>
+                    <div class="form-group col-sm-6">
+                        <label class="form-label">City <span class="text-danger">*</span></label>
+                        <input type="text" formControlName="city" [(ngModel)]="usrDetails.city" class="form-control"
+                            [ngClass]="{ 'is-invalid': userSubmitted && f.city.errors }" />
+                        <div *ngIf="userSubmitted && f.city.errors" class="invalid-feedback">
+                            <div *ngIf="f.city.errors.required">City is required</div>
+                        </div>
+                    </div>
+                    <div class="form-group col-sm-6">
+                        <label class="form-label">State <span class="text-danger">*</span></label>
+                        <input type="text" formControlName="state" [(ngModel)]="usrDetails.state" class="form-control"
+                            [ngClass]="{ 'is-invalid': userSubmitted && f.state.errors }" />
+                        <div *ngIf="userSubmitted && f.state.errors" class="invalid-feedback">
+                            <div *ngIf="f.state.errors.required">State is required</div>
+                        </div>
+                    </div>
+                    <div class="form-group col-sm-6">
+                        <label class="form-label">Country <span class="text-danger">*</span></label>
+                        <input type="text" formControlName="country" [(ngModel)]="usrDetails.country"
+                            class="form-control" [ngClass]="{ 'is-invalid': userSubmitted && f.country.errors }" />
+                        <div *ngIf="userSubmitted && f.country.errors" class="invalid-feedback">
+                            <div *ngIf="f.country.errors.required">Country Name is required</div>
+                        </div>
+                    </div>
+                    <div class="form-group col-sm-6">
+                        <label class="form-label">Postal Code <span class="text-danger">*</span></label>
+                        <input type="text" formControlName="postalcode" [(ngModel)]="usrDetails.postalcode"
+                            class="form-control" [ngClass]="{ 'is-invalid': userSubmitted && f.postalcode.errors }" />
+                        <div *ngIf="userSubmitted && f.postalcode.errors" class="invalid-feedback">
+                            <div *ngIf="f.postalcode.errors.required">Postal Code is required</div>
+                        </div>
+                    </div>
+                    <div class="form-group col-sm-6">
+                        <label class="form-label">DOB <span class="text-danger">*</span></label>
+                        <input type="date" formControlName="dob" [(ngModel)]="usrDetails.dob" class="form-control"
+                            [ngClass]="{ 'is-invalid': userSubmitted && f.dob.errors }" />
+                        <div *ngIf="userSubmitted && f.dob.errors" class="invalid-feedback">
+                            <div *ngIf="f.dob.errors.required">DOB is required</div>
+                        </div>
+                    </div>
+                    <div class="form-group col-sm-6">
+                        <label class="form-label">Gender <span class="text-danger">*</span></label>
+                        <input type="text" formControlName="gender" [(ngModel)]="usrDetails.gender" class="form-control"
+                            [ngClass]="{ 'is-invalid': userSubmitted && f.gender.errors }" />
+                        <div *ngIf="userSubmitted && f.gender.errors" class="invalid-feedback">
+                            <div *ngIf="f.gender.errors.required">Gender is required</div>
+                        </div>
+                    </div>
+                    <div class="col-md-12 my-3 text-center">
+                        <div class="form-group">
+                            <button [disabled]="userEditForm.invalid" class="btn btn-contact-submit">Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div> -->
+
+
+<div class="container my-4 ">
+
+    <div class="row mt-5">
+        <div class="offset-lg-2 col-lg-8 mt-5">
+            <h1 class="fs-4" *ngIf="usrDetails && usrDetails.email">
+                <i class="fa fa-edit"></i>Edit Profile
+            </h1>
+            <h1 class="fs-4" *ngIf="!usrDetails.email">
+                <img src="./assets/images/spinning-loading.gif" style="width:30px;">Loading Data
+            </h1>
+            <form [formGroup]="useredit" >
+                <div class="row">
+                    <div class="col-lg-6 my-3">
+                        <input type="text" class="form-control border-top-0 border-end-0 border-start-0"
+                            placeholder="First Name*" formControlName="firstname" [(ngModel)]="usrDetails.firstname"
+                            [ngClass]="{ 'is-invalid': f1.firstname.touched && f1.firstname.errors }" required />
+                        <div *ngIf="f1.firstname.touched && f1.firstname.errors" class="invalid-feedback">
+                            <div *ngIf="f1.firstname.errors.required">First Name is required</div>
+                            <div *ngIf="f1.firstname.errors.pattern">First Name should be Alphabetic</div>
+                            <div *ngIf="f1.firstname.errors.minlength">First Name should be min 2 chars </div>
+                            <div *ngIf="f1.firstname.errors.maxlength">First Name should be Max 25 chars </div>
+                        </div>
+
+                    </div>
+                    <div class="col-lg-6 my-3">
+                        <input maxlength="10" type="text" class="form-control border-top-0 border-end-0 border-start-0"
+                            placeholder="Middle Name" formControlName="middlename" [(ngModel)]="usrDetails.middlename"
+                            [ngClass]="{ 'is-invalid': f1.middlename.touched && f1.middlename.errors }" />
+                        <div *ngIf="f1.middlename.touched && f1.middlename.errors" class="invalid-feedback">
+                            <div *ngIf="f1.middlename.errors">Middle Name is Required</div>
+                            <div *ngIf="f1.middlename.errors.pattern">Middle Name should be Alphabetic</div>
+                            <div *ngIf="f1.middlename.errors.minlength">Middle Name should be min 2 chars </div>
+                            <div *ngIf="f1.middlename.errors.maxlength">Middle Name should be Max 25 chars </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col-lg-6 my-3">
+                        <input type="text" class="form-control border-top-0 border-end-0 border-start-0"
+                            placeholder="Last Name*" formControlName="lastname" [(ngModel)]="usrDetails.lastname"
+                            [ngClass]="{ 'is-invalid': f1.lastname.touched && f1.lastname.errors }" required />
+                        <div *ngIf="f1.lastname.touched && f1.lastname.errors" class="invalid-feedback">
+                            <div *ngIf="f1.lastname.errors.required">Last Name is required</div>
+                            <div *ngIf="f1.lastname.errors.pattern">Last Name should be Alphabetic</div>
+                            <div *ngIf="f1.lastname.errors.minlength">Last Name should be min 2 chars </div>
+                            <div *ngIf="f1.lastname.errors.maxlength">Last Name should be Max 25 chars </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col-lg-6 my-3">
+                        <input type="email" class="form-control border-top-0 border-end-0 border-start-0"
+                            placeholder="Enter Email id*" disabled formControlName="email" [(ngModel)]="usrDetails.email"
+                            [ngClass]="{ 'is-invalid': f1.email.touched && f1.email.errors }" required />
+                        <div *ngIf="f1.email.touched && f1.email.errors" class="invalid-feedback">
+                            <div *ngIf="f1.email.errors.required">Email id is required</div>
+                            <div *ngIf="f1.email.errors.maxlength">Email should be Max 50</div>
+                            <div *ngIf="f1.email.errors.pattern">Email id should be Valid</div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 my-3">
+                        <!-- <ngx-intl-tel-input [cssClass]="'form-control border-top-0 border-end-0 border-start-0'"
+                            [preferredCountries]="preferredCountries" [enableAutoCountrySelect]="true"
+                            [ngModel]="usrDetails.phoneNumber" [enablePlaceholder]="false" maxLength=14
+                            [searchCountryFlag]="true" placeholder="xcv" formControlName="phonenumber">
+                        </ngx-intl-tel-input>
+                        <div *ngIf="f1.phonenumber.touched && f1.phonenumber.errors" class="invalid-feedback d-block">
+                            <div *ngIf="f1.phonenumber.errors.required">Phone number is required</div>
+                            <div *ngIf="f1.phonenumber.errors.minlength">Please Enter 10 digit Mobile
+                                Number</div>
+                            <div *ngIf="f1.phonenumber.errors.maxlength">Please Enter 10 digit Mobile
+                                Number</div>
+                        </div> -->
+
+                        <!-- <input type="text" id="contact" placeholder="Enter Your Contact No."
+                            formControlName="phonenumber" (keypress)="numericOnly($event)"
+                            class="form-control border-top-0 border-end-0 border-start-0"
+                            [ngModel]="usrDetails.phonenumber"
+                            [ngClass]="{ 'is-invalid': f1.phonenumber.touched && f1.phonenumber.errors }" /> -->
+                        <!--input type="text" id="contact" placeholder="Enter Your Contact No."
+                            formControlName="phonenumber" class="form-control border-top-0 border-end-0 border-start-0"
+                            [ngModel]="usrDetails.phonenumber"
+                            [ngClass]="{ 'is-invalid': f1.phonenumber.touched && f1.phonenumber.errors }" /-->
+                           <ngx-intl-tel-input
+                             [cssClass]="'form-control w-100'"
+                              [preferredCountries]="preferredCountries"
+                              [enableAutoCountrySelect]="true"
+                              [enablePlaceholder]="true"
+                              [ngModel]="usrDetails.phonenumber"
+                              [searchCountryFlag]="true"
+                              formControlName="phonenumber">
+                          </ngx-intl-tel-input>
+                        <div *ngIf="f1.phonenumber.touched && f1.phonenumber.errors" class="invalid-feedback">
+                            <div *ngIf="f1.phonenumber.errors.required">Contact No. is required</div>
+                            <div *ngIf="f1.phonenumber.errors.minlength">Contact No. must be at least 10 digit</div>
+                        </div>
+
+                    </div>
+
+                    <div class="col-lg-6 my-3">
+                        <input type="date" [max]="maxDateDOB" class="form-control border-top-0 border-end-0 border-start-0"
+                            placeholder="DOB*" formControlName="dob" [(ngModel)]="usrDetails.dob"
+                            [ngClass]="{ 'is-invalid': f1.dob.touched && f1.dob.errors }" required />
+                        <div *ngIf="f1.dob.touched && f1.dob.errors" class="invalid-feedback">
+                            <div *ngIf="f1.dob.errors.required">DOB is required</div>
+                        </div>
+
+                    </div>
+
+                    <div class="col-lg-6 my-3">
+                        <select class="form-select  border-top-0 border-end-0 border-start-0"
+                            aria-label="Default select example" formControlName="gender" [(ngModel)]="usrDetails.gender"
+                            [ngClass]="{ 'is-invalid': f1.gender.touched && f1.gender.errors }">
+                            <option value="" disabled selected>Gender*</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="other">Other</option>
+                        </select>
+                        <div *ngIf="f1.gender.touched && f1.gender.errors" class="invalid-feedback">
+                            <div *ngIf="f1.gender.errors.required">Gender is required</div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-12 my-3">
+                        <input type="text" class="form-control border-top-0 border-end-0 border-start-0"
+                            placeholder="Address1*" formControlName="address1" [(ngModel)]="usrDetails.address1"
+                            [ngClass]="{ 'is-invalid': f1.address1.touched && f1.address1.errors }" required />
+                        <div *ngIf="f1.address1.touched && f1.address1.errors" class="invalid-feedback">
+                            <div *ngIf="f1.address1.errors.required">Address1 is required</div>
+                        </div>
+
+                    </div>
+
+                    <div class="col-lg-12 my-3">
+                        <input type="text" class="form-control border-top-0 border-end-0 border-start-0"
+                            placeholder="Address2*" formControlName="address2" [(ngModel)]="usrDetails.address2"
+                            [ngClass]="{ 'is-invalid': f1.address2.touched && f1.address2.errors }" required />
+                        <div *ngIf="f1.address2.touched && f1.address2.errors" class="invalid-feedback">
+                            <div *ngIf="f1.address2.errors.required">Address2 is required</div>
+                        </div>
+
+                    </div>
+
+                    <div class="col-lg-6 my-3">
+                        <input type="text" class="form-control border-top-0 border-end-0 border-start-0"
+                            placeholder="Enter Your City*" formControlName="city" [(ngModel)]="usrDetails.city"
+                            [ngClass]="{ 'is-invalid': f1.city.touched && f1.city.errors }" required />
+                        <div *ngIf="f1.city.touched && f1.city.errors" class="invalid-feedback">
+                            <div *ngIf="f1.city.errors.required">City is required</div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 my-3">
+                        <input type="text" class="form-control border-top-0 border-end-0 border-start-0"
+                            placeholder="Enter Your State*" formControlName="state" [(ngModel)]="usrDetails.state"
+                            [ngClass]="{ 'is-invalid': f1.state.touched && f1.state.errors }" required />
+                        <div *ngIf="f1.state.touched && f1.state.errors" class="invalid-feedback">
+                            <div *ngIf="f1.state.errors.required">State is required</div>
+                        </div>
+                    </div>
+
+
+
+                    <div class="col-lg-6 my-3">
+                        <!-- <span class="country">
+                            <select class="form-select campaign-card-border-radius contact-input-bg"
+                                name="defaultCounrty" aria-label="Default select example"
+                                [(ngModel)]="defaultCountry" formControlName="country"
+                                [ngClass]="{ 'is-invalid': f.country.touched  && f.country.errors}">
+
+                                <option *ngFor="let country of countries" value="{{country.name}}">
+                                    {{country.name}}</option>
+                            </select>
+                            <div *ngIf="f.country.touched  && f.country.errors" class="invalid-feedback">
+                                <div *ngIf="f.country.errors.required">Country Name is required.</div>
+                            </div>
+                        </span> -->
+
+                        <!-- <select class="form-select  border-top-0 border-end-0 border-start-0"
+                            aria-label="Default select example" formControlName="country"
+                            [(ngModel)]="usrDetails.country"
+                            [ngClass]="{ 'is-invalid': f1.country.touched && f1.country.errors }">
+                            <option value="" disabled selected>Country</option>
+                            <option *ngFor="let country of countries" value="{{country.name}}">
+                                {{country.name}}</option>
+                        </select> -->
+                        <input type="text" class="form-control border-top-0 border-end-0 border-start-0"
+                            placeholder="Enter Your Country*" formControlName="country" [(ngModel)]="usrDetails.country"
+                            [ngClass]="{ 'is-invalid': f1.country.touched && f1.country.errors }" required />
+                        <div *ngIf="f1.country.touched && f1.country.errors" class="invalid-feedback">
+                            <div *ngIf="f1.country.errors.required">Country is required</div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 my-3">
+                        <input type="text" class="form-control border-top-0 border-end-0 border-start-0"
+                            placeholder="Enter Your Pincode*" formControlName="postalcode"
+                            [(ngModel)]="usrDetails.postalcode"
+                            [ngClass]="{ 'is-invalid': f1.postalcode.touched && f1.postalcode.errors }" required />
+                        <div *ngIf="f1.postalcode.touched && f1.postalcode.errors" class="invalid-feedback">
+                            <div *ngIf="f1.postalcode.errors.required">Pincode is required</div>
+                        </div>
+                    </div>
+
+                    <!-- <div class="col-lg-12 my-3">
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <label class="hoverable w-100" for="fileInput" *ngIf="usrDetails.profilepic">
+                                    <img class="img-fluid w-100"
+                                        [src]="base64code ? base64code : usrDetails.profilepic">
+                                    
+                                    <div class="background"></div>
+                                </label>
+
+                                <label class="hoverable w-100" for="fileInput" *ngFor="!usrDetails.profilepic">
+                                    <img class="img-fluid w-100"
+                                        [src]="base64code ? base64code : 'https://www.w3schools.com/howto/img_avatar.png'">
+                                    
+                                    <div class="background"></div>
+                                </label>
+                            </div>
+                            <div class="col-lg-4">
+                                <input id="fileInput" type='file' accept="image/png, image/jpg,  image/jpeg"
+                                    (change)="onSelectFile($event) ">
+                                <button *ngIf="base64code" (click)="delete()">delete</button>
+                            </div>
+                        </div>
+
+
+                    </div> -->
+
+                    <div class="col-lg-12 my-3">
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <label class="hoverable w-100" for="fileInput" *ngIf="usrDetails.profilepic">
+                                    <img class="img-fluid w-100"
+                                        [src]="base64code ? base64code : usrDetails.profilepic">
+
+                                    <div class="background"></div>
+                                </label>
+
+                                <label class="hoverable w-100" for="fileInput" *ngIf="!usrDetails.profilepic">
+                                    <img class="img-fluid w-100"
+                                        [src]="base64code ? base64code : 'https://www.w3schools.com/howto/img_avatar.png'">
+                                    <!-- <div class="hover-text">Choose file</div> -->
+                                    <div class="background"></div>
+                                </label>
+                            </div>
+                            <div class="col-lg-4">
+                                <input id="fileInput" type='file' accept="image/png, image/jpg,  image/jpeg"
+                                    (change)="onSelectFile($event) ">
+                                <button *ngIf="base64code" (click)="delete()">delete</button>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                    <!-- <div class="col-lg-12 my-3">
+                        <h6>Subscribe/Unsubscribe Email Notification</h6>
+
+
+                        <label class="d-block" for="">
+                            <input type="checkbox" class="checkbox-inline" [checked]="usrDetails.storiesnotifytype"
+                                (click)="storiesNotification($event)" value="RAAHI Stories (Once a Week)">
+                            RAAHI Stories (Once a Week)
+                        </label>
+
+                        <label class="d-block" for="">
+                            <input type="checkbox" class="checkbox-inline" [checked]="usrDetails.emailnotifytype"
+                                (click)="emailNotification($event)" value="Email (Once a Month)">
+                            Email (Once a Month)
+                        </label>
+
+                    </div> -->
+                    <div class="col-lg-6">
+                        <button class="btn btn-danger redbg text-white px-4 rounded-pill" (click)="backToProfile()">Back To Profile</button>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <button [disabled]="useredit.invalid" class="btn btn-primary redbg text-white px-4 rounded-pill" (click)="usersubmit()">Submit <img *ngIf="submitted" src="./assets/images/spinning-loading.gif" style="width:30px;"></button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

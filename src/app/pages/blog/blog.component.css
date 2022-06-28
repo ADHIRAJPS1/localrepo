@@ -1,0 +1,67 @@
+.pgc-blog{text-align: right; font-weight: 600;}
+ul.blog-search-list {
+    padding-left: 0px;
+    list-style: none;
+}
+ul.blog-search-list li{display: inline-block;}
+ul.blog-search-list li.search{border-right:1px solid #000;}
+ul.blog-search-list li.search a{color: #a42a6a; cursor: pointer;}
+ul.blog-search-list li a{padding: 10px 20px; text-decoration: none; color: #000;}
+ul.blog-search-list li a i{margin-right:10px;}
+ul.blog-search-list li a img{width: 13px; margin-left: 7px;}
+
+.blog-business-info h5{position: relative; margin:20px 0px; display: flex; align-items: center;}
+.blog-business-info h5::after{width:100%; height:2.2px; background: #000; margin-left: 12px; margin-right: 15px; content: '';}
+.blog-business-info h2{font-weight:600;}
+.blog-text-red-color{color: #a42a6a;}
+.blog-list{text-decoration: none; color: #000;}
+    .searchbar{
+        margin-bottom: auto;
+        margin-top: auto;
+        height: 60px;
+        background-color: #353b48;
+        border-radius: 30px;
+        padding: 10px;
+        }
+
+        .search_input{
+        color: white;
+        border: 0;
+        outline: 0;
+        padding: 0 10px;
+        width: 95%;
+        background: none;
+        caret-color:transparent;
+        line-height: 40px;
+        transition: width 0.4s linear;
+        }
+
+        .searchbar:hover .search_input{
+        padding: 0 10px;
+        width: 95%;
+        caret-color:red;
+        transition: width 0.4s linear;
+        }
+
+        .searchbar:hover .search_icon{
+        background: white;
+        color: #e74c3c;
+        }
+
+        .search_icon{
+        height: 40px;
+        width: 40px;
+        float: right;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        color:white;
+        text-decoration:none;
+        }
+        .blog-banner {
+          width: 100%;
+          height: 600px;
+          align-items: center;
+          display: flex;
+      }

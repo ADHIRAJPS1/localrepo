@@ -1,0 +1,382 @@
+<section class="home-banner mobile-banner-right-align"
+    style="background-image: url(./assets/images/covid-banner.webp); background-repeat: no-repeat; background-size: cover;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 offset-md-9">
+                <h1 class="pgc-blog text-white"> Covid-19</h1>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="">
+    <div class="container-fluid news-section-width">
+        <div class="row mx-0">
+            <div class="col-lg-12 newsupdate-section px-0 " *ngIf="coviddata">
+                <div class="row">
+                    <div class="col-lg-1">
+                        <div class="new-pgc-heading">
+                            <h5>UPDATES</h5>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 py-4">
+                        <p class="covid-19-date-paragraph">COVID-19 INDIA as on <br /><strong>
+                                {{coviddata?.date| date:'d,MMM , y'}}</strong></p>
+                    </div>
+                    <div class="col-lg-9 px-4">
+                        <div class="row">
+                            <div class="col-lg-4 py-4">
+                                <p class="text-center"><strong>Total Active Case
+                                        <!-- (1.58%) -->
+                                    </strong></p>
+                                <span class="totalcases total-active-case">{{coviddata.totalactivecase}}
+                                </span>
+                            </div>
+                            <div class="col-lg-4 py-4">
+                                <p class="text-center"><strong>Death
+                                        <!-- (1.32%) -->
+                                    </strong></p>
+                                <span class="totalcases total-death">{{coviddata.death}}
+                                </span>
+                            </div>
+                            <div class="col-lg-4 py-4">
+                                <p class="text-center"><strong>Vaccination
+                                        <!-- (1.32%) -->
+                                    </strong></p>
+                                <span class="totalcases total-vaccination">{{coviddata.vaccination}}
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="module-gallery module-12345 pt-5">
+    <div class="container">
+        <div class="row">
+
+            <div class="col-lg-7">
+                <div class="slider-wrapper pgc-video-slide-height">
+                    <ul class="slider-preview noPad noMar">
+                        <!--li class="type-image">
+
+                            <video class="video-wh"
+                                poster="./assets/images/landing-page/ready-for-vaccination-video.webp" controls>
+                                <source src="./assets/video/Final-copy-waccination-awareness.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                        </li-->
+                        <li class="type-image">
+                            <iframe src="https://www.youtube.com/embed/Qu8XUCGlAvM" class="video-wh"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                        </li>
+
+                        <li class="type-image">
+                            <iframe src="https://www.youtube.com/embed/EH4mPZFbnMY" class="video-wh"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                        </li>
+                        <li class="type-image">
+                            <iframe src="https://www.youtube.com/embed/Qu8XUCGlAvM" class="video-wh"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                        </li>
+                        <li class="type-image">
+                            <iframe src="https://www.youtube.com/embed/EH4mPZFbnMY" class="video-wh"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                        </li>
+                        <li class="type-image">
+                            <iframe src="https://www.youtube.com/embed/Qu8XUCGlAvM" class="video-wh"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="slider-wrapper">
+                    <ul class="slider-thumb noPad noMar">
+                        <!--li class="type-image">
+                            <video class="pe-none"  poster="./assets/images/landing-page/ready-for-vaccination-video.webp"
+                                controls>
+                                <source src="./assets/video/Final-copy-waccination-awareness.mp4" type="video/mp4">
+                                Your browser does not support the video tag.
+                            </video>
+                            <span class="thumbnail-text">
+                                <h6>15 August 2021</h6>
+                                <p>India is witnessing a massive surge of cases for the past month.</p>
+                            </span>
+                        </li-->
+                        <li class="type-image">
+                            <iframe src="https://www.youtube.com/embed/Qu8XUCGlAvM" class="pe-none"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                            <span class="thumbnail-text">
+                                <h6>25 August 2021</h6>
+                                <p>India is witnessing a massive surge of cases for the past month.</p>
+                            </span>
+                        </li>
+                        <li class="type-image">
+                            <iframe src="https://www.youtube.com/embed/EH4mPZFbnMY" class="pe-none"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+
+                            <span class="thumbnail-text">
+                                <h6>5 August 2021</h6>
+                                <p>India is witnessing a massive surge of cases for the past month.</p>
+                            </span>
+                        </li>
+                        <li class="type-image">
+                            <iframe src="https://www.youtube.com/embed/Qu8XUCGlAvM" class="pe-none"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                            <span class="thumbnail-text">
+                                <h6>15 July 2021</h6>
+                                <p>India is witnessing a massive surge of cases for the past month.</p>
+                            </span>
+                        </li>
+                        <li class="type-image">
+                            <iframe src="https://www.youtube.com/embed/EH4mPZFbnMY" class="pe-none"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+
+                            <span class="thumbnail-text">
+                                <h6>10 July 2021</h6>
+                                <p>India is witnessing a massive surge of cases for the past month.</p>
+                            </span>
+                        </li>
+                        <li class="type-image">
+                            <iframe src="https://www.youtube.com/embed/Qu8XUCGlAvM" class="pe-none"
+                                title="YouTube video player" frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+
+                            <span class="thumbnail-text">
+                                <h6>5 July 2021</h6>
+                                <p>India is witnessing a massive surge of cases for the past month.</p>
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-5">
+                <div class="covid-urgent-section">
+                    <h5 class="text-center covid-urgent-action-heading">The urgent action we take today
+                        can prevent the COVID-19 pandemic
+                        from becoming a lasting crisis for
+                        children, especially the most
+                        vulnerable.</h5>
+                    <div class="tabbable boxed parentTabs">
+                        <div class="tab-content">
+                            <div class="tab-pane fadein active" id="monthdonate">
+                                <div class="pgc-helpus-bg-section">
+                                    <app-donate allowDonation="true" redirectionUrl="{{currentPageUrl}}"
+                                        campaignid="00000000-0000-0000-0000-000000000000"></app-donate>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="story-section py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <ul class="nav nav-pills mb-3 covid-story-tab" id="pills-tab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="pills-story-tab" data-bs-toggle="pill"
+                            data-bs-target="#pills-story" type="button" role="tab" aria-controls="pills-story"
+                            aria-selected="true">STORY</button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="pills-update-tab" data-bs-toggle="pill"
+                            data-bs-target="#pills-update" type="button" role="tab" aria-controls="pills-update"
+                            aria-selected="false">UPDATE</button>
+                    </li>
+
+                </ul>
+                <div class="tab-content" id="pills-tabContent">
+                    <div class="tab-pane fade show active" id="pills-story" role="tabpanel"
+                        aria-labelledby="pills-story-tab">
+                        <p>As coronavirus spreads worldwide, India remains one of the worst-hit countries with
+                            significant cases and fatalities. The nationwide lockdown during the first and horrid second
+                            waves has already rolled us back both socially and economically. The need of the hour is to
+                            unite all Indians to work for the betterment of our country. The only possible way to win
+                            this war is by uniting our efforts and standing together.</p>
+
+                        <p>
+                            We have faced many challenges earlier, and we have always come out victorious. Our nation
+                            needs us, and we must cooperate with the authorities to overcome this virus. Being in the
+                            middle of the biggest crisis, there is no possible way to run away from it. We have to stand
+                            firm against this crisis and help everyone around us in every possible way. It is time we
+                            take this pandemic seriously.
+                        </p>
+
+                        <p>As the whole world has its eyes on India tackling Covid-19, the citizens and non-citizens
+                            must support the ongoing activities in our country in all possible ways to protect the
+                            future of India. No one is safe until everyone is safe.</p>
+
+                        <p>It is necessary to save as many lives as possible. As many families are losing their earning
+                            hands, and the youth of our country are being affected, it becomes our duty to protect them
+                            and avoid the impending financial and social crisis.</p>
+
+
+                        <h3 class="covid-requirement-heading">What has PGC done so far?</h3>
+                        <div class="covid-requirement-container">
+
+                            <p>When the virus first hit our country, we started a Covid-19 relief fund and launched the
+                                first campaign in India; Milaap was the first crowdfunding platform to help us with
+                                this.</p>
+
+                            <p>This movement shows the results of our collaborative efforts with other organizations and
+                                local bodies. We work hard with commitment and devotion towards the wellbeing of our
+                                nation, both directly and indirectly.</p>
+
+                            <p>The results are compelling - we have supported tens of thousands of families in India so
+                                far.</p>
+
+                            <p>Looking out with all possible channels to reach out to needy families, we have met the
+                                requirements of nearly all the people who have come in touch with us.</p>
+
+                            <p>We supported the affected families through our food donation drives, oxygen supplies,
+                                medical assistance, medical supplies, etc., in-person and indirectly through our project
+                                partners.</p>
+
+                            <p>We have also reached out to the most remote places through local vendors who supported us
+                                in delivering the required items to the local beneficiaries.</p>
+
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="pills-update" role="tabpanel" aria-labelledby="pills-update-tab">
+                        <div class="covid-requirement-container">
+                            <h3 class="covid-requirement-heading">How can you help?</h3>
+                            <h5>Dear Supporters,</h5>
+                            <p>Thank you for all the help and support you have given by extending a helping hand during
+                                these extraordinary times. We are grateful to you for being a beacon of positivity and
+                                hope in these dark times.</p>
+
+                            <p>As we battle the challenges incessantly to make a difference in our community and help
+                                those who are deprived, there is a surge in coronavirus cases in India that has made the
+                                challenge exceptionally acute due to the size and density of its population as well as
+                                the overall levels of poverty coupled with an inadequate health infrastructure and a
+                                stressed economy.</p>
+
+                            <p>In such times, the {{ config.appDisplayName }} Team is on a mission to rescue and provide
+                                support
+                                to helpless, distressed, poverty-stricken, and hungry.</p>
+
+                            <p>{{ config.appDisplayName }} team members are working tirelessly every day to save the
+                                maximum
+                                number of lives. We salute our Team Members for such courage and dedication towards
+                                serving humanity.</p>
+
+                            <p>As the country lies wrecked and bruised by the second wave of COVID-19, every citizen
+                                faces the most significant dilemma between daily necessities and medical supplies. We
+                                need to ensure that no one fights this battle alone. We need to fill the void by helping
+                                with the funds for our people to survive.</p>
+
+                            <p>Let us use the power of social media to defeat this deadly virus. By investing 15 mins of
+                                a day in creating social media campaigns, you can help us raise funds to save thousands
+                                of lives. Realize your strength to help and heal others. We appeal to you all to please
+                                come forward and be a part of this massive campaign with us.</p>
+
+                            <p>The call of the hour is to stand united and help the nation heal.</p>
+                        </div>
+                    </div>
+                </div>
+                <h1 class="bank-details-heading fs-4">Details for direct bank transfer</h1>
+                <div class="row">
+                    <div class="col-md-6">
+                        <table class="table table-borderless bank-details-table">
+                            <tbody>
+                                <tr>
+                                    <td class="w-96p"><strong>Name</strong></td>
+                                    <td><strong>:</strong></td>
+                                    <td>
+                                        <p>Humanity Welfare Council</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="w-96p"><strong>Account</strong></td>
+                                    <td><strong>:</strong></td>
+                                    <td>
+                                        <p>201002023770</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="w-96p"><strong>Branch</strong></td>
+                                    <td><strong>:</strong></td>
+                                    <td>
+                                        <p>Janakpuri, New Delhi - 110058</p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="col-md-6">
+                        <table class="table table-borderless bank-details-table">
+                            <tbody>
+                                <tr>
+                                    <td class="w-96p"><strong>IFSC code</strong></td>
+                                    <td><strong>:</strong></td>
+                                    <td>
+                                        <p>INDB0000044</p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="w-96p"><strong>Bank</strong></td>
+                                    <td><strong>:</strong></td>
+                                    <td>
+                                        <p>Induslnd Bank</p>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="instruction-bank-transfer-section">
+                    <h5 class="instruction-bank-transfer-heading">Instructions for bank transfer</h5>
+                    <ul class="instruction-bank-transfer-list">
+                        <li>Transfer allowed by domestic bank accounts only.</li>
+                        <li>This account will not support fund transfers from foreign banks.</li>
+                        <li>Please mention all the details correctly to save our time and efforts.</li>
+                        <li>In case of any issue, please email us at <a class="txt-primary"
+                                href="mailto:connect@projectglobalcure.org">{{
+                                config.contactEmail }}</a></li>
+                    </ul>
+                </div>
+
+            </div>
+            <div class="col-md-4">
+                <div class="card  panel-default covidnews-sticky">
+                    <div class="card-header"> <b>News</b></div>
+                    <div class="card-body p-0">
+                        <ul class="news list-inline" id="accordion">
+                            <li class="news-item" *ngFor="let new of news; let i= index">
+                                <div class="card-body text-left">
+                                    {{new.content}}
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

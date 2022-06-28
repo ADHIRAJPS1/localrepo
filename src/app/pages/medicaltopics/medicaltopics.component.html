@@ -1,0 +1,44 @@
+<section class="home-banner"
+    style="background-image: url(./assets/images/deceases/120-SM673401.webp); background-repeat: no-repeat; background-size: cover;">
+    <div class="page-banner-overlay">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6" data-aos="flip-up">
+                    <h1>Medical Awareness</h1>
+                    <p>In alphabetical order</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="medical-topic-container">
+    <div class="container medical-topics-mt py-5 px-4 mb-4">
+        <div class="row">
+            <div class="col-lg-12">
+
+                <ul class="medicaltopics-filterbtn">
+                    <li *ngFor="let tool of medicaltopic_cat"><a class=" btn "
+                            (click)=" scrollPointA(tool)">{{tool}}</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="row" *ngFor="let tool of data | groupBy:'category' | pairs ">
+                <div class="col-lg-12 my-4">
+                    <h1 class="medical-topics-filter-list-heading fs-2" id="{{tool[0]}}">{{tool[0]}}</h1>
+                </div>
+                <div class="col-lg-4 my-3" data-aos="flip-up" data-aos-easing="ease-in-sine" data-aos-duration="600"
+                    *ngFor="let val of tool[1]">
+                    <div class="card medical-awareness-card-bt">
+                        <div class="card-body">
+                            <a routerLink="/medical-awareness/{{val?.slug}}">
+                                <h5 class="card-title">{{val.name}} <i class="fas fa-angle-right"></i></h5>
+                            </a>
+
+                            <p class="card-text" [innerHtml]="val.description.substring(0,120)+'...'"></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

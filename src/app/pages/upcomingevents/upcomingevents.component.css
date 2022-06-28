@@ -1,0 +1,12 @@
+.pgc-events li{margin-right: 15px;}
+.pgc-events li button{padding: 9px 20px; background: #e2e2e2; color: #000;}
+.pgc-events li button.active{background: #a42a6a; color: #fff;}
+.pgc-events-time{color: #a42a6a; font-weight: 600;}
+.pgc-events-heading{color: #212529; font-weight: 600;}
+a.pgc-events-details {
+    color: #212529; font-weight: 600; text-decoration: none;
+}
+.pgc-events-events-detais{margin-top:35px;}
+.pgc-events-container{padding-left: 25px; margin-top: 15px;}
+.pgc-calender-icon{width:19px; position: absolute; margin-left: -26px;}
+.pgc-globe-icon{width:19px; position: absolute; margin-left: -26px;}

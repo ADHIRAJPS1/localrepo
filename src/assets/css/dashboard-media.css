@@ -1,0 +1,11 @@
+@media only screen and (max-width: 991.5px) {
+    .toggled {
+        display: block !important;
+      }
+      .pgc-admin-header-sec { flex-direction: row ; margin-top:25px;}
+      .pgc-header-toggle{margin-left:25px;}
+      .pgc-admin-header-searchbox {
+        margin-top: 25px;
+        margin-left: 0px;
+    }
+}

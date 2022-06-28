@@ -1,0 +1,13 @@
+<!-- <input type="file" accept=".jpg,.png,.jpeg" id="image-input" (change)="selectFile($event)">
+<br><br> Original: Size: {{sizeOfOriginalImage | number : '1.2-2'}}MB
+<br><img [src]="localUrl" height="200px"> -->
+<!-- <input type="file" accept=".jpg,.png,.jpeg" id="image-input" (change)="selectFile($event)">
+ {{sizeOFCompressedImage | number : '1.2-2'}}MB<br>
+<img [src]="localCompressedURl" height="150px"/> -->
+
+<input #imgUpload type="file"  accept=".jpg,.png,.jpeg" hidden (change)="handleInputChange($event)"/>
+  <div class="img-upload-wrappper" (click)="imgUpload.click()">
+    <!-- {{sizeOFCompressedImage | number : '1.2-2'}}MB<br> -->
+    <img [src]="localUrl " class="img-fluid" />
+    <i [hidden]="localUrl" [ngClass]="requiredFileType.includes('image/*') ? 'fas fa-image' : 'fas fa-file-upload'"></i>
+</div>

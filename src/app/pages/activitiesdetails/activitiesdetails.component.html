@@ -1,0 +1,75 @@
+<section class="py-5"></section>
+<section class="about-future-funding-section">
+    <div class="container py-5">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="pgc-activity-h1 text-center">My Body is My Own: State of World <br />
+                    Population Report 2021</h1>
+            </div>
+            <div class="col-lg-12">
+                <div class="position-relative">
+            <img class="img-fluid" src="./assets/images/activities/indianpopulation-1603691862947.png" alt="indian Population" />
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<div class="container pb-5">
+    <div class="row">
+        <div class="col-lg-8">
+            <h4 class="activities-details-heading">August 15, 2021 | 5:12 p.m.</h4>
+            <p>Noida — {{ config.appDisplayName }}, alongside partner Mission of Hope, plans to distribute an initial 1 million
+                meals to those affected by the earthquake that struck Haiti yesterday. In addition to food, Convoy will
+                also distribute hygiene kits and sheltering supplies. Thankfully, PGC in-country warehouse was not
+                damaged by the quake, so distributions can begin immediately. </p>
+            <p>Government agencies in Haiti have reported that at least 724 people have died and more than 2,800 have
+                been injured. However, the death toll could reach into the thousands.</p>
+            <p>PGC of Hope began feeding children in Haiti in 2007, but the program expanded immensely following the
+                2010 earthquake. Alongside partners at Mission of Hope, PGC now feeds 104,307 children at nearly 500
+                program centers.</p>
+            <img class="img-fluid w-100 my-3" src="./assets/images/activities/increasing-population.png" alt="increasing Population" />
+            <h4 class="activities-details-heading">State of World Population</h4>
+            <p>Noida — {{ config.appDisplayName }}, alongside partner Mission of Hope, plans to distribute an initial 1 million
+                meals to those affected by the earthquake that struck Haiti yesterday. In addition to food, PGC will
+                also distribute hygiene kits and sheltering supplies. Thankfully, PGC’s in-country warehouse was not
+                damaged by the quake, so distributions can begin immediately.</p>
+        </div>
+        <div class="col-lg-4">
+            <div class="activities-details-container">
+                <img class="img-fluid" src="./assets/images/Cure-white-logo@4x.png" alt="PGC LOGO" />
+                <h1>Give Relief <br />
+                    to Disaster <br />
+                    Survivors</h1>
+                <a class="activities-details-donate-btn">Donate</a>
+            </div>
+        </div>
+    </div>
+</div>
+<section class="activity-details-section1 py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h4 class="activities-more-details-h">More Activities </h4>
+                <owl-carousel-o [options]="moreactivitydetails" class="owl-readmore">
+                    <ng-container *ngFor="let case of cases">
+                        <ng-template carouselSlide>
+                            <!--TESTIMONIAL 1 -->
+                            <div class="item">
+                                <div class="shadow-effect">
+                                    <img class="img-fluid" [src]="case.img" alt="PGC More Activities">
+                                    <div class="item-details medical-item-padding">
+                                        <h5 class="activities-details-h5">Interactive reports</h5>
+                                        <h5><strong [innerText]="case.title"></strong></h5>
+                                        <p>{{case.summary}}</p>
+                                        <a class="readmore d-block mb-3">Read More</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--END OF TESTIMONIAL 1 -->
+                        </ng-template>
+                    </ng-container>
+                </owl-carousel-o>
+            </div>
+        </div>
+    </div>
+</section>

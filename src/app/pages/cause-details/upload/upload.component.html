@@ -1,0 +1,6 @@
+<label for="text"> {{ label }}</label>
+<input #imgUpload type="file" [accept]="requiredFileType" hidden (change)="handleInputChange($event)"/>
+<div class="img-upload-wrappper" (click)="imgUpload.click()">
+    <img [src]="fileSrc" class="img-fluid"  />
+    <i [hidden]="fileSrc" [ngClass]="requiredFileType.includes('image/*') ? 'fas fa-image' : 'fas fa-file-upload'"></i>
+</div>

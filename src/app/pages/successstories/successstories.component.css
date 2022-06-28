@@ -1,0 +1,12 @@
+.case-search-box {
+    display: flex;
+    position: relative;
+}
+.search-case-textbox{padding-left: 35px; border-radius: .25rem 0px 0px.25rem}
+.search-textbox-icon{position: absolute; color: #a5a5a5; margin: 8px;}
+.btn-search{background: #a42a6a; color: #fff; text-align: center; padding: 3px 15px;
+    border-radius: 0px .25rem .25rem 0px; font-size: 20px;}
+h1{
+    font-size: 17px;
+}
+

@@ -1,0 +1,551 @@
+.admin-profile-pic {
+  border-radius: 50%;
+  height: 150px;
+  width: 150px;
+  background-size: cover;
+  background-position: center;
+  background-blend-mode: multiply;
+  vertical-align: middle;
+  text-align: center;
+  color: transparent;
+  transition: all .3s ease;
+  text-decoration: none;
+  cursor: pointer;
+  position: relative;
+}
+
+.admin-profile-pic span {
+  color: #fff;
+  position: absolute;
+  right: 0px;
+  bottom: 15px;
+  padding: 9px 13px;
+  background: #a42a6a;
+  border-radius: 22px;
+}
+
+input#adminfileToUpload[type="file"] {
+  cursor: pointer;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  opacity: 0;
+}
+
+.adminprofile-innercontainer {
+  display: flex;
+  align-items: center;
+}
+
+.admin-profile-name {
+  margin-left: 15px;
+  color: #556080;
+}
+
+.pgc-admin-profile-contact-list {
+  list-style: none;
+  padding-left: 0px;
+  margin-bottom: 20px;
+}
+
+.pgc-admin-profile-contact-list li {
+  margin: 10px 0px;
+  color: #556080;
+}
+
+.pgc-admin-profile-contact-list li span {
+  margin-right: 15px;
+}
+
+.pgc-admin-profile-social-links {
+  list-style: none;
+  padding-left: 0px;
+}
+
+.pgc-admin-profile-social-links li {
+  display: inline-block;
+  margin-right: 15px;
+  width: 35px;
+  height: 35px;
+  background: #a42a6a;
+  text-align: center;
+  border-radius: 50%;
+  padding-top: 5px;
+}
+
+.pgc-admin-profile-social-links li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.pgc-admin-profile-dev-container {
+  display: flex;
+  align-items: center;
+}
+
+.pgc-admin-profile-details-dev-container {
+  display: block;
+  margin-left: 15px;
+}
+
+.pgc-admin-profile-details-dev-container p,
+h5 {
+  margin-bottom: 0px;
+}
+
+.pgc-admin-profile-leads1 {
+  display: flex;
+  align-items: center;
+}
+
+.pgc-admin-profile-leads1 span {
+  padding: 4px;
+  background-color: #fff;
+  margin-right: 15px;
+  border: 6px solid #0d6efd;
+  border-radius: 50%;
+}
+
+.pgc-admin-profile-leads2 {
+  display: flex;
+  align-items: center;
+}
+
+.pgc-admin-profile-leads2 span {
+  padding: 4px;
+  background-color: #fff;
+  margin-right: 15px;
+  border: 6px solid #ffb822;
+  border-radius: 50%;
+}
+
+.adminprofileleadtargetbg {
+  background-color: #ffb822;
+}
+
+.pgc-admin-profile-latestleads-container {
+  display: flex;
+  align-items: center;
+}
+
+.pgc-admin-profile-latestleads-container a {
+  padding: 9px 19px;
+  background-color: #a42a6a;
+  border-radius: 13px;
+  text-decoration: none;
+  color: #fff;
+  margin-left: 15px;
+}
+
+.pgc-admin-profile-latestleads-container span {
+  color: #72ddac;
+}
+
+.pgc-admin-lead-won-gallery-container {
+  list-style: none;
+  padding-left: 0px;
+}
+
+.pgc-admin-lead-won-gallery-container li {
+  display: inline-block;
+  padding: 2px;
+  background-color: #d9e4f3;
+  font-size: 12px;
+  border-radius: 50%;
+}
+
+.pgc-admin-lead-won-gallery-container li img {
+  border-radius: 50%;
+  width: 22px;
+}
+
+.pgc-admin-lead-won-gallery-container li span {
+  padding: 10px;
+  background-color: #d9e4f3;
+}
+
+.pgc-admin-new-lead-slider-container {
+  background-color: #fff;
+  padding: 15px;
+}
+
+.pgc-admin-lead-won-container {
+  background-color: #f1f5fa;
+  padding: 15px;
+}
+
+.pgc-admin-profile-overall-rating-list {
+  padding-left: 0px;
+  list-style: none;
+}
+
+.pgc-admin-profile-overall-rating-list li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.pgc-admin-profile-overall-rating-list li i {
+  color: #ffb822;
+}
+
+.pgc-admin-profile-overall-rating-list li {
+  color: #b8bbd1;
+}
+
+.admin-profile-satisfied-text i {
+  color: #ffb822;
+  margin-left: 15px;
+}
+
+.admin-profile-ticket-mark-list {
+  padding-left: 0px;
+}
+
+.admin-profile-ticket-mark-list li {
+  list-style: none;
+  display: block;
+  margin: 10px 0px;
+}
+
+.admin-profile-ticket-mark-list li span {
+  padding: 4px;
+  margin-right: 10px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  float: left;
+  align-items: center;
+  margin-top: 8px;
+}
+
+.pgc-admin-profile-tabs {
+  width: 100%;
+  background-color: #ebebeb;
+}
+
+.pgc-admin-profile-tabs li .nav-link.active {
+  background-color: #b14d81;
+  color: #fff;
+}
+
+.pgc-admin-profile-tabs-container {
+  background-color: #fff;
+}
+
+.mt-7 {
+  margin-top: 5rem !important
+}
+
+.redbg {
+  background-color: #a42a6a;
+}
+
+.campaign-box-shadow {
+  box-shadow: 0 0 20px #0f254678;
+}
+
+.campaign-title-height {
+  overflow: hidden;
+  font-size: 15px;
+  font-weight: 600;
+  text-transform: capitalize !important;
+}
+
+.campaign-story-amount {
+    font-size: 13.5px;
+    color: #b14d81;
+    font-weight: 600;
+    margin-top: 10px;
+}
+.campaign-story-height p {
+    /* margin-bottom: 5px !important; */
+    margin-top: 5px !important;
+    text-transform: capitalize !important;
+}
+
+.btn-main{
+    border-radius: 40px; 
+    background: #a42a6a; 
+    color: #fff;
+    margin-top: 30px;
+    padding: 10px 40px;
+}
+/* Form Step Header CSS starts - @Author: Akhilesh */
+.form-step-header {
+    align-items: center;
+    display: flex;
+}
+.form-step-header .line {
+    background-color: rgba(0,0,0,.12);
+    flex: 1 0 32px;
+    margin: auto;
+    min-height: 1px;
+    min-width: 1px;
+}
+.form-step-header .step {
+    align-items: center;
+    background-color: initial;
+    border: none;
+    border-radius: .25rem;
+    color: #6c757d;
+    display: inline-flex;
+    flex-wrap: wrap;
+    font-size: 1rem;
+    font-weight: 700;
+    justify-content: center;
+    line-height: 1.5;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color .15s ease-out,color .15s ease-out;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    vertical-align: middle;
+    white-space: nowrap;
+}
+
+.form-step-header .step span.step-circle {
+    align-content: center;
+    background-color: #6c757d;
+    border-radius: 1em;
+    color: #fff;
+    display: inline-flex;
+    height: 2em;
+    justify-content: center;
+    line-height: 1em;
+    margin: .25rem;
+    padding: .5em 0;
+    width: 2em;
+}
+
+.form-step-header .step.active span.step-circle {
+    background-color: #007bff !important;
+}
+
+.form-step-header .step span.step-label {
+    display: inline-block;
+    margin: .25rem;
+}
+/* Form Step Header CSS ends here */
+.deleted {
+    opacity: 0.6;
+}
+
+.deleted .title {
+    text-decoration: line-through;
+}
+
+.actions {
+    text-align: center;
+}
+
+tr {
+    text-align: center;
+}
+
+tr .title {
+    text-align: left;
+}
+
+.target-amt {
+    padding-left: 100px;
+}
+
+.target-currency {
+    width: 75px;
+    position: absolute;
+    top: 40px;
+}
+
+button.btn.calendar {
+    position: absolute;
+    top: 38px;
+    right: 15px;
+    border: none;
+    height: calc(1.5em + .75rem + 2px);
+}
+.card-body {
+    padding-top: 0;
+}
+.attachment {
+    position: relative;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    /*width: fit-content;
+    display: inline-block;*/
+    border: 1px solid #d3d3d3;
+    border-radius: 5px;
+    margin-left: 15px;
+}
+.removeAttachment{
+    font-size: 20px;
+    position: absolute;
+    left: -21px;
+    top: 16px;
+    /*background: #d3d3d3;*/
+    border-radius: 50%;
+    display: block;
+}
+.capitalize{
+  text-transform: capitalize !important;
+}
+.show{
+  display:block !important;
+}
+.hide{
+  display:none !important;
+}
+
+.image-loading {
+    background: #f1f1f1;
+}
+
+.tag-input span{
+  margin-top: 5px;
+  margin-bottom: 5px
+}
+
+/* The Modal (background) */
+.modal-c {
+  position: fixed; /* Stay in place */
+  z-index: 8; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+.modal-title-c {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+/* Modal Content */
+.modal-content-c {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 80%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+  from {top:-300px; opacity:0} 
+  to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.close-c {
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close-c:hover,
+.close-c:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-header-c {
+  padding: 2px 16px;
+  background-color: #90497d;
+  color: white;
+}
+.float-right{
+  float:right !important;
+}
+
+.modal-body-c {padding: 2px 16px;}
+
+.modal-footer-c {
+  padding: 2px 16px;
+  background-color: #90497d;
+  color: white;
+}
+
+
+/*STORIES CSS*/
+.hidden{
+  visibility: hidden !important;
+}
+.st-status {
+    background: #fff;
+    padding: 3px 4px 0px 1px;
+    color: #5a5454 !important;
+    font-size: small;
+    border: 1px solid #ccc;
+    margin-top: -1px;
+    height: 25px;
+}
+
+.st-status svg {
+    width: 9px;
+    margin-right: 4px !important;
+    margin-left: 2px;
+}
+.card-list .card-link {
+    font-size: 10px;
+    max-height: 30px;
+}
+.card-link svg {
+  padding-right: 1px;
+}
+.bg-light-gray {
+    background: #cccccc7a;
+}
+.card-link span {
+    margin-left: 3px;
+}
+.card-status {
+    position: absolute;
+    right: 0px;
+    z-index: 8;
+}
+.card-img img {
+    width: 100%;
+    height: 150px;
+}
+
+.card-confirmation {
+    margin-bottom: 5px;
+}
+.card-confirmation .form-check-input[type=radio] {
+    margin-right: 3px !important;
+}
+.card-action button {
+    margin-right: 5px !important;
+}
+
+.campaign-story-height, .campaign-story-height h3, .campaign-story-height p, .campaign-story-height h2, .campaign-story-height h1, .campaign-story-height h4, .campaign-story-height h5, #bloglistDescription h1 {
+    font-size: 13px !important;
+    margin-top: 5px;
+    min-height: 20px;
+    text-transform: capitalize !important;
+}
+
+/*BLOG CSS*/
+.blog-dropdown option, .blog-dropdown {
+    text-transform: capitalize;
+}
